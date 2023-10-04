@@ -20,10 +20,11 @@ from kbplacer.board_builder import BoardBuilder
 from kbplacer.defaults import DEFAULT_DIODE_POSITION
 from kbplacer.element_position import ElementInfo, PositionOption
 from kbplacer.key_placer import KeyPlacer
-from kbplacer.kle_serial import Keyboard, ViaKeyboard, parse_via
+from kbplacer.kle_serial import Key, Keyboard, ViaKeyboard, parse_via
 from pyurlon import stringify
 
 Numeric = Union[int, float]
+Point = Tuple[Numeric, Numeric]
 Box = Tuple[Numeric, Numeric, Numeric, Numeric]
 
 REPOSITORY_URL = "https://github.com/the-via/keyboards.git"
@@ -57,47 +58,70 @@ def rotate(origin, point, angle):
     return qx, qy
 
 
-def build_key(width, height, labels: list, decal: bool):
-    key = dw.Group()
-    width_px = width * KEY_WIDTH
-    height_px = height * KEY_HEIGHT
-    if not decal:
-        key.append(
-            dw.Rectangle(
-                0,
-                0,
-                width_px,
-                height_px,
-                rx="5",
-                fill="#cccccc",
-                stroke="black",
-                stroke_width=2,
-            )
+def build_key(key: Key):
+    group = dw.Group()
+    width_px = key.width * KEY_WIDTH
+    height_px = key.height * KEY_HEIGHT
+
+    not_rectangle = key.width != key.width2 or key.height != key.height2
+
+    def border(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
+        return dw.Rectangle(
+            x * KEY_WIDTH,
+            y * KEY_HEIGHT,
+            w * KEY_WIDTH,
+            h * KEY_HEIGHT,
+            rx="5",
+            fill="none",
+            stroke="black",
+            stroke_width=2,
         )
-        key.append(
-            dw.Rectangle(
-                INNER_GAP_LEFT,
-                INNER_GAP_TOP,
-                width_px - 2 * INNER_GAP_LEFT,
-                height_px - INNER_GAP_TOP - INNER_GAP_BOTTOM,
-                rx="5",
-                fill="#fcfcfc",
-                stroke="rgba(0,0,0,.1)",
-                stroke_width=1,
-            )
+
+    def fill(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
+        return dw.Rectangle(
+            x * KEY_WIDTH + 1,
+            y * KEY_HEIGHT + 1,
+            w * KEY_WIDTH - 2,
+            h * KEY_HEIGHT - 2,
+            rx="5",
+            fill="#cccccc",
         )
-    key.append(
+
+    def top(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
+        return dw.Rectangle(
+            x * KEY_WIDTH + INNER_GAP_LEFT,
+            y * KEY_HEIGHT + INNER_GAP_TOP,
+            w * KEY_WIDTH - 2 * INNER_GAP_LEFT,
+            h * KEY_HEIGHT - INNER_GAP_TOP - INNER_GAP_BOTTOM,
+            rx="5",
+            fill="#fcfcfc",
+        )
+
+    if not key.decal:
+        layers = ["border", "fill", "top"]
+
+        for layer in layers:
+            group.append(locals()[layer](0, 0, key.width, key.height))
+            if not_rectangle:
+                group.append(locals()[layer](key.x2, key.y2, key.width2, key.height2))
+
+    top_label_position = (
+        INNER_GAP_LEFT + 1 + (key.x2 * KEY_WIDTH),
+        INNER_GAP_TOP + LABEL_SIZE + 1 + (key.y2 * KEY_HEIGHT),
+    )
+
+    group.append(
         dw.Text(
-            labels[0],
+            key.labels[0],
             font_size=LABEL_SIZE,
-            x=INNER_GAP_LEFT + 1,
-            y=INNER_GAP_TOP + LABEL_SIZE + 1,
+            x=top_label_position[0],
+            y=top_label_position[1],
         )
     )
-    if len(labels) >= 9 and labels[8]:
-        key.append(
+    if len(key.labels) >= 9 and key.labels[8]:
+        group.append(
             dw.Text(
-                labels[8],
+                key.labels[8],
                 font_size=LABEL_SIZE,
                 x=width_px - INNER_GAP_LEFT - 1,
                 y=height_px - LABEL_SIZE - 1,
@@ -105,7 +129,7 @@ def build_key(width, height, labels: list, decal: bool):
             )
         )
 
-    return key
+    return group
 
 
 def calcualte_canvas_size(keyboard: ViaKeyboard) -> tuple[int, int]:
@@ -252,7 +276,9 @@ def create_render(pcb_file: Path) -> Path:
     plot_control = pcbnew.PLOT_CONTROLLER(board)
     plot_options = plot_control.GetPlotOptions()
     plot_options.SetOutputDirectory(dst_dir)
-    plot_options.SetColorSettings(pcbnew.GetSettingsManager().GetColorSettings("vampire"))
+    plot_options.SetColorSettings(
+        pcbnew.GetSettingsManager().GetColorSettings("vampire")
+    )
     plot_options.SetPlotFrameRef(False)
     plot_options.SetSketchPadLineWidth(pcbnew.FromMM(0.35))
     plot_options.SetAutoScale(False)
@@ -309,7 +335,7 @@ def create_layout_image(keyboard: ViaKeyboard, png_output: Path):
         x = KEY_WIDTH * k.x
         y = KEY_WIDTH * k.y
 
-        key = build_key(width, height, k.labels, k.decal)
+        key = build_key(k)
 
         args = {}
         angle = k.rotation_angle
@@ -376,7 +402,9 @@ def app() -> None:
                 "Collection of generated keyboard PCBs based on "
                 "[via](https://github.com/the-via/keyboards.git) layouts.\n\n"
             )
-            readme.add_links({"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"})
+            readme.add_links(
+                {"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"}
+            )
 
             for layout_file in layouts:
                 logger.info(f"\nProcessing: {layout_file}")
@@ -427,7 +455,6 @@ def app() -> None:
                             }
                         )
                         inner_readme.add_links({"layout": kle_layout, "PCB": pcb_path})
-
 
                         readme.add_image(layout_png)
                         inner_readme.add_image(layout_png)
