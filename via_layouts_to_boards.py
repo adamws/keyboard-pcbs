@@ -16,6 +16,9 @@ import drawsvg as dw
 import pcbnew
 import svgpathtools
 
+from colormath.color_objects import LabColor, sRGBColor
+from colormath.color_conversions import convert_color
+
 from kbplacer.board_builder import BoardBuilder
 from kbplacer.defaults import DEFAULT_DIODE_POSITION
 from kbplacer.element_position import ElementInfo, PositionOption
@@ -48,6 +51,16 @@ INNER_GAP_BOTTOM = 8
 LABEL_SIZE = 12
 
 
+def lighten_color(hex_color: str) -> str:
+    color = sRGBColor.new_from_rgb_hex(hex_color)
+    lab_color = convert_color(color, LabColor)
+    lab_color.lab_l = min(100, lab_color.lab_l * 1.2)
+    rgb = convert_color(lab_color, sRGBColor)
+    return sRGBColor(
+        rgb.clamped_rgb_r, rgb.clamped_rgb_g, rgb.clamped_rgb_b
+    ).get_rgb_hex()
+
+
 def rotate(origin, point, angle):
     ox, oy = origin
     px, py = point
@@ -64,6 +77,9 @@ def build_key(key: Key):
     height_px = key.height * KEY_HEIGHT
 
     not_rectangle = key.width != key.width2 or key.height != key.height2
+
+    dark_color = key.color
+    light_color = lighten_color(dark_color)
 
     def border(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
         return dw.Rectangle(
@@ -84,7 +100,7 @@ def build_key(key: Key):
             w * KEY_WIDTH - 2,
             h * KEY_HEIGHT - 2,
             rx="5",
-            fill="#cccccc",
+            fill=dark_color,
         )
 
     def top(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
@@ -94,7 +110,7 @@ def build_key(key: Key):
             w * KEY_WIDTH - 2 * INNER_GAP_LEFT,
             h * KEY_HEIGHT - INNER_GAP_TOP - INNER_GAP_BOTTOM,
             rx="5",
-            fill="#fcfcfc",
+            fill=light_color,
         )
 
     if not key.decal:
@@ -116,6 +132,7 @@ def build_key(key: Key):
             font_size=LABEL_SIZE,
             x=top_label_position[0],
             y=top_label_position[1],
+            fill=key.textColor[0] if len(key.textColor) else key.default.textColor,
         )
     )
     if len(key.labels) >= 9 and key.labels[8]:
@@ -125,6 +142,9 @@ def build_key(key: Key):
                 font_size=LABEL_SIZE,
                 x=width_px - INNER_GAP_LEFT - 1,
                 y=height_px - LABEL_SIZE - 1,
+                fill=key.textColor[8]
+                if len(key.textColor) >= 9
+                else key.default.textColor,
                 text_anchor="end",
             )
         )
