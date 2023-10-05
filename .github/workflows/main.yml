@@ -1,0 +1,30 @@
+name: Main Workflow
+
+on: [push]
+
+jobs:
+  generate:
+    name: Generate site
+    runs-on: ubuntu-latest
+    container: admwscki/kicad-kbplacer-primary:7.0.8-lunar
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        python3 -m pip install -r requirements.txt
+    - name: Download KiCad colorscheme
+      run: |
+        mkdir -p /root/.config/kicad/7.0/colors
+        cd /root/.config/kicad/7.0/colors
+        wget https://raw.githubusercontent.com/2231puppy/kicad-vampire/master/colors/vampire.json
+    - name: Run
+      run: |
+        python3 via_layouts_to_boards.py
+    - uses: actions/upload-artifact@v3
+      with:
+        name: gh-pages
+        path: gh-pages/*
+        retention-days: 1
+        if-no-files-found: error
+
