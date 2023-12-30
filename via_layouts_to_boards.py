@@ -18,6 +18,9 @@ import svgpathtools
 
 from colormath.color_objects import LabColor, sRGBColor
 from colormath.color_conversions import convert_color
+from scour.scour import scourString
+from scour.scour import sanitizeOptions as sanitizeScourOptions
+from scour.scour import parse_args as parseScourArgs
 
 from kbplacer.board_builder import BoardBuilder
 from kbplacer.defaults import DEFAULT_DIODE_POSITION
@@ -342,7 +345,35 @@ def create_render(pcb_file: Path) -> Path:
     root.insert(2, background_group)
 
     tree.write(filepath)
+
+    optimize_svg(filepath)
+
     return filepath
+
+
+def optimize_svg(source_svg: Path, optimization_passes: int = 2):
+    def _optimize(sourcesvg):
+        scouroptions = parseScourArgs(
+            [
+                "--enable-id-stripping",
+                "--enable-comment-stripping",
+                "--shorten-ids",
+                "--create-groups",
+            ]
+        )
+        scouroptions = sanitizeScourOptions(scouroptions)
+        optimizedsvg = scourString(sourcesvg, scouroptions)
+        return optimizedsvg
+
+    with open(source_svg) as f:
+        svg = f.read()
+
+    for i in range(optimization_passes):
+        svg = _optimize(svg)
+
+    # overwrite
+    with open(source_svg, "w") as f:
+        f.write(svg)
 
 
 def create_layout_image(keyboard: ViaKeyboard, png_output: Path):
