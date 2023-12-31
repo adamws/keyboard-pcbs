@@ -1,3 +1,4 @@
+import concurrent.futures
 import glob
 import itertools
 import json
@@ -8,6 +9,7 @@ import shutil
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
+from functools import partial
 from pathlib import Path
 from typing import Union, Tuple, cast
 from types import TracebackType
@@ -35,9 +37,11 @@ Box = Tuple[Numeric, Numeric, Numeric, Numeric]
 
 REPOSITORY_URL = "https://github.com/the-via/keyboards.git"
 
+FORMAT = '%(message)s'
+logging.basicConfig(format=FORMAT)
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-logger.addHandler(logging.StreamHandler())
 
 kbplacer_logger = logging.getLogger("kbplacer")
 kbplacer_logger.setLevel(logging.ERROR)
@@ -436,6 +440,89 @@ class ReadmeBuilder:
         self.readme.close()
 
 
+def process_layout(tempdir, output, layout_file):
+    logger.info(f"Processing: {layout_file}")
+    try:
+        name = Path(layout_file).stem
+        destination = create_result_dir(tempdir, output, layout_file)
+        destination = Path(destination)
+        keyboard = load_keyboard(layout_file)
+
+        kle_layout = destination / f"{name}-kle.json"
+        with open(kle_layout, "w") as f:
+            new_keyboard = Keyboard(
+                meta=keyboard.meta,
+                keys=keyboard.keys + keyboard.alternative_keys,
+            )
+            f.write(new_keyboard.to_kle())
+
+        layout_png = destination / f"{name}-layout.png"
+        create_layout_image(keyboard, layout_png)
+
+        pcb_path = destination / f"{name}.kicad_pcb"
+        create_board(keyboard, pcb_path)
+        create_render(pcb_path)
+    except Exception as e:
+        msg = f"\t{layout_file} failed with error: '{e}'"
+        logger.error(msg)
+
+
+def generate_readmes(output: Path):
+    results = glob.glob(f"{output}/**/*-kle.json")
+    results = sorted(results)
+    with ReadmeBuilder(output.parent / "README.md") as readme:
+        readme.write(
+            "Collection of generated keyboard PCBs based on "
+            "[via](https://github.com/the-via/keyboards.git) layouts.\n\n"
+        )
+        readme.add_links(
+            {"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"}
+        )
+
+        for kle_layout in results:
+            result = Path(kle_layout)
+            name = result.stem.removesuffix("-kle")
+            destination = result.parent
+            header = f"{destination.name}/{name}"
+            layout_png = destination / f"{name}-layout.png"
+            pcb_path = destination / f"{name}.kicad_pcb"
+            render_path = destination / f"{name}-render.svg"
+
+            with ReadmeBuilder(
+                destination / "README.md", mode="a"
+            ) as inner_readme:
+                readme.write(f"## {header}\n\n")
+                inner_readme.write(f"## {header}\n\n")
+
+                readme.add_links(
+                    {
+                        "README": destination / "README.md",
+                        "layout": result,
+                        "PCB": pcb_path,
+                        "PCB render": render_path,
+                    }
+                )
+                inner_readme.add_links({"layout": result, "PCB": pcb_path})
+
+                readme.add_image(layout_png)
+                inner_readme.add_image(layout_png)
+
+                with open(result, "r") as f:
+                    data = json.loads("[" + f.read() + "]")
+                    kle_url = stringify(data)
+                    # keyboard-layout-editor uses old version of urlon, need
+                    # to replace `$` with `_` to be compatible with it.
+                    # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
+                    kle_url = kle_url.replace("$", "_")
+                    kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
+
+                kle_link = f"[Open in keyboard-layout-editor]({kle_url})\n\n"
+                readme.write(kle_link)
+                inner_readme.write(kle_link)
+
+                inner_readme.add_image(render_path)
+
+
 def app() -> None:
     with tempfile.TemporaryDirectory() as tempdir:
         logger.info(f"Created temporary directory {tempdir}")
@@ -448,76 +535,11 @@ def app() -> None:
         shutil.rmtree(output, ignore_errors=True)
         os.makedirs(output)
 
-        with ReadmeBuilder(script_dir / "gh-pages" / "README.md") as readme:
-            readme.write(
-                "Collection of generated keyboard PCBs based on "
-                "[via](https://github.com/the-via/keyboards.git) layouts.\n\n"
-            )
-            readme.add_links(
-                {"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"}
-            )
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            process_layout_partial = partial(process_layout, tempdir, output)
+            executor.map(process_layout_partial, layouts)
 
-            for layout_file in layouts:
-                logger.info(f"\nProcessing: {layout_file}")
-                try:
-                    name = Path(layout_file).stem
-                    destination = create_result_dir(tempdir, output, layout_file)
-                    destination = Path(destination)
-                    keyboard = load_keyboard(layout_file)
-
-                    kle_layout = destination / f"{name}-kle.json"
-                    with open(kle_layout, "w") as f:
-                        new_keyboard = Keyboard(
-                            meta=keyboard.meta,
-                            keys=keyboard.keys + keyboard.alternative_keys,
-                        )
-                        f.write(new_keyboard.to_kle())
-
-                    layout_png = destination / f"{name}-layout.png"
-                    create_layout_image(keyboard, layout_png)
-
-                    pcb_path = destination / f"{name}.kicad_pcb"
-                    create_board(keyboard, pcb_path)
-                    render_path = create_render(pcb_path)
-
-                    header = f"{destination.name}/{name}"
-
-                    with open(kle_layout, "r") as f:
-                        data = json.loads("[" + f.read() + "]")
-                        kle_url = stringify(data)
-                        # keyboard-layout-editor uses old version of urlon, need
-                        # to replace `$` with `_` to be compatible with it.
-                        # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
-                        kle_url = kle_url.replace("$", "_")
-                        kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
-
-                    with ReadmeBuilder(
-                        destination / "README.md", mode="a"
-                    ) as inner_readme:
-                        readme.write(f"## {header}\n\n")
-                        inner_readme.write(f"## {header}\n\n")
-
-                        readme.add_links(
-                            {
-                                "README": destination / "README.md",
-                                "layout": kle_layout,
-                                "PCB": pcb_path,
-                                "PCB render": render_path,
-                            }
-                        )
-                        inner_readme.add_links({"layout": kle_layout, "PCB": pcb_path})
-
-                        readme.add_image(layout_png)
-                        inner_readme.add_image(layout_png)
-                        kle_link = f"[Open in keyboard-layout-editor]({kle_url})\n\n"
-                        readme.write(kle_link)
-                        inner_readme.write(kle_link)
-
-                        inner_readme.add_image(render_path)
-
-                except Exception as e:
-                    msg = f"\tFailed with error: '{e}'"
-                    logger.error(msg)
+        generate_readmes(output)
 
 
 if __name__ == "__main__":
