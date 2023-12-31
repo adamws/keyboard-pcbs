@@ -199,6 +199,17 @@ def clone(destination: str) -> None:
     assert p.returncode == 0
 
 
+def git_repository_sha(path):
+    # Check if the path is a directory
+    if not os.path.isdir(path):
+        raise ValueError("Invalid path. Please provide a valid Git repository path.")
+    try:
+        git_hash = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=path).strip()
+    except subprocess.CalledProcessError as e:
+        raise RuntimeError(f"Error executing Git command: {e}")
+    return git_hash.decode("utf-8")
+
+
 def get_footprints_dir():
     script_dir = Path(__file__).parent.resolve()
     return script_dir / "footprints/local.pretty"
@@ -540,6 +551,13 @@ def app() -> None:
             executor.map(process_layout_partial, layouts)
 
         generate_readmes(output)
+
+        via_revision = git_repository_sha(tempdir)
+        with open(output.parent / "README.md", "a") as f:
+            f.write(
+                "\n\n---\n"
+                f"[via](https://github.com/the-via/keyboards.git) revision {via_revision}"
+            )
 
 
 if __name__ == "__main__":

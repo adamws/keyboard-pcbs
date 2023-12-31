@@ -1,11 +1,53 @@
 name: Main Workflow
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: "0 10 * * *"
+      branches:
+        - master
 
 jobs:
+  check_condition:
+    name: Check Condition
+    runs-on: ubuntu-latest
+    outputs:
+      run_generate: ${{ steps.check.outputs.generate }}
+
+    steps:
+    - name: Check if required to regenerate
+      id: check
+      run: |
+        if [[ "${{ github.event_name }}" = "schedule" ]]; then
+          wget https://raw.githubusercontent.com/adamws/keyboard-pcbs/gh-pages/README.md
+          metadata=$(tail -n 1 README.md)
+          # Extract revision using regex
+          if echo "$metadata" | grep -o 'revision [[:xdigit:]]\{40\}' > /dev/null; then
+              previous_revision=$(echo "$metadata" | grep -o 'revision [[:xdigit:]]\{40\}' | awk '{print $2}')
+          else
+              previous_revision="notfound"
+          fi
+          current_revision=$(git ls-remote https://github.com/the-via/keyboards.git HEAD | awk '{print $1}')
+          echo "Previous used via revision: '$previous_revision'"
+          echo "Current via revision: '$current_revision'"
+
+          if [ "$previous_revision" = "$current_revision" ]; then
+              echo "Revisions are equal, nothing to regenerate"
+              echo "generate=false" >> $GITHUB_OUTPUT
+          else
+              echo "Revisions are different, run generate"
+              echo "generate=true" >> $GITHUB_OUTPUT
+          fi
+        else
+          echo "Event is not a schedule event. Setting generate to true."
+          echo "generate=true" >> $GITHUB_OUTPUT
+        fi
+
   generate:
     name: Generate site
     runs-on: ubuntu-latest
+    needs: check_condition
+    if: needs.check_condition.outputs.run_generate == 'true'
     container: admwscki/kicad-kbplacer-primary:7.0.8-lunar
 
     steps:
