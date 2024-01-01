@@ -484,7 +484,7 @@ def process_layout(tempdir, output, layout_file):
 
 
 def generate_readmes(output: Path):
-    results = glob.glob(f"{output}/**/*-kle.json")
+    results = glob.glob(f"{output}/**/*-kle.json", recursive=True)
     results = sorted(results)
     with ReadmeBuilder(output.parent / "README.md") as readme:
         readme.write(
@@ -497,7 +497,14 @@ def generate_readmes(output: Path):
             result = Path(kle_layout)
             name = result.stem.removesuffix("-kle")
             destination = result.parent
-            header = f"{destination.name}/{name}"
+            header = f"{destination.relative_to(output)}/{name}"
+            # some vendors put each keyboard in separate folder of the same name,
+            # if name is equal folder name, shorten it in header
+            header_parts = header.split("/")
+            if len(header_parts) > 2:
+                if header_parts[-1] == header_parts[-2]:
+                    header = "/".join(header_parts[:-1])
+
             layout_png = destination / f"{name}-layout.png"
             pcb_path = destination / f"{name}.kicad_pcb"
             render_path = destination / f"{name}-render.svg"
@@ -539,7 +546,7 @@ def app() -> None:
     with tempfile.TemporaryDirectory() as tempdir:
         logger.info(f"Created temporary directory {tempdir}")
         clone(tempdir)
-        layouts = glob.glob(f"{tempdir}/src/**/*json")
+        layouts = glob.glob(f"{tempdir}/src/**/*json", recursive=True)
         layouts = sorted(layouts)
         script_dir = Path(__file__).parent.resolve()
         output = script_dir / "gh-pages" / "output"
@@ -560,7 +567,7 @@ def app() -> None:
                 f"[via](https://github.com/the-via/keyboards.git) revision {via_revision}"
             )
 
-        errors = glob.glob(f"{output}/**/error.log")
+        errors = glob.glob(f"{output}/**/error.log", recursive=True)
         errors = sorted(errors)
         if errors:
             logger.warning("Errors summary:")
