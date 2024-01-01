@@ -37,7 +37,7 @@ Box = Tuple[Numeric, Numeric, Numeric, Numeric]
 
 REPOSITORY_URL = "https://github.com/the-via/keyboards.git"
 
-FORMAT = '%(message)s'
+FORMAT = "%(message)s"
 logging.basicConfig(format=FORMAT)
 
 logger = logging.getLogger(__name__)
@@ -204,7 +204,9 @@ def git_repository_sha(path):
     if not os.path.isdir(path):
         raise ValueError("Invalid path. Please provide a valid Git repository path.")
     try:
-        git_hash = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=path).strip()
+        git_hash = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=path
+        ).strip()
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"Error executing Git command: {e}")
     return git_hash.decode("utf-8")
@@ -453,10 +455,11 @@ class ReadmeBuilder:
 
 def process_layout(tempdir, output, layout_file):
     logger.info(f"Processing: {layout_file}")
+
+    name = Path(layout_file).stem
+    destination = create_result_dir(tempdir, output, layout_file)
+    destination = Path(destination)
     try:
-        name = Path(layout_file).stem
-        destination = create_result_dir(tempdir, output, layout_file)
-        destination = Path(destination)
         keyboard = load_keyboard(layout_file)
 
         kle_layout = destination / f"{name}-kle.json"
@@ -476,6 +479,8 @@ def process_layout(tempdir, output, layout_file):
     except Exception as e:
         msg = f"\t{layout_file} failed with error: '{e}'"
         logger.error(msg)
+        with open(destination / "error.log", "a") as f:
+            f.write(msg.strip() + "\n")
 
 
 def generate_readmes(output: Path):
@@ -486,9 +491,7 @@ def generate_readmes(output: Path):
             "Collection of generated keyboard PCBs based on "
             "[via](https://github.com/the-via/keyboards.git) layouts.\n\n"
         )
-        readme.add_links(
-            {"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"}
-        )
+        readme.add_links({"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"})
 
         for kle_layout in results:
             result = Path(kle_layout)
@@ -499,9 +502,7 @@ def generate_readmes(output: Path):
             pcb_path = destination / f"{name}.kicad_pcb"
             render_path = destination / f"{name}-render.svg"
 
-            with ReadmeBuilder(
-                destination / "README.md", mode="a"
-            ) as inner_readme:
+            with ReadmeBuilder(destination / "README.md", mode="a") as inner_readme:
                 readme.write(f"## {header}\n\n")
                 inner_readme.write(f"## {header}\n\n")
 
@@ -558,6 +559,16 @@ def app() -> None:
                 "\n\n---\n"
                 f"[via](https://github.com/the-via/keyboards.git) revision {via_revision}"
             )
+
+        errors = glob.glob(f"{output}/**/error.log")
+        errors = sorted(errors)
+        if errors:
+            logger.warning("Errors summary:")
+            for e in errors:
+                with open(e, "r") as f:
+                    for line in f.readlines():
+                        if line:
+                            logger.warning(line.strip())
 
 
 if __name__ == "__main__":
