@@ -439,7 +439,7 @@ class ReadmeBuilder:
 
     def add_image(self, image_path: Path) -> None:
         relative_path = image_path.relative_to(self.parent)
-        self.readme.write(f"![{image_path.name}]({relative_path})\n\n")
+        self.readme.write(f"![{image_path.name}]({relative_path}){{:loading=\"lazy\"}}\n\n")
 
     def __enter__(self):
         return self
