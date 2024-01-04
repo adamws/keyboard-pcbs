@@ -1,0 +1,10 @@
+## deng/thirty
+
+[layout](thirty-kle.json) - [PCB](thirty.kicad_pcb)
+
+![thirty-layout.png](thirty-layout.png){:loading="lazy"}
+
+[Open in keyboard-layout-editor](http://www.keyboard-layout-editor.com/##@@=0,0&=0,1&=0,2&=0,3&=0,4&=3,4&=3,3&=3,2&=3,1&=3,0;&@=1,0&=1,1&=1,2&=1,3&=1,4&=4,4&=4,3&=4,2&=4,1&_c=#777777;&=4,0;&@=2,0&=2,1&=2,2&=2,3&=2,4&=5,4&=5,3&=5,2&=5,1&=5,0)
+
+![thirty-render.svg](thirty-render.svg){:loading="lazy"}
+

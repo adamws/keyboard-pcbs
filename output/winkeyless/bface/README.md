@@ -1,0 +1,10 @@
+## winkeyless/bface
+
+[layout](bface-kle.json) - [PCB](bface.kicad_pcb)
+
+![bface-layout.png](bface-layout.png){:loading="lazy"}
+
+[Open in keyboard-layout-editor](http://www.keyboard-layout-editor.com/##@@_c=#777777;&=4,0&_c=#cccccc;&=4,1&=4,2&=4,3&=4,4&=4,5&=6,1&=6,11&=7,11&=7,1&=4,10&=4,11&=4,12&_c=#aaaaaa&w:2;&=4,14;&@_w:1.5;&=3,0&_c=#cccccc;&=3,1&=3,2&=3,3&=3,4&=3,5&=6,2&=6,12&=7,12&=7,2&=3,10&=3,11&=3,12&_w:1.5;&=3,13;&@_c=#aaaaaa&w:1.75;&=2,0&_c=#cccccc;&=2,1&=2,2&=2,3&=2,4&=2,5&=6,3&=6,13&=7,13&=7,3&=2,10&=2,11&_c=#777777&w:2.25;&=2,13;&@_c=#aaaaaa&w:2.25;&=1,0&_c=#cccccc;&=1,1&=1,2&=1,3&=1,4&=1,5&=6,4&=6,14&=7,14&=7,4&=1,10&_c=#aaaaaa&w:2.75;&=1,11;&@_w:1.25;&=0,0&_w:1.25;&=0,1&_w:1.25;&=0,2&_c=#cccccc&w:6.25;&=6,5&_c=#aaaaaa&w:1.25;&=7,5&_w:1.25;&=0,10&_w:1.25;&=0,11&_w:1.25;&=0,12)
+
+![bface-render.svg](bface-render.svg){:loading="lazy"}
+

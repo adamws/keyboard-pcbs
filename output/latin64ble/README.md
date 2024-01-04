@@ -1,0 +1,10 @@
+## latin64ble/latin64ble
+
+[layout](latin64ble-kle.json) - [PCB](latin64ble.kicad_pcb)
+
+![latin64ble-layout.png](latin64ble-layout.png){:loading="lazy"}
+
+[Open in keyboard-layout-editor](http://www.keyboard-layout-editor.com/##@@_c=#ecc82f&t=#fbfbfb;&=0,0&_c=#cccccc&t=#000000;&=0,1&=0,2&=0,3&=0,4&=0,5&=0,6&=0,7&=1,0&=1,1&=1,2&=1,3&=1,4&_w:2;&=1,5;&@_w:1.5;&=1,6&=1,7&=2,0&=2,1&=2,2&=2,3&=2,4&=2,5&=2,6&=2,7&=3,0&=3,1&=3,2&_w:1.5;&=3,3;&@_w:1.75;&=3,4&=3,5&=3,6&=3,7&=4,0&=4,1&=4,2&=4,3&=4,4&=4,5&=4,6&=4,7&_w:2.25;&=5,0;&@_w:2;&=5,1&=5,2&=5,3&=5,4&=5,5&=5,6&=5,7&=6,0&=6,1&=6,2&=6,3&=6,4&=6,5&=6,6;&@_w:1.25;&=6,7&_w:1.25;&=7,0&_w:1.25;&=7,1&_w:6.25;&=7,2&=7,3&=7,4&=7,5&=7,6&=7,7)
+
+![latin64ble-render.svg](latin64ble-render.svg){:loading="lazy"}
+
