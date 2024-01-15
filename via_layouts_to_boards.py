@@ -148,13 +148,29 @@ def build_key(key: Key):
                 key.labels[8],
                 font_size=LABEL_SIZE,
                 x=width_px - INNER_GAP_LEFT - 1,
-                y=height_px - LABEL_SIZE - 1,
+                y=height_px - LABEL_SIZE,
                 fill=key.textColor[8]
                 if len(key.textColor) >= 9
                 else key.default.textColor,
                 text_anchor="end",
             )
         )
+    # center label (denoting encoder)
+    if len(key.labels) >= 5 and key.labels[4] and key.labels[4].startswith("e"):
+        group.append(
+            dw.Text(
+                key.labels[4],
+                font_size=LABEL_SIZE,
+                x=width_px / 2,
+                y=height_px / 2 - 2,
+                fill=key.textColor[4]
+                if len(key.textColor) >= 5
+                else key.default.textColor,
+                text_anchor="middle",
+                dominant_baseline="middle"
+            )
+        )
+
 
     return group
 
