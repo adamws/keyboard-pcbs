@@ -17,5 +17,6 @@ pip install -r requirements.txt
 3. Run
 
 ```
-python via_layouts_to_boards.py
+python via_layouts_to_boards.py generate
+python via_layouts_to_boards.py collect
 ```

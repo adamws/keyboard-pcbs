@@ -167,10 +167,9 @@ def build_key(key: Key):
                 if len(key.textColor) >= 5
                 else key.default.textColor,
                 text_anchor="middle",
-                dominant_baseline="middle"
+                dominant_baseline="middle",
             )
         )
-
 
     return group
 
@@ -455,7 +454,9 @@ class ReadmeBuilder:
 
     def add_image(self, image_path: Path) -> None:
         relative_path = image_path.relative_to(self.parent)
-        self.readme.write(f"![{image_path.name}]({relative_path}){{:loading=\"lazy\"}}\n\n")
+        self.readme.write(
+            f'![{image_path.name}]({relative_path}){{:loading="lazy"}}\n\n'
+        )
 
     def __enter__(self):
         return self
@@ -497,6 +498,40 @@ def process_layout(tempdir, output, layout_file):
         logger.error(msg)
         with open(destination / "error.log", "a") as f:
             f.write(msg.strip() + "\n")
+
+
+def divide_list(lst, n):
+    size = len(lst) // n
+    remainder = len(lst) % n
+    start = 0
+
+    result = []
+    for i in range(n):
+        end = start + size + (1 if i < remainder else 0)
+        result.append(lst[start:end])
+        start = end
+
+    return result
+
+
+def generate_images(output: Path, part: int, num_parts: int):
+    with tempfile.TemporaryDirectory() as tempdir:
+        logger.info(f"Created temporary directory {tempdir}")
+        clone(tempdir)
+        layouts = glob.glob(f"{tempdir}/src/**/*json", recursive=True)
+        layouts = sorted(layouts)
+        layouts = divide_list(layouts, num_parts)
+        layouts = layouts[part - 1]
+
+        shutil.rmtree(output, ignore_errors=True)
+        os.makedirs(output)
+
+        with open(output.parent / "revision.txt", "w") as f:
+            f.write(git_repository_sha(tempdir))
+
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            process_layout_partial = partial(process_layout, tempdir, output)
+            executor.map(process_layout_partial, layouts)
 
 
 def generate_readmes(output: Path):
@@ -558,41 +593,47 @@ def generate_readmes(output: Path):
                 inner_readme.add_image(render_path)
 
 
-def app() -> None:
-    with tempfile.TemporaryDirectory() as tempdir:
-        logger.info(f"Created temporary directory {tempdir}")
-        clone(tempdir)
-        layouts = glob.glob(f"{tempdir}/src/**/*json", recursive=True)
-        layouts = sorted(layouts)
-        script_dir = Path(__file__).parent.resolve()
-        output = script_dir / "gh-pages" / "output"
-
-        shutil.rmtree(output, ignore_errors=True)
-        os.makedirs(output)
-
-        with concurrent.futures.ProcessPoolExecutor() as executor:
-            process_layout_partial = partial(process_layout, tempdir, output)
-            executor.map(process_layout_partial, layouts)
-
-        generate_readmes(output)
-
-        via_revision = git_repository_sha(tempdir)
-        with open(output.parent / "README.md", "a") as f:
-            f.write(
-                "\n\n---\n"
-                f"[via](https://github.com/the-via/keyboards.git) revision {via_revision}"
-            )
-
-        errors = glob.glob(f"{output}/**/error.log", recursive=True)
-        errors = sorted(errors)
-        if errors:
-            logger.warning("Errors summary:")
-            for e in errors:
-                with open(e, "r") as f:
-                    for line in f.readlines():
-                        if line:
-                            logger.warning(line.strip())
+def get_errors(output: Path):
+    errors = glob.glob(f"{output}/**/error.log", recursive=True)
+    errors = sorted(errors)
+    if errors:
+        logger.warning("Errors summary:")
+        for e in errors:
+            with open(e, "r") as f:
+                for line in f.readlines():
+                    if line:
+                        logger.warning(line.strip())
 
 
 if __name__ == "__main__":
-    app()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="via PCB builder")
+    subparsers = parser.add_subparsers(dest="subparser_name")
+    parser_generate = subparsers.add_parser("generate", help="Generate stage")
+    parser_generate.add_argument(
+        "-n", required=False, default=1, type=int, help="Part to generate"
+    )
+    parser_generate.add_argument(
+        "-parts", required=False, default=1, type=int, help="Total number of parts"
+    )
+
+    parser_collect = subparsers.add_parser("collect", help="Collect stage")
+
+    args = parser.parse_args()
+
+    script_dir = Path(__file__).parent.resolve()
+    output = script_dir / "gh-pages" / "output"
+    if args.subparser_name == "collect":
+        generate_readmes(output)
+
+        with open(output.parent / "README.md", "a") as f:
+            with open(output.parent / "revision.txt", "r") as f2:
+                revision = f2.readline()
+            f.write(
+                "\n\n---\n"
+                f"[via](https://github.com/the-via/keyboards.git) revision {revision}"
+            )
+        get_errors(output)
+    else:
+        generate_images(output, args.n, args.parts)
