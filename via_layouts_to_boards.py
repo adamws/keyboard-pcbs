@@ -85,7 +85,9 @@ def build_key(key: Key):
 
     not_rectangle = key.width != key.width2 or key.height != key.height2
 
-    dark_color = key.color
+    # some layouts fail due to: 'input #ccccccc is not in #RRGGBB format',
+    # truncate to fix most of these issues
+    dark_color = key.color[0:7]
     light_color = lighten_color(dark_color)
 
     def border(x, y, w, h) -> dw.Rectangle:  # pyright: ignore
