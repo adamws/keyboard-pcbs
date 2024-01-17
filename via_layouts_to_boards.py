@@ -135,15 +135,18 @@ def build_key(key: Key):
         INNER_GAP_TOP + LABEL_SIZE + 1 + (key.y2 * KEY_HEIGHT),
     )
 
-    group.append(
-        dw.Text(
-            key.labels[0],
-            font_size=LABEL_SIZE,
-            x=top_label_position[0],
-            y=top_label_position[1],
-            fill=key.textColor[0] if len(key.textColor) else key.default.textColor,
+    # top left-label (might be missing for some decal keys)
+    if len(key.labels) >= 1 and key.labels[0]:
+        group.append(
+            dw.Text(
+                key.labels[0],
+                font_size=LABEL_SIZE,
+                x=top_label_position[0],
+                y=top_label_position[1],
+                fill=key.textColor[0] if len(key.textColor) else key.default.textColor,
+            )
         )
-    )
+    # bottom right label
     if len(key.labels) >= 9 and key.labels[8]:
         group.append(
             dw.Text(
