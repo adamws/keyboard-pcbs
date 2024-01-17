@@ -57,6 +57,7 @@
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
   <body>
     <main class="container">
       <hgroup>
@@ -87,6 +88,8 @@
         <small>Built for revision {{ revision }}</small>
       </footer>
       <script>
+        anchors.add('h4');
+
         var slider = document.getElementById('range-slider');
 
         noUiSlider.create(slider, {
