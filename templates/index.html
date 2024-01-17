@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.css" />
+  </head>
+  <style type="text/css" media="screen">
+    .container {
+        padding: 0 !important;
+    }
+    .kb-div {
+        margin-bottom: 24px;
+    }
+    .kb-links {
+        display: inline-flex;
+        list-style: none;
+        padding: 0;
+    }
+    .kb-links li {
+        display: list-item;
+        margin-right: 24px;
+    }
+    .kb-links li:first-child {
+        list-style: none;
+    }
+    #range-slider {
+        height: 10px;
+        width: 100%;
+        margin-top: 25px;
+    }
+    #range-slider .noUi-connect {
+        background: hsl(205, 20%, 32%);
+    }
+    #range-slider .noUi-handle {
+        height: 24px;
+        width: 24px;
+        top: -8px;
+        right: -12px;
+        border-radius: 12px;
+        box-shadow: none;
+        background: hsl(195, 85%, 41%);
+        border-color: hsl(195, 85%, 41%);
+    }
+    .noUi-handle:before, .noUi-handle:after {
+        display: none;
+    }
+    #keys-filter {
+        display: grid;
+        box-sizing: border-box;
+        grid-template-columns: 1fr 3fr;
+    }
+    #keys-filter-label {
+        margin-top: 12px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
+  <body>
+    <main class="container">
+      <hgroup>
+        <h3><a href="https://adamws.github.io/keyboard-pcbs">keyboard-pcbs</a></h3>
+        <p>Collection of generated keyboard PCBs based on <a
+          href="https://github.com/the-via/keyboards.git">via</a> layouts.
+          Visit on <a href="https://github.com/adamws/keyboard-pcbs">GitHub</a>.
+        </p>
+      </hgroup>
+      <span id="keys-filter">
+        <h5 id="keys-filter-label">Number of keys:</h5>
+        <div class="slider-styled" id="range-slider"></div>
+      </span>
+      {% for k in keyboards %}
+        <div class="kb-div" data-value="{{ k.total_keys }}">
+          <hgroup style="margin-bottom: 0px;">
+            <h4>{{ k.header }}</h4>
+            <ul class="kb-links">
+            {% for name, link in k.links.items() %}
+            <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+            {% endfor %}
+            </ul>
+          </hgroup>
+          <img src="{{ k.image_path }}" loading="lazy">
+        </div>
+      {% endfor %}
+      <footer>
+        <small>Built for revision {{ revision }}</small>
+      </footer>
+      <script>
+        var slider = document.getElementById('range-slider');
+
+        noUiSlider.create(slider, {
+            start: [1, {{ max_keys }}],
+            connect: true,
+            step: 1,
+            tooltips: true,
+            format: {
+              to: function (value) {
+                  return parseInt(value).toString();
+              },
+              from: function (value) {
+                  return Number(value);
+              }
+            },
+            range: {
+                'min': 1,
+                '90%': 110,
+                'max': {{ max_keys }}
+            }
+        });
+
+        slider.noUiSlider.on('update', function (values, handle) {
+            var keyboardDivs = document.querySelectorAll('.kb-div');
+            keyboardDivs.forEach(function(div) {
+              var divValue = parseInt(div.getAttribute('data-value'), 10);
+              if (divValue >= values[0] && divValue <= values[1]) {
+                div.style.display = 'block';
+              } else {
+                div.style.display = 'none';
+              }
+            });
+        });
+      </script>
+    </main>
+  </body>
+</html>

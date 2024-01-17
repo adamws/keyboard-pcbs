@@ -11,6 +11,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from functools import partial
 from pathlib import Path
+from textwrap import dedent
 from typing import Union, Tuple, cast
 from types import TracebackType
 
@@ -20,6 +21,7 @@ import svgpathtools
 
 from colormath.color_objects import LabColor, sRGBColor
 from colormath.color_conversions import convert_color
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 from scour.scour import scourString
 from scour.scour import sanitizeOptions as sanitizeScourOptions
 from scour.scour import parse_args as parseScourArgs
@@ -440,45 +442,6 @@ def create_layout_image(keyboard: ViaKeyboard, png_output: Path):
     d.save_png(str(png_output))
 
 
-class ReadmeBuilder:
-    def __init__(self, path: Path, mode: str = "w") -> None:
-        self.readme = open(path, mode)
-        self.parent = path.parent
-
-    def write(self, text: str) -> None:
-        self.readme.write(text)
-
-    def add_links(self, links: dict[str, Union[Path, str]]) -> None:
-        strings = []
-        for k, v in links.items():
-            if isinstance(v, Path):
-                relative_link = v.relative_to(self.parent)
-                strings.append(f"[{k}]({relative_link})")
-            else:
-                strings.append(f"[{k}]({v})")
-
-        result = " - ".join(strings)
-        self.readme.write(result)
-        self.readme.write("\n\n")
-
-    def add_image(self, image_path: Path) -> None:
-        relative_path = image_path.relative_to(self.parent)
-        self.readme.write(
-            f'![{image_path.name}]({relative_path}){{:loading="lazy"}}\n\n'
-        )
-
-    def __enter__(self):
-        return self
-
-    def __exit__(
-        self,
-        exc_type: type[BaseException] | None,
-        exc_value: BaseException | None,
-        traceback: TracebackType | None,
-    ) -> None:
-        self.readme.close()
-
-
 def process_layout(tempdir, output, layout_file):
     logger.info(f"Processing: {layout_file}")
 
@@ -487,6 +450,11 @@ def process_layout(tempdir, output, layout_file):
     destination = Path(destination)
     try:
         keyboard = load_keyboard(layout_file)
+
+        metadata = destination / f"{name}-metadata.json"
+        with open(metadata, "w") as f:
+            keys_without_decals = [k for k in keyboard.keys if not k.decal]
+            f.write(json.dumps({"total": len(keys_without_decals)}))
 
         kle_layout = destination / f"{name}-kle.json"
         with open(kle_layout, "w") as f:
@@ -543,63 +511,75 @@ def generate_images(output: Path, part: int, num_parts: int):
             executor.map(process_layout_partial, layouts)
 
 
-def generate_readmes(output: Path):
+
+
+def generate_index(output: Path, fix_links: bool = False):
     results = glob.glob(f"{output}/**/*-kle.json", recursive=True)
     results = sorted(results)
-    with ReadmeBuilder(output.parent / "README.md") as readme:
-        readme.write(
-            "Collection of generated keyboard PCBs based on "
-            "[via](https://github.com/the-via/keyboards.git) layouts.\n\n"
+
+    def build_link(output: Path, item: Path, fix_links: bool):
+        part1 = str(item.relative_to(output.parent))
+        if fix_links:
+            return "/keyboard-pcbs/" + part1
+        return part1
+
+    max_keys = 0
+    keyboards = []
+    for kle_layout in results:
+        result = Path(kle_layout)
+        name = result.stem.removesuffix("-kle")
+        metadata = result.with_name(f"{name}-metadata.json")
+        destination = result.parent
+        header = f"{destination.relative_to(output)}/{name}"
+        # some vendors put each keyboard in separate folder of the same name,
+        # if name is equal folder name, shorten it in header
+        header_parts = header.split("/")
+        if len(header_parts) > 2:
+            if header_parts[-1] == header_parts[-2]:
+                header = "/".join(header_parts[:-1])
+
+        layout_png = destination / f"{name}-layout.png"
+        pcb_path = destination / f"{name}.kicad_pcb"
+        render_path = destination / f"{name}-render.svg"
+        with open(result, "r") as f:
+            data = json.loads("[" + f.read() + "]")
+            kle_url = stringify(data)
+            # keyboard-layout-editor uses old version of urlon, need
+            # to replace `$` with `_` to be compatible with it.
+            # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
+            kle_url = kle_url.replace("$", "_")
+            kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
+
+        with open(metadata, "r") as f:
+            metadata = json.load(f)
+            total_keys = metadata["total"]
+            if total_keys > max_keys:
+                max_keys = total_keys
+
+        keyboards.append(
+            {
+                "header": header,
+                "links": {
+                    "Layout editor": kle_url,
+                    "Download PCB": build_link(output, pcb_path, fix_links),
+                    "PCB render": build_link(output, render_path, fix_links),
+                },
+                "total_keys": total_keys,
+                "image_path": build_link(output, layout_png, fix_links),
+            }
         )
-        readme.add_links({"Visit on GitHub": "https://github.com/adamws/keyboard-pcbs"})
 
-        for kle_layout in results:
-            result = Path(kle_layout)
-            name = result.stem.removesuffix("-kle")
-            destination = result.parent
-            header = f"{destination.relative_to(output)}/{name}"
-            # some vendors put each keyboard in separate folder of the same name,
-            # if name is equal folder name, shorten it in header
-            header_parts = header.split("/")
-            if len(header_parts) > 2:
-                if header_parts[-1] == header_parts[-2]:
-                    header = "/".join(header_parts[:-1])
+    with open(output.parent / "revision.txt", "r") as f2:
+        revision = f2.readline()
 
-            layout_png = destination / f"{name}-layout.png"
-            pcb_path = destination / f"{name}.kicad_pcb"
-            render_path = destination / f"{name}-render.svg"
-
-            with ReadmeBuilder(destination / "README.md", mode="a") as inner_readme:
-                readme.write(f"## {header}\n\n")
-                inner_readme.write(f"## {header}\n\n")
-
-                readme.add_links(
-                    {
-                        "README": destination / "README.md",
-                        "layout": result,
-                        "PCB": pcb_path,
-                        "PCB render": render_path,
-                    }
-                )
-                inner_readme.add_links({"layout": result, "PCB": pcb_path})
-
-                readme.add_image(layout_png)
-                inner_readme.add_image(layout_png)
-
-                with open(result, "r") as f:
-                    data = json.loads("[" + f.read() + "]")
-                    kle_url = stringify(data)
-                    # keyboard-layout-editor uses old version of urlon, need
-                    # to replace `$` with `_` to be compatible with it.
-                    # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
-                    kle_url = kle_url.replace("$", "_")
-                    kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
-
-                kle_link = f"[Open in keyboard-layout-editor]({kle_url})\n\n"
-                readme.write(kle_link)
-                inner_readme.write(kle_link)
-
-                inner_readme.add_image(render_path)
+    env = Environment(
+        loader=FileSystemLoader("templates"), autoescape=select_autoescape()
+    )
+    template = env.get_template("index.html")
+    with open(output.parent / "index.html", "w") as f:
+        f.writelines(
+            template.generate(keyboards=keyboards, max_keys=max_keys, revision=revision)
+        )
 
 
 def get_errors(output: Path):
@@ -628,21 +608,16 @@ if __name__ == "__main__":
     )
 
     parser_collect = subparsers.add_parser("collect", help="Collect stage")
+    parser_collect.add_argument(
+        "-gh", required=False, action="store_true", help="Use for deploy (fixes links)"
+    )
 
     args = parser.parse_args()
 
     script_dir = Path(__file__).parent.resolve()
     output = script_dir / "gh-pages" / "output"
     if args.subparser_name == "collect":
-        generate_readmes(output)
-
-        with open(output.parent / "README.md", "a") as f:
-            with open(output.parent / "revision.txt", "r") as f2:
-                revision = f2.readline()
-            f.write(
-                "\n\n---\n"
-                f"[via](https://github.com/the-via/keyboards.git) revision {revision}"
-            )
+        generate_index(output, args.gh)
         get_errors(output)
     else:
         generate_images(output, args.n, args.parts)

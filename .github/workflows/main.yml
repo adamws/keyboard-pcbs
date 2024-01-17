@@ -19,14 +19,8 @@ jobs:
       id: check
       run: |
         if [[ "${{ github.event_name }}" = "schedule" ]]; then
-          wget https://raw.githubusercontent.com/adamws/keyboard-pcbs/gh-pages/README.md
-          metadata=$(tail -n 1 README.md)
-          # Extract revision using regex
-          if echo "$metadata" | grep -o 'revision [[:xdigit:]]\{40\}' > /dev/null; then
-              previous_revision=$(echo "$metadata" | grep -o 'revision [[:xdigit:]]\{40\}' | awk '{print $2}')
-          else
-              previous_revision="notfound"
-          fi
+          wget https://raw.githubusercontent.com/adamws/keyboard-pcbs/gh-pages/revision.txt
+          previous_revision=$(cat revision.txt)
           current_revision=$(git ls-remote https://github.com/the-via/keyboards.git HEAD | awk '{print $1}')
           echo "Previous used via revision: '$previous_revision'"
           echo "Current via revision: '$current_revision'"
@@ -92,7 +86,7 @@ jobs:
         merge-multiple: true
     - name: Run
       run: |
-        python3 via_layouts_to_boards.py collect
+        python3 via_layouts_to_boards.py collect -gh
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/master' }}
@@ -100,6 +94,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
         publish_dir: ./gh-pages
-        enable_jekyll: true
+        enable_jekyll: false
         force_orphan: true
 
