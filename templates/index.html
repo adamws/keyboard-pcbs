@@ -30,6 +30,8 @@
         height: 10px;
         width: 100%;
         margin-top: 25px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
     #range-slider .noUi-connect {
         background: hsl(205, 20%, 32%);
@@ -47,13 +49,25 @@
     .noUi-handle:before, .noUi-handle:after {
         display: none;
     }
-    #keys-filter {
+    #kb-filters {
         display: grid;
         box-sizing: border-box;
         grid-template-columns: 1fr 3fr;
     }
-    #keys-filter-label {
+    #kb-filters-label {
         margin-top: 12px;
+    }
+    #kb-tags {
+        display: flex;
+    }
+    .kb-tag-label {
+        margin-right: 24px;
+    }
+    .row1 {
+      grid-row: 1;
+    }
+    .row2 {
+      grid-row: 2;
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
@@ -67,12 +81,22 @@
           Visit on <a href="https://github.com/adamws/keyboard-pcbs">GitHub</a>.
         </p>
       </hgroup>
-      <span id="keys-filter">
-        <h5 id="keys-filter-label">Number of keys:</h5>
-        <div class="slider-styled" id="range-slider"></div>
-      </span>
+      <div id="kb-filters">
+        <h5 class="row1" id="kb-filters-label">Number of keys:</h5>
+        <div class="row1 slider-styled" id="range-slider"></div>
+        <h5 class="row2">Type:</h5>
+        <div class="row2" id="kb-tags">
+          {% set layout_types = ['Ortholinear', 'Staggered', 'Other'] %}
+          {% for item in layout_types %}
+          <label class="kb-tag-label" for="checkbox_{{ item|lower }}">
+            <input type="checkbox" id="checkbox_{{ item|lower }}" class="tag-checkbox" checked>
+            {{ item }}
+          </label>
+          {% endfor %}
+        </div>
+      </div>
       {% for k in keyboards %}
-        <div class="kb-div" data-value="{{ k.total_keys }}">
+        <div class="kb-div" data-value="{{ k.total_keys }}" data-tags="{{ k.tags|lower }}">
           <hgroup style="margin-bottom: 0px;">
             <h4>{{ k.header }}</h4>
             <ul class="kb-links">
@@ -90,7 +114,9 @@
       <script>
         anchors.add('h4');
 
+        var selectedTags = [];
         var slider = document.getElementById('range-slider');
+        var sliderValues = [1, {{ max_keys }}];
 
         noUiSlider.create(slider, {
             start: [1, {{ max_keys }}],
@@ -112,17 +138,56 @@
             }
         });
 
-        slider.noUiSlider.on('update', function (values, handle) {
+        function filterDivs() {
             var keyboardDivs = document.querySelectorAll('.kb-div');
             keyboardDivs.forEach(function(div) {
-              var divValue = parseInt(div.getAttribute('data-value'), 10);
-              if (divValue >= values[0] && divValue <= values[1]) {
-                div.style.display = 'block';
-              } else {
-                div.style.display = 'none';
-              }
+                var numberOfKeys = parseInt(div.getAttribute('data-value'), 10);
+                var tags = div.getAttribute('data-tags').split(',');
+
+                var sliderMatch = numberOfKeys >= sliderValues[0] && numberOfKeys <= sliderValues[1];
+                var checkboxMatch = checkTagsMatch(tags);
+
+                div.style.display = (sliderMatch && checkboxMatch) ? 'block' : 'none';
             });
+        }
+
+        function checkTagsMatch(tags) {
+            for (var i = 0; i < selectedTags.length; i++) {
+                if (tags.includes(selectedTags[i])) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        slider.noUiSlider.on('update', function (values, handle) {
+            sliderValues = [values[0], values[1]];
+            filterDivs();
         });
+
+        function handleCheckboxChange() {
+            selectedTags = [];
+            var checkboxes = document.querySelectorAll('.tag-checkbox:checked');
+
+            checkboxes.forEach(function (checkbox) {
+                selectedTags.push(checkbox.id.replace('checkbox_', ''));
+            });
+            console.log(selectedTags);
+
+            filterDivs();
+        }
+
+        var checkboxes = document.querySelectorAll('.tag-checkbox');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+            selectedTags.push(checkbox.id.replace('checkbox_', ''));
+            checkbox.addEventListener('change', handleCheckboxChange);
+        });
+
+        // call once for initial display:
+        filterDivs();
+
       </script>
     </main>
   </body>

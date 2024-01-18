@@ -9,11 +9,10 @@ import shutil
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
+from enum import Enum
 from functools import partial
 from pathlib import Path
-from textwrap import dedent
-from typing import Union, Tuple, cast
-from types import TracebackType
+from typing import List, Union, Tuple, cast
 
 import drawsvg as dw
 import pcbnew
@@ -78,6 +77,18 @@ def rotate(origin, point, angle):
     qx = ox + math.cos(radians) * (px - ox) - math.sin(radians) * (py - oy)
     qy = oy + math.sin(radians) * (px - ox) + math.cos(radians) * (py - oy)
     return qx, qy
+
+
+def is_encoder(key: Key) -> bool:
+    if len(key.labels) >= 5 and key.labels[4] and key.labels[4].startswith("e"):
+        return True
+    return False
+
+
+def is_iso_enter(key: Key) -> bool:
+    if key.width == 1.25 and key.height == 2 and key.width2 == 1.5 and key.height2 == 1:
+        return True
+    return False
 
 
 def build_key(key: Key):
@@ -163,7 +174,7 @@ def build_key(key: Key):
             )
         )
     # center label (denoting encoder)
-    if len(key.labels) >= 5 and key.labels[4] and key.labels[4].startswith("e"):
+    if is_encoder(key):
         group.append(
             dw.Text(
                 key.labels[4],
@@ -442,6 +453,55 @@ def create_layout_image(keyboard: ViaKeyboard, png_output: Path):
     d.save_png(str(png_output))
 
 
+class KeyboardTag(Enum):
+    ORTHOLINEAR = 1
+    STAGGERED = 2
+    OTHER = 3
+
+
+def tag_keyboard(keyboard: ViaKeyboard) -> List[KeyboardTag]:
+    tags = []
+
+    anchor = None
+    for k in keyboard.keys:
+        if not is_encoder(k):
+            anchor = k
+            break
+
+    ortholinear_keys = 0
+    rotated_keys = 0
+    encoders = 0
+    iso_enters = 0
+
+    # anchor can be None only if 'keyboard' has only encoders,
+    # then it should be tagged as 'OTHER'
+    if anchor:
+        for k in keyboard.keys:
+            if (
+                float(k.x - anchor.x).is_integer()
+                and not is_encoder(k)
+            ):
+                ortholinear_keys += 1
+            if k.rotation_angle != 0:
+                rotated_keys += 1
+            if is_encoder(k):
+                encoders += 1
+            if is_iso_enter(k):
+                iso_enters += 1
+
+        if ortholinear_keys == len(keyboard.keys) - encoders:
+            tags.append(KeyboardTag.ORTHOLINEAR)
+        elif rotated_keys != 0:
+            tags.append(KeyboardTag.OTHER)
+        else:
+            tags.append(KeyboardTag.STAGGERED)
+
+    if not tags:
+        tags.append(KeyboardTag.OTHER)
+
+    return tags
+
+
 def process_layout(tempdir, output, layout_file):
     logger.info(f"Processing: {layout_file}")
 
@@ -454,7 +514,14 @@ def process_layout(tempdir, output, layout_file):
         metadata = destination / f"{name}-metadata.json"
         with open(metadata, "w") as f:
             keys_without_decals = [k for k in keyboard.keys if not k.decal]
-            f.write(json.dumps({"total": len(keys_without_decals)}))
+            f.write(
+                json.dumps(
+                    {
+                        "total": len(keys_without_decals),
+                        "tags": [t.name for t in tag_keyboard(keyboard)],
+                    }
+                )
+            )
 
         kle_layout = destination / f"{name}-kle.json"
         with open(kle_layout, "w") as f:
@@ -506,11 +573,9 @@ def generate_images(output: Path, part: int, num_parts: int):
         with open(output.parent / "revision.txt", "w") as f:
             f.write(git_repository_sha(tempdir))
 
-        with concurrent.futures.ProcessPoolExecutor() as executor:
+        with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
             process_layout_partial = partial(process_layout, tempdir, output)
             executor.map(process_layout_partial, layouts)
-
-
 
 
 def generate_index(output: Path, fix_links: bool = False):
@@ -565,6 +630,7 @@ def generate_index(output: Path, fix_links: bool = False):
                     "PCB render": build_link(output, render_path, fix_links),
                 },
                 "total_keys": total_keys,
+                "tags": ", ".join(metadata["tags"]),
                 "image_path": build_link(output, layout_png, fix_links),
             }
         )
@@ -621,3 +687,9 @@ if __name__ == "__main__":
         get_errors(output)
     else:
         generate_images(output, args.n, args.parts)
+
+    #layout_file = "/home/aws/git/via-keyboards/src/0_sixty/0_sixty.json"
+    #layout_file = "/home/aws/git/via-keyboards/src/1upkeyboards/pi40/pi40.json"
+    #keyboard = load_keyboard(layout_file)
+    #result = tag_keyboard(keyboard)
+    #print(result)
