@@ -64,16 +64,27 @@
         margin-right: 24px;
     }
     .row1 {
-      grid-row: 1;
+        grid-row: 1;
     }
     .row2 {
-      grid-row: 2;
+        grid-row: 2;
+    }
+    #backToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: auto !important;
+        margin-bottom: 0px !important;
+        font-size: 2rem !important;
+        padding: 10px !important;
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
   <body>
     <main class="container">
+      <button id="backToTopBtn" class="secondary">&uarr;</button>
       <hgroup>
         <h3><a href="https://adamws.github.io/keyboard-pcbs">keyboard-pcbs</a></h3>
         <p>Collection of generated keyboard PCBs based on <a
@@ -188,6 +199,19 @@
         // call once for initial display:
         filterDivs();
 
+        var backToTopBtn = document.getElementById('backToTopBtn');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+
+        backToTopBtn.addEventListener('click', function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
       </script>
     </main>
   </body>
