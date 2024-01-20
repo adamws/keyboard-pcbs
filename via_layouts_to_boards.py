@@ -489,7 +489,7 @@ def tag_keyboard(keyboard: ViaKeyboard) -> List[KeyboardTag]:
             if is_iso_enter(k):
                 iso_enters += 1
 
-        if ortholinear_keys == len(keyboard.keys) - encoders:
+        if ortholinear_keys == len(keyboard.keys) - encoders and rotated_keys == 0:
             tags.append(KeyboardTag.ORTHOLINEAR)
         elif rotated_keys != 0:
             tags.append(KeyboardTag.OTHER)
