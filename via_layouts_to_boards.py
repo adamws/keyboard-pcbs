@@ -47,6 +47,9 @@ logger.setLevel(logging.DEBUG)
 kbplacer_logger = logging.getLogger("kbplacer")
 kbplacer_logger.setLevel(logging.ERROR)
 
+kle_serial_logger = logging.getLogger("kbplacer.kle_serial")
+kle_serial_logger.setLevel(logging.WARNING)
+
 ORIGIN_X = 4
 ORIGIN_Y = 4
 
