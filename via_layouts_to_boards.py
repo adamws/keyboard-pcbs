@@ -480,10 +480,7 @@ def tag_keyboard(keyboard: ViaKeyboard) -> List[KeyboardTag]:
     # then it should be tagged as 'OTHER'
     if anchor:
         for k in keyboard.keys:
-            if (
-                float(k.x - anchor.x).is_integer()
-                and not is_encoder(k)
-            ):
+            if float(k.x - anchor.x).is_integer() and not is_encoder(k):
                 ortholinear_keys += 1
             if k.rotation_angle != 0:
                 rotated_keys += 1
@@ -690,9 +687,3 @@ if __name__ == "__main__":
         get_errors(output)
     else:
         generate_images(output, args.n, args.parts)
-
-    #layout_file = "/home/aws/git/via-keyboards/src/0_sixty/0_sixty.json"
-    #layout_file = "/home/aws/git/via-keyboards/src/1upkeyboards/pi40/pi40.json"
-    #keyboard = load_keyboard(layout_file)
-    #result = tag_keyboard(keyboard)
-    #print(result)
