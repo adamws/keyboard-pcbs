@@ -608,10 +608,14 @@ def generate_index(output: Path, fix_links: bool = False):
         render_path = destination / f"{name}-render.svg"
         with open(result, "r") as f:
             data = json.loads("[" + f.read() + "]")
-            kle_url = stringify(data)
-            # keyboard-layout-editor uses old version of urlon, need
-            # to replace `$` with `_` to be compatible with it.
+            # keyboard-layout-editor uses old version of urlon,
+            # for this reason each `_` in metadata value must be replaced with `-`
+            # and all `$` in resulting url with `_`.
             # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
+            if isinstance(data[0], dict):
+                for k, v in data[0].items():
+                    data[0][k] = v.replace("_", "-")
+            kle_url = stringify(data)
             kle_url = kle_url.replace("$", "_")
             kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
 
