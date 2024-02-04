@@ -272,10 +272,6 @@ def create_board(keyboard: ViaKeyboard, destination_pcb: Path):
         switch_footprint=f"{get_footprints_dir()}:SW_Cherry_MX_PCB_1.00u",
         diode_footprint=f"{get_footprints_dir()}:D_SOD-323F",
     )
-    # decal keys should be ignored by `builder.create_board`, workaround until
-    # fixed in kbplacer:
-    keyboard.keys = [k for k in keyboard.keys if not k.decal]
-
     board = builder.create_board(keyboard)
     placer = KeyPlacer(board)
     placer.place_switches(
