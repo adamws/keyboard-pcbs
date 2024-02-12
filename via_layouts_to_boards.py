@@ -26,10 +26,10 @@ from scour.scour import sanitizeOptions as sanitizeScourOptions
 from scour.scour import parse_args as parseScourArgs
 
 from kbplacer.board_builder import BoardBuilder
-from kbplacer.defaults import DEFAULT_DIODE_POSITION
+from kbplacer.defaults import DEFAULT_DIODE_POSITION, ZERO_POSITION
 from kbplacer.element_position import ElementInfo, PositionOption
-from kbplacer.key_placer import KeyPlacer
-from kbplacer.kle_serial import Key, Keyboard, ViaKeyboard, parse_via
+from kbplacer.key_placer import KeyMatrix, KeyPlacer
+from kbplacer.kle_serial import Key, Keyboard, MatrixAnnotatedKeyboard, parse_via
 from pyurlon import stringify
 
 Numeric = Union[int, float]
@@ -195,7 +195,7 @@ def build_key(key: Key):
     return group
 
 
-def calcualte_canvas_size(keyboard: ViaKeyboard) -> tuple[int, int]:
+def calcualte_canvas_size(keyboard: MatrixAnnotatedKeyboard) -> tuple[int, int]:
     max_x = 0
     max_y = 0
     for k in itertools.chain(keyboard.keys, keyboard.alternative_keys):
@@ -260,30 +260,32 @@ def create_result_dir(tempdir, output: Path, layout_file: str):
     return destination
 
 
-def load_keyboard(layout_file: str) -> ViaKeyboard:
+def load_keyboard(layout_file: str) -> MatrixAnnotatedKeyboard:
     with open(layout_file, "r") as f:
         layout = json.load(f)
         keyboard = parse_via(layout)
         return keyboard
 
 
-def create_board(keyboard: ViaKeyboard, destination_pcb: Path):
+def create_board(keyboard: MatrixAnnotatedKeyboard, destination_pcb: Path):
     builder = BoardBuilder(
         switch_footprint=f"{get_footprints_dir()}:SW_Cherry_MX_PCB_1.00u",
         diode_footprint=f"{get_footprints_dir()}:D_SOD-323F",
     )
     board = builder.create_board(keyboard)
+    key_matrix = KeyMatrix(board, "SW{}", "D{}")
     placer = KeyPlacer(board)
     placer.place_switches(
         keyboard,
-        "SW{}",
+        key_matrix,
+        ZERO_POSITION
     )
     placer.place_switch_elements(
-        "SW{}",
         [ElementInfo("D{}", PositionOption.DEFAULT, DEFAULT_DIODE_POSITION, "")],
+        key_matrix
     )
-    placer.route_switches_with_diodes("SW{}", "D{}", [])
-    placer.route_rows_and_columns()
+    placer.route_switches_with_diodes(key_matrix, [])
+    placer.route_rows_and_columns(key_matrix)
     placer.remove_dangling_tracks()
 
     board.Save(str(destination_pcb))
@@ -429,7 +431,7 @@ def optimize_svg(source_svg: Path, optimization_passes: int = 2):
         f.write(svg)
 
 
-def create_layout_image(keyboard: ViaKeyboard, png_output: Path):
+def create_layout_image(keyboard: MatrixAnnotatedKeyboard, png_output: Path):
     width, height = calcualte_canvas_size(keyboard)
     d = dw.Drawing(width, height)
 
@@ -458,7 +460,7 @@ class KeyboardTag(Enum):
     OTHER = 3
 
 
-def tag_keyboard(keyboard: ViaKeyboard) -> List[KeyboardTag]:
+def tag_keyboard(keyboard: MatrixAnnotatedKeyboard) -> List[KeyboardTag]:
     tags = []
 
     anchor = None
