@@ -27,13 +27,12 @@ from scour.scour import parse_args as parseScourArgs
 
 from kbplacer.board_builder import BoardBuilder
 from kbplacer.defaults import DEFAULT_DIODE_POSITION, ZERO_POSITION
-from kbplacer.element_position import ElementInfo, PositionOption
+from kbplacer.element_position import ElementInfo, ElementPosition, Point, PositionOption, Side
 from kbplacer.key_placer import KeyMatrix, KeyPlacer
 from kbplacer.kle_serial import Key, Keyboard, MatrixAnnotatedKeyboard, parse_via
 from pyurlon import stringify
 
 Numeric = Union[int, float]
-Point = Tuple[Numeric, Numeric]
 Box = Tuple[Numeric, Numeric, Numeric, Numeric]
 
 REPOSITORY_URL = "https://github.com/the-via/keyboards.git"
@@ -270,7 +269,7 @@ def load_keyboard(layout_file: str) -> MatrixAnnotatedKeyboard:
 def create_board(keyboard: MatrixAnnotatedKeyboard, destination_pcb: Path):
     builder = BoardBuilder(
         switch_footprint=f"{get_footprints_dir()}:SW_Cherry_MX_PCB_1.00u",
-        diode_footprint=f"{get_footprints_dir()}:D_SOD-323F",
+        diode_footprint=f"{get_footprints_dir()}:D_SOD-123F",
     )
     board = builder.create_board(keyboard)
     key_matrix = KeyMatrix(board, "SW{}", "D{}")
@@ -280,8 +279,9 @@ def create_board(keyboard: MatrixAnnotatedKeyboard, destination_pcb: Path):
         key_matrix,
         ZERO_POSITION
     )
+    diode_position = ElementPosition(Point(5.08, 4.00), 90.0, Side.BACK)
     placer.place_switch_elements(
-        [ElementInfo("D{}", PositionOption.DEFAULT, DEFAULT_DIODE_POSITION, "")],
+        [ElementInfo("D{}", PositionOption.CUSTOM, diode_position, "")],
         key_matrix
     )
     placer.route_switches_with_diodes(key_matrix, [])
