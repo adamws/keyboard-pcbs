@@ -26,8 +26,8 @@ from scour.scour import sanitizeOptions as sanitizeScourOptions
 from scour.scour import parse_args as parseScourArgs
 
 from kbplacer.board_builder import BoardBuilder
-from kbplacer.defaults import DEFAULT_DIODE_POSITION, ZERO_POSITION
-from kbplacer.element_position import ElementInfo, ElementPosition, Point, PositionOption, Side
+from kbplacer.defaults import ZERO_POSITION
+from kbplacer.element_position import ElementInfo, ElementPosition, PositionOption, Side
 from kbplacer.key_placer import KeyMatrix, KeyPlacer
 from kbplacer.kle_serial import Key, Keyboard, MatrixAnnotatedKeyboard, parse_via
 from pyurlon import stringify
@@ -279,7 +279,7 @@ def create_board(keyboard: MatrixAnnotatedKeyboard, destination_pcb: Path):
         key_matrix,
         ZERO_POSITION
     )
-    diode_position = ElementPosition(Point(5.08, 4.00), 90.0, Side.BACK)
+    diode_position = ElementPosition(5.08, 4.00, 90.0, Side.BACK)
     placer.place_switch_elements(
         [ElementInfo("D{}", PositionOption.CUSTOM, diode_position, "")],
         key_matrix
