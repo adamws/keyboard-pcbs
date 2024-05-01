@@ -7,6 +7,9 @@ on:
       branches:
         - master
 
+env:
+  IMAGE_NAME: keyboard-pcbs-maker
+
 jobs:
   check_condition:
     name: Check Condition
@@ -37,26 +40,54 @@ jobs:
           echo "generate=true" >> $GITHUB_OUTPUT
         fi
 
+  build_image:
+    runs-on: ubuntu-latest
+    needs: check_condition
+    if: needs.check_condition.outputs.run_generate == 'true'
+    permissions:
+      packages: write
+      contents: read
+    defaults:
+      run:
+        working-directory: ./docker
+    outputs:
+      image_version: ${{ steps.push.outputs.image_version }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+      - name: Push image
+        id: push
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          # This changes all uppercase characters to lowercase.
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # This strips the git ref prefix from the version.
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # This strips the "v" prefix from the tag name.
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # This uses the Docker `latest` tag convention.
+          [ "$VERSION" == "master" ] && VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
+          echo "image_version=$VERSION" >> $GITHUB_OUTPUT
+
   generate:
     strategy:
       matrix:
         part: [1, 2, 3, 4, 5, 6, 7, 8]
     name: Generate PCBs and layout images
     runs-on: ubuntu-latest
-    needs: check_condition
-    if: needs.check_condition.outputs.run_generate == 'true'
-    container: admwscki/kicad-kbplacer-primary:7.0.8-lunar
+    needs: build_image
+    container: ghcr.io/adamws/keyboard-pcbs-maker:${{ needs.build_image.outputs.image_version }}
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: |
-        python3 -m pip install -r requirements.txt
-    - name: Download KiCad colorscheme
-      run: |
-        mkdir -p /root/.config/kicad/7.0/colors
-        cd /root/.config/kicad/7.0/colors
-        wget https://raw.githubusercontent.com/2231puppy/kicad-vampire/master/colors/vampire.json
     - name: Run
       run: |
         python3 via_layouts_to_boards.py generate -n ${{ matrix.part }} -parts 8
@@ -71,13 +102,10 @@ jobs:
     name: Collect and deploy results
     runs-on: ubuntu-latest
     needs: generate
-    container: admwscki/kicad-kbplacer-primary:7.0.8-lunar
+    container: ghcr.io/adamws/keyboard-pcbs-maker:develop
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: |
-        python3 -m pip install -r requirements.txt
     - name: Download All Artifacts
       uses: actions/download-artifact@v4
       with:
@@ -88,7 +116,7 @@ jobs:
       run: |
         python3 via_layouts_to_boards.py collect -gh
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       if: ${{ github.ref == 'refs/heads/master' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
