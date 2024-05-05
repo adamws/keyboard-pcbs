@@ -19,14 +19,14 @@ repository and generate KiCad schematic and PCB file for each one.
 
   ```bash
   $ docker run --rm -v $(pwd):/work \
-      ghcr.io/adamws/keyboard-pcbs-maker:master python via_layouts_to_boards.py generate
+      ghcr.io/adamws/keyboard-pcbs-maker:latest python via_layouts_to_boards.py generate
   ```
 
 - Collect results from first stage and create static website to be deployed
 
   ```bash
   $ docker run --rm -v $(pwd):/work \
-      ghcr.io/adamws/keyboard-pcbs-maker:master python via_layouts_to_boards.py collect
+      ghcr.io/adamws/keyboard-pcbs-maker:latest python via_layouts_to_boards.py collect
   ```
 
 > [!WARNING]
@@ -51,7 +51,7 @@ $ cd src/gh60/satan
 $ ls
 satan.json
 $ docker run --rm -v $(pwd):/work \
-    ghcr.io/adamws/keyboard-pcbs-maker:master kbplacer-generate.sh /work satan
+    ghcr.io/adamws/keyboard-pcbs-maker:latest kbplacer-generate.sh /work satan
 ```
 
 Note that second argument passed to `kbplacer-generate.sh` does not contain file extension.
