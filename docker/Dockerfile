@@ -1,6 +1,6 @@
 FROM admwscki/kicad-kbplacer-primary:7.0.11-mantic
 
-ARG KBPLACER_REVISION=develop
+ARG KBPLACER_REVISION=ea819bd15446864aa57544bc830d6244865cceae
 
 RUN apt-get update \
   && apt-get install -y jq x11-apps x11-utils x11-xserver-utils xdotool zip
