@@ -1,14 +1,14 @@
-FROM admwscki/kicad-kbplacer-primary:7.0.11-mantic
+FROM admwscki/kicad-kbplacer-primary:8.0.4-jammy
 
-ARG KBPLACER_REVISION=ea819bd15446864aa57544bc830d6244865cceae
+ARG KBPLACER_REVISION=v0.11
 
 RUN apt-get update \
   && apt-get install -y jq x11-apps x11-utils x11-xserver-utils xdotool zip
 
 ENV XAUTHORITY /root/.Xauthority
-ENV KICAD_3RDPARTY_PATH=/root/.local/share/kicad/7.0/3rdparty
-ENV KICAD_TEMPLATE_PATH=/root/.local/share/kicad/7.0/template
-ENV KICAD_CONFIG_PATH=/root/.config/kicad/7.0
+ENV KICAD_3RDPARTY_PATH=/root/.local/share/kicad/8.0/3rdparty
+ENV KICAD_TEMPLATE_PATH=/root/.local/share/kicad/8.0/template
+ENV KICAD_CONFIG_PATH=/root/.config/kicad/8.0
 ENV SWITCH_LIBRARY=com_github_perigoso_keyswitch-kicad-library
 ENV WORK_PATH=/work
 

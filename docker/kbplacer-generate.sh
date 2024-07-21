@@ -21,8 +21,9 @@ PCB_SVG="$PROJECT_NAME-render.svg"
 TMP_SVG_DIR="/tmp/$PROJECT_NAME-svg-tmp"
 
 # in case of running with different home (happens on CI)
-mkdir -p $HOME/.config/kicad/7.0/colors
-cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/7.0/colors
+mkdir -p $HOME/.config/kicad/8.0/colors
+cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/8.0/colors \
+  || (echo "ignore error" > /dev/null)
 
 cd $PROJECT_DIR
 
