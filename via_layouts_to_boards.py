@@ -6,10 +6,12 @@ import os
 import shutil
 import subprocess
 import tempfile
+from collections import defaultdict
+from dataclasses import asdict
 from enum import Enum
 from functools import partial
 from pathlib import Path
-from typing import List, Union, Tuple
+from typing import List, Union, Tuple, Dict
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -122,8 +124,12 @@ def load_keyboard(layout_file: str) -> MatrixAnnotatedKeyboard:
         return keyboard
 
 
-def process_layout(tempdir, output, layout_file):
+def process_layout(tempdir, output, layout_files: List[str]):
+    layout_file = layout_files[0]
     logger.info(f"Processing: {layout_file}")
+
+    if len(layout_files) > 1:
+        logger.info(f"Duplicates: {layout_files[1:]}")
 
     name = Path(layout_file).stem
     destination = create_result_dir(tempdir, output, layout_file)
@@ -134,15 +140,19 @@ def process_layout(tempdir, output, layout_file):
         keyboard = load_keyboard(layout_file)
         metadata = destination / f"{name}-metadata.json"
         with open(metadata, "w") as f:
-           keys_without_decals = [k for k in keyboard.keys if not k.decal]
-           f.write(
-               json.dumps(
-                   {
-                       "total": len(keys_without_decals),
-                       "tags": [t.name for t in tag_keyboard(keyboard)],
-                   }
-               )
-           )
+            keys_without_decals = [k for k in keyboard.keys if not k.decal]
+            f.write(
+                json.dumps(
+                    {
+                        "total": len(keys_without_decals),
+                        "tags": [t.name for t in tag_keyboard(keyboard)],
+                        "duplicates": [
+                            d.removeprefix(f"{tempdir}/src/").removesuffix(".json")
+                            for d in layout_files[1:]
+                        ],
+                    }
+                )
+            )
 
         args = ["kbplacer-generate.sh", destination, name]
         logger.info(f"Running: {args}")
@@ -171,13 +181,63 @@ def divide_list(lst, n):
     return result
 
 
+def find_duplicates(tempdir, output, layout_files: List[str]) -> List[List[str]]:
+    important_properties = [
+        "labels",
+        "x",
+        "y",
+        "width",
+        "height",
+        "x2",
+        "y2",
+        "width2",
+        "height2",
+        "rotation_x",
+        "rotation_y",
+        "rotation_angle",
+        "decal",
+        "ghost",
+        "stepped",
+        "nub",
+    ]
+
+    duplicates: Dict[str, List[str]] = defaultdict(list)
+
+    for layout_file in layout_files:
+
+        destination = create_result_dir(tempdir, output, layout_file)
+        destination = Path(destination)
+        try:
+            k = load_keyboard(layout_file)
+            kstr = ""
+
+            for k in k.keys_in_matrix_order():
+                key_dict = asdict(k)
+                filtered_props = {
+                    k: v for k, v in key_dict.items() if k in important_properties
+                }
+                kstr += str(filtered_props)
+
+            duplicates[kstr].append(layout_file)
+        except Exception as e:
+            msg = f"\t{layout_file} failed with error: '{e}'"
+            logger.error(msg)
+            with open(destination / "error.log", "a") as f:
+                f.write(msg.strip() + "\n")
+
+    return list(duplicates.values())
+
+
 def generate_images(output: Path, part: int, num_parts: int):
     with tempfile.TemporaryDirectory() as tempdir:
         logger.info(f"Created temporary directory {tempdir}")
         clone(tempdir)
         layouts = glob.glob(f"{tempdir}/src/**/*json", recursive=True)
         layouts = sorted(layouts)
-        layouts = divide_list(layouts, num_parts)
+
+        deduplicated_layouts = find_duplicates(tempdir, output, layouts)
+
+        layouts = divide_list(deduplicated_layouts, num_parts)
         layouts = layouts[part - 1]
 
         shutil.rmtree(output, ignore_errors=True)
@@ -244,12 +304,15 @@ def generate_index(output: Path, fix_links: bool = False):
                 "header": header,
                 "links": {
                     "Layout editor": kle_url,
-                    "Download KiCad project": build_link(output, kicad_zip_path, fix_links),
+                    "Download KiCad project": build_link(
+                        output, kicad_zip_path, fix_links
+                    ),
                     "Schematic": build_link(output, schematic_render_path, fix_links),
                     "PCB render": build_link(output, pcb_render_path, fix_links),
                 },
                 "total_keys": total_keys,
                 "tags": ", ".join(metadata["tags"]),
+                "duplicates": metadata["duplicates"],
                 "image_path": build_link(output, layout_svg, fix_links),
             }
         )
