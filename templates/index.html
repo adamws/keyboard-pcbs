@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.css" />
   </head>
   <style type="text/css" media="screen">
+    ul {
+      display: block;
+    }
+
+    ul li {
+      display: list-item;
+    }
     .container {
         padding: 0 !important;
     }
@@ -25,6 +32,17 @@
     }
     .kb-links li:first-child {
         list-style: none;
+    }
+    .duplicate-header {
+      margin-bottom: 0px;
+    }
+    .duplicate-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+    .duplicate-list li {
+      margin-right: 25px;
     }
     #range-slider {
         height: 10px;
@@ -117,6 +135,17 @@
             </ul>
           </hgroup>
           <img src="{{ k.image_path }}" loading="lazy">
+
+          {% if k.duplicates is defined and k.duplicates|length > 0 %}
+            <small>
+              <h6 class="duplicate-header">Duplicates:</h6>
+              <ul class="duplicate-list">
+              {% for d in k.duplicates %}
+                <li><a href="https://github.com/the-via/keyboards/tree/{{ revision }}/src/{{ d }}.json">{{ d }}</a></li>
+              {% endfor %}
+              </ul>
+            </small>
+          {% endif %}
         </div>
       {% endfor %}
       <footer>
