@@ -261,6 +261,9 @@ def generate_index(output: Path, fix_links: bool = False):
             return "/keyboard-pcbs/" + part1
         return part1
 
+    with open(output.parent / "revision.txt", "r") as f2:
+        revision = f2.readline()
+
     max_keys = 0
     keyboards = []
     for kle_layout in results:
@@ -269,6 +272,7 @@ def generate_index(output: Path, fix_links: bool = False):
         metadata = result.with_name(f"{name}-metadata.json")
         destination = result.parent
         header = f"{destination.relative_to(output)}/{name}"
+        via_path = f"src/{destination.relative_to(output)}/{name}.json"
         # some vendors put each keyboard in separate folder of the same name,
         # if name is equal folder name, shorten it in header
         header_parts = header.split("/")
@@ -309,6 +313,7 @@ def generate_index(output: Path, fix_links: bool = False):
                     ),
                     "Schematic": build_link(output, schematic_render_path, fix_links),
                     "PCB render": build_link(output, pcb_render_path, fix_links),
+                    "VIA": f"https://github.com/the-via/keyboards/tree/{revision}/{via_path}",
                 },
                 "total_keys": total_keys,
                 "tags": ", ".join(metadata["tags"]),
@@ -316,9 +321,6 @@ def generate_index(output: Path, fix_links: bool = False):
                 "image_path": build_link(output, layout_svg, fix_links),
             }
         )
-
-    with open(output.parent / "revision.txt", "r") as f2:
-        revision = f2.readline()
 
     env = Environment(
         loader=FileSystemLoader("templates"), autoescape=select_autoescape()
