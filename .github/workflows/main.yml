@@ -115,6 +115,12 @@ jobs:
     - name: Run
       run: |
         python3 via_layouts_to_boards.py collect -gh
+    - uses: actions/upload-artifact@v4
+      with:
+        name: gh-pages-final
+        path: gh-pages/*
+        retention-days: 1
+        if-no-files-found: error
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       if: ${{ github.ref == 'refs/heads/master' }}
