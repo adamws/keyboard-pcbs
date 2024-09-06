@@ -115,6 +115,9 @@ jobs:
     - name: Run
       run: |
         python3 via_layouts_to_boards.py collect -gh
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+        name: gh-pages-*
     - uses: actions/upload-artifact@v4
       with:
         name: gh-pages-final
