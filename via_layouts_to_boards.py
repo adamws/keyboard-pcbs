@@ -322,6 +322,8 @@ def generate_index(output: Path, fix_links: bool = False):
             }
         )
 
+    keyboards = sorted(keyboards, key=lambda x: x["header"].casefold())
+
     env = Environment(
         loader=FileSystemLoader("templates"), autoescape=select_autoescape()
     )
