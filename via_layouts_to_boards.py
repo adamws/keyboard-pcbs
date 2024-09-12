@@ -346,6 +346,19 @@ def get_errors(output: Path):
                         logger.warning(line.strip())
 
 
+def process_drcs(output: Path):
+    drcs = glob.glob(f"{output}/**/*.drc.json", recursive=True)
+    drcs = sorted(drcs)
+    total_unconnected_items = 0
+    for drc in drcs:
+        with open(drc, "r") as f:
+            report = json.load(f)
+            unconnected_items = len(report.get("unconnected_items", []))
+            total_unconnected_items += unconnected_items
+    logger.debug(f"Got {total_unconnected_items} unconnected items")
+
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -371,5 +384,6 @@ if __name__ == "__main__":
     if args.subparser_name == "collect":
         generate_index(output, args.gh)
         get_errors(output)
+        process_drcs(output)
     else:
         generate_images(output, args.n, args.parts)
