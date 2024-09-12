@@ -15,6 +15,7 @@ KICAD_PRO="$PROJECT_NAME.kicad_pro"
 KICAD_SCH="$PROJECT_NAME.kicad_sch"
 KICAD_PCB="$PROJECT_NAME.kicad_pcb"
 KICAD_NET="$PROJECT_NAME.net"
+KICAD_DRC="$PROJECT_NAME.drc.json"
 SCH_SVG="$PROJECT_NAME-schematic.svg"
 PCB_SVG="$PROJECT_NAME-render.svg"
 
@@ -64,6 +65,8 @@ python -m kbplacer --board "$KICAD_PCB" \
   --route-switches-with-diodes \
   --route-rows-and-columns \
   --log-level "WARNING"
+
+kicad-cli pcb drc --format json --output "$KICAD_DRC" "$KICAD_PCB"
 
 kicad-cli pcb export svg --exclude-drawing-sheet --page-size-mode 2 --theme vampire \
   -l F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,Edge.Cuts -o "$PCB_SVG" "$KICAD_PCB"
