@@ -295,7 +295,7 @@ def generate_index(output: Path, fix_links: bool = False):
                     data[0][k] = v.replace("_", "-")
             kle_url = stringify(data)
             kle_url = kle_url.replace("$", "_")
-            kle_url = "http://www.keyboard-layout-editor.com/##" + kle_url
+            kle_url = "https://www.keyboard-layout-editor.com/##" + kle_url
 
         with open(metadata, "r") as f:
             metadata = json.load(f)
