@@ -1,6 +1,6 @@
 FROM admwscki/kicad-kbplacer-primary:8.0.5-jammy
 
-ARG KBPLACER_REVISION=v0.11
+ARG KBPLACER_REVISION=v0.12
 
 RUN apt-get update \
   && apt-get install -y jq x11-apps x11-utils x11-xserver-utils xdotool zip
