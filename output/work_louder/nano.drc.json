@@ -1,0 +1,73 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2024-10-15T10:22:23+0000",
+    "kicad_version": "8.0.5",
+    "schematic_parity": [],
+    "source": "nano.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [ROW0] on B.Cu, length 23.8125 mm",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 43.5
+                    },
+                    "uuid": "0f21fb73-36be-4b7b-ae48-7c6e24f31741"
+                },
+                {
+                    "description": "Pad 1 [ROW0] of D4 on B.Cu",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 62.55
+                    },
+                    "uuid": "9d570fe9-89c4-49da-8ff0-a49e40df2a2d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [ROW0] of D4 on B.Cu",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 62.55
+                    },
+                    "uuid": "9d570fe9-89c4-49da-8ff0-a49e40df2a2d"
+                },
+                {
+                    "description": "Pad 1 [ROW0] of D5 on B.Cu",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 81.6
+                    },
+                    "uuid": "d6bf7d48-f957-4b67-9bd6-3dad778028d7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3a87d350-447d-4c95-aef0-4537b61ddfa7"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}
