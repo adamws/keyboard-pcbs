@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2024-10-24T10:25:05+0000",
+    "kicad_version": "8.0.5",
+    "schematic_parity": [],
+    "source": "cherish.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [COL1] of SW74",
+                    "pos": {
+                        "x": 60.48375,
+                        "y": 135.5725
+                    },
+                    "uuid": "cfb1f3f2-4dd9-4a81-bc98-df07c219055c"
+                },
+                {
+                    "description": "Track [COL1] on F.Cu, length 13.4704 mm",
+                    "pos": {
+                        "x": 67.6275,
+                        "y": 106.9975
+                    },
+                    "uuid": "33ef6e10-078f-44d9-a5ed-b14dbec0db56"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "99f01567-5fb4-4aee-a4fe-d2fcba0a42e2"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2024-10-24T10:36:14+0000",
+    "kicad_version": "8.0.5",
+    "schematic_parity": [],
+    "source": "bella_rgb.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [COL14] on F.Cu, length 13.4704 mm",
+                    "pos": {
+                        "x": 291.465,
+                        "y": 59.3725
+                    },
+                    "uuid": "28a587c0-73ba-47cb-b2a4-dfbc0440162c"
+                },
+                {
+                    "description": "Track [COL14] on F.Cu, length 19.0500 mm",
+                    "pos": {
+                        "x": 305.7525,
+                        "y": 121.285
+                    },
+                    "uuid": "9cc54ef9-8ac1-43c1-ba28-0bfe97163f7d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "8f27ac23-87ec-493f-92f8-97b508f2d6d9"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}
