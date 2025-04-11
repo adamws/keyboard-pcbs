@@ -66,7 +66,7 @@ def git_repository_sha(path):
 
 def create_result_dir(tempdir, output: Path, layout_file: str):
     path = Path(layout_file)
-    destination = str(path.parent).replace(f"{tempdir}/src", str(output))
+    destination = str(path.parent).replace(f"{tempdir}/v3", str(output))
     os.makedirs(Path(destination), exist_ok=True)
     return destination
 
@@ -147,7 +147,7 @@ def process_layout(tempdir, output, layout_files: List[str]):
                         "total": len(keys_without_decals),
                         "tags": [t.name for t in tag_keyboard(keyboard)],
                         "duplicates": [
-                            d.removeprefix(f"{tempdir}/src/").removesuffix(".json")
+                            d.removeprefix(f"{tempdir}/v3/").removesuffix(".json")
                             for d in layout_files[1:]
                         ],
                     }
@@ -232,7 +232,7 @@ def generate_images(output: Path, part: int, num_parts: int):
     with tempfile.TemporaryDirectory() as tempdir:
         logger.info(f"Created temporary directory {tempdir}")
         clone(tempdir)
-        layouts = glob.glob(f"{tempdir}/src/**/*json", recursive=True)
+        layouts = glob.glob(f"{tempdir}/v3/**/*json", recursive=True)
         layouts = sorted(layouts)
 
         deduplicated_layouts = find_duplicates(tempdir, output, layouts)
@@ -272,7 +272,7 @@ def generate_index(output: Path, fix_links: bool = False):
         metadata = result.with_name(f"{name}-metadata.json")
         destination = result.parent
         header = f"{destination.relative_to(output)}/{name}"
-        via_path = f"src/{destination.relative_to(output)}/{name}.json"
+        via_path = f"v3/{destination.relative_to(output)}/{name}.json"
         # some vendors put each keyboard in separate folder of the same name,
         # if name is equal folder name, shorten it in header
         header_parts = header.split("/")
