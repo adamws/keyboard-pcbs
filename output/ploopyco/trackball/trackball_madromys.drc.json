@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2025-04-16T10:41:11+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "trackball_madromys.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [ROW0] on B.Cu, length 16.6687 mm",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 62.55
+                    },
+                    "uuid": "4a58dfe9-98ab-461e-b40c-612552d3b8f8"
+                },
+                {
+                    "description": "Pad 1 [ROW0] of D1 on B.Cu",
+                    "pos": {
+                        "x": 50.32375,
+                        "y": 105.4125
+                    },
+                    "uuid": "1ede2637-883c-4bd3-a997-5d6f6e2cc24a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "1bea1024-1866-4073-842c-96b6dcac4d38"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}
