@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2025-05-15T10:22:39+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "odin_rgb.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [COL14] of SW13",
+                    "pos": {
+                        "x": 300.99,
+                        "y": 35.56
+                    },
+                    "uuid": "da88c78b-f39c-4bed-ab26-31036fa572c9"
+                },
+                {
+                    "description": "PTH pad 1 [COL14] of SW96",
+                    "pos": {
+                        "x": 305.7525,
+                        "y": 145.0975
+                    },
+                    "uuid": "a7643ccc-9ad3-4523-b1f2-c7c22f31d6a7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "2ed4f155-d6fd-41ec-b2df-bb3fd76513ae"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}
