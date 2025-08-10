@@ -3,7 +3,9 @@ FROM admwscki/kicad-kbplacer-primary:8.0.9-jammy
 ARG KBPLACER_REVISION=315ed62c62c17590a11a8fc748d668bcadf2f645
 
 RUN apt-get update \
-  && apt-get install -y jq x11-apps x11-utils x11-xserver-utils xdotool zip
+  && apt-get install -y nodejs npm jq x11-apps x11-utils x11-xserver-utils xdotool zip
+
+RUN npm install -g n && n install lts
 
 ENV XAUTHORITY=/root/.Xauthority
 ENV KICAD_3RDPARTY_PATH=/root/.local/share/kicad/8.0/3rdparty

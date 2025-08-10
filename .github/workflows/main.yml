@@ -114,7 +114,13 @@ jobs:
         merge-multiple: true
     - name: Run
       run: |
-        python3 via_layouts_to_boards.py collect -gh
+        python3 via_layouts_to_boards.py collect $([[ "${{ github.ref }}" == "refs/heads/master" ]] && echo "-gh")
+    - name: Optimize
+      run: |
+        # remove whitespace-only lines
+        sed -i '/^[[:space:]]*$/d' ./gh-pages/index.html
+        # minimize layout svgs
+        python3 minimize.py
     - uses: geekyeggo/delete-artifact@v5
       with:
         name: gh-pages-*
