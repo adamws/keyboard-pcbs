@@ -32,15 +32,15 @@ cp $KICAD_TEMPLATE_PATH/template.kicad_pro "$KICAD_PRO"
 sed -i 's/template\.kicad_pro/$PROJECT_NAME\.kicad_pro/g' "$KICAD_PRO"
 
 python -m kbplacer.kle_serial \
-  -in "$VIA_LAYOUT" -inform KLE_VIA -outform KLE_RAW -out "$KLE_LAYOUT"
+  --in "$VIA_LAYOUT" --inform KLE_VIA --outform KLE_RAW --out "$KLE_LAYOUT"
 
 # `layout2schematic` and `layout2image` are not yet part of kbplacer installation,
 # must call scripts directly:
-python /kicad-kbplacer/tools/layout2schematic.py -in "$KLE_LAYOUT" -out "$KICAD_SCH" -f \
+python /kicad-kbplacer/tools/layout2schematic.py --in "$KLE_LAYOUT" --out "$KICAD_SCH" -f \
   -swf "Switch_Keyboard_Cherry_MX:SW_Cherry_MX_PCB_1.00u" \
   -df "Diode_SMD:D_SOD-123F"
 
-python /kicad-kbplacer/tools/layout2image.py -in "$KLE_LAYOUT" -out "$KLE_SVG" -f
+python /kicad-kbplacer/tools/layout2image.py --in "$KLE_LAYOUT" --out "$KLE_SVG" -f
 
 # this is required, otherwise netlist will contain many 'unconnected' pads
 # make sure that there are no lock files, otherwise xdotool scripting won't work

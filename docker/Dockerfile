@@ -1,6 +1,6 @@
 FROM admwscki/kicad-kbplacer-primary:8.0.9-jammy
 
-ARG KBPLACER_REVISION=315ed62c62c17590a11a8fc748d668bcadf2f645
+ARG KBPLACER_REVISION=459024573e080d445f5c2912c6206b73b58cbaa2
 
 RUN apt-get update \
   && apt-get install -y nodejs npm jq x11-apps x11-utils x11-xserver-utils xdotool zip
