@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2025-09-05T18:20:22+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "nightmare.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [ROW0] of D13 on B.Cu",
+                    "pos": {
+                        "x": 276.5425,
+                        "y": 43.5
+                    },
+                    "uuid": "cca94fc1-c3de-4ea5-b76a-439fcf08a023"
+                },
+                {
+                    "description": "Pad 1 [ROW0] of D14 on B.Cu",
+                    "pos": {
+                        "x": 314.6425,
+                        "y": 43.5
+                    },
+                    "uuid": "4819cc19-ec71-4ffe-8b00-7f2146767c7b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e9bbb204-a0fb-4aa7-815c-ae23fa847fcb"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}

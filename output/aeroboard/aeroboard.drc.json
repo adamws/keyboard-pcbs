@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2025-09-05T18:24:49+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "aeroboard.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [COL2] on F.Cu, length 6.7352 mm",
+                    "pos": {
+                        "x": 67.6275,
+                        "y": 49.8475
+                    },
+                    "uuid": "b4638f15-05ff-49ed-89bd-bff2abb4051b"
+                },
+                {
+                    "description": "PTH pad 1 [COL2] of SW35",
+                    "pos": {
+                        "x": 100.965,
+                        "y": 73.66
+                    },
+                    "uuid": "a3de8597-66a7-4926-b88c-7e3ad0153fdd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "8d0eb98c-a0ce-4a26-b9d8-f311df77b2bd"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}
