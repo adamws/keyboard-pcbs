@@ -45,7 +45,7 @@ RUN git clone https://github.com/adamws/kicad-kbplacer.git \
   && python -m pip install . \
   && python -m pip install PyYAML==6.0.1 colormath==3.0.0 drawsvg==2.3.0 kicad-skip==0.2.5
 
-RUN python -m pip install yq scour==0.38.2 yq pyurlon==0.1.0 Jinja2==3.1.3
+RUN python -m pip install yq scour==0.38.2 yq lzstring==1.0.4 Jinja2==3.1.3
 RUN python -m pip install git+https://github.com/adamws/kinet2pcb@1fc8a4b67e9fbb25beade950c80d3cdc8d868c23
 
 COPY eeschema-open-and-save.sh /usr/bin

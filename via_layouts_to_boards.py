@@ -16,7 +16,7 @@ from typing import List, Union, Tuple, Dict
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from kbplacer.kle_serial import Key, MatrixAnnotatedKeyboard, parse_via
-from pyurlon import stringify
+from lzstring import LZString
 
 Numeric = Union[int, float]
 Box = Tuple[Numeric, Numeric, Numeric, Numeric]
@@ -32,6 +32,7 @@ logger.setLevel(logging.DEBUG)
 kle_serial_logger = logging.getLogger("kbplacer.kle_serial")
 kle_serial_logger.setLevel(logging.WARNING)
 
+lz = LZString()
 
 def is_encoder(key: Key) -> bool:
     if len(key.labels) >= 5 and key.labels[4] and key.labels[4].startswith("e"):
@@ -286,16 +287,9 @@ def generate_index(output: Path, fix_links: bool = False):
         pcb_render_path = destination / f"{name}-render.svg"
         with open(result, "r") as f:
             data = json.load(f)
-            # keyboard-layout-editor uses old version of urlon,
-            # for this reason each `_` in metadata value must be replaced with `-`
-            # and all `$` in resulting url with `_`.
-            # see https://github.com/cerebral/urlon/commit/efbdc00af4ec48cabb28372e6f3fcc0c0a30a4c7
-            if isinstance(data[0], dict):
-                for k, v in data[0].items():
-                    data[0][k] = v.replace("_", "-")
-            kle_url = stringify(data)
-            kle_url = kle_url.replace("$", "_")
-            kle_url = "https://www.keyboard-layout-editor.com/##" + kle_url
+            data_str = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
+            encoded = lz.compressToEncodedURIComponent(data_str)
+            kle_url = "https://editor.keyboard-tools.xyz/#share=" + encoded
 
         with open(metadata, "r") as f:
             metadata = json.load(f)
