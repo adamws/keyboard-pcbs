@@ -14,7 +14,6 @@ KLE_SVG="$PROJECT_NAME-layout.svg"
 KICAD_PRO="$PROJECT_NAME.kicad_pro"
 KICAD_SCH="$PROJECT_NAME.kicad_sch"
 KICAD_PCB="$PROJECT_NAME.kicad_pcb"
-KICAD_NET="$PROJECT_NAME.net"
 KICAD_DRC="$PROJECT_NAME.drc.json"
 SCH_SVG="$PROJECT_NAME-schematic.svg"
 PCB_SVG="$PROJECT_NAME-render.svg"
@@ -22,49 +21,36 @@ PCB_SVG="$PROJECT_NAME-render.svg"
 TMP_SVG_DIR="/tmp/$PROJECT_NAME-svg-tmp"
 
 # in case of running with different home (happens on CI)
-mkdir -p $HOME/.config/kicad/8.0/colors
-cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/8.0/colors \
+mkdir -p $HOME/.config/kicad/9.0/colors
+cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/9.0/colors \
   || (echo "ignore error" > /dev/null)
 
 cd $PROJECT_DIR
 
-cp $KICAD_TEMPLATE_PATH/template.kicad_pro "$KICAD_PRO"
-sed -i 's/template\.kicad_pro/$PROJECT_NAME\.kicad_pro/g' "$KICAD_PRO"
-
 python -m kbplacer.kle_serial \
   --in "$VIA_LAYOUT" --inform KLE_VIA --outform KLE_RAW --out "$KLE_LAYOUT"
 
-# `layout2schematic` and `layout2image` are not yet part of kbplacer installation,
+# `layout2image` is not yet part of kbplacer installation,
 # must call scripts directly:
-python /kicad-kbplacer/tools/layout2schematic.py --in "$KLE_LAYOUT" --out "$KICAD_SCH" -f \
-  -swf "Switch_Keyboard_Cherry_MX:SW_Cherry_MX_PCB_1.00u" \
-  -df "Diode_SMD:D_SOD-123F"
-
 python /kicad-kbplacer/tools/layout2image.py --in "$KLE_LAYOUT" --out "$KLE_SVG" -f
 
-# this is required, otherwise netlist will contain many 'unconnected' pads
-# make sure that there are no lock files, otherwise xdotool scripting won't work
-# due to some extra warning windows popping up
-rm -rf *.lck
-xvfb-run -a eeschema-open-and-save.sh "$KICAD_SCH"
+python -m kbplacer \
+  --layout "$KLE_LAYOUT" \
+  --create-sch-file \
+  --sch-file "$KICAD_SCH" \
+  --switch-footprint "$KICAD_3RDPARTY_PATH/footprints/$SWITCH_LIBRARY/Switch_Keyboard_Cherry_MX.pretty:SW_Cherry_MX_PCB_{:.2f}u" \
+  --diode-footprint "/usr/share/kicad/footprints/Diode_SMD.pretty:D_SOD-123F" \
+  --create-pcb-file \
+  --pcb-file "$KICAD_PCB" \
+  --diode "D{} CUSTOM 5.08 4 90 BACK" \
+  --route-switches-with-diodes \
+  --route-rows-and-columns \
+  --log-level "DEBUG"
 
-kicad-cli sch export netlist --output "$KICAD_NET" "$KICAD_SCH"
 kicad-cli sch export svg --theme vampire --output "$TMP_SVG_DIR" "$KICAD_SCH"
 # schematic svg export creates file in new dir, move it:
 mv "$TMP_SVG_DIR"/"$PROJECT_NAME".svg "$SCH_SVG"
 rm -rf "$TMP_SVG_DIR"
-
-kinet2pcb -i "$KICAD_NET" \
-  --libraries /usr/share/kicad/footprints \
-              $KICAD_3RDPARTY_PATH/footprints/$SWITCH_LIBRARY/Switch_Keyboard_Cherry_MX.pretty \
-  --output "$KICAD_PCB"
-
-python -m kbplacer --board "$KICAD_PCB" \
-  --layout "$KLE_LAYOUT" \
-  --diode "D{} CUSTOM 5.08 4 90 BACK" \
-  --route-switches-with-diodes \
-  --route-rows-and-columns \
-  --log-level "WARNING"
 
 kicad-cli pcb drc --format json --output "$KICAD_DRC" "$KICAD_PCB"
 
@@ -86,8 +72,8 @@ optimize_svg () {
 optimize_svg "$SCH_SVG"
 optimize_svg "$PCB_SVG"
 
-zip -r "$PROJECT_NAME.zip" "$KICAD_PRO" "$KICAD_SCH" "$KICAD_PCB" "$KICAD_NET"
-rm "$KICAD_PRO" "$KICAD_SCH" "$KICAD_PCB" "$KICAD_NET"
+zip -r "$PROJECT_NAME.zip" "$KICAD_PRO" "$KICAD_SCH" "$KICAD_PCB"
+rm "$KICAD_PRO" "$KICAD_SCH" "$KICAD_PCB"
 
 # remove any remaining temporary files
 rm -rf *.lck
