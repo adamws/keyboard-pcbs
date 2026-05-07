@@ -79,6 +79,9 @@
     #kb-tags {
         display: flex;
     }
+    #kb-encoder-tags {
+        display: flex;
+    }
     .kb-tag-label {
         margin-right: 24px;
     }
@@ -87,6 +90,9 @@
     }
     .row2 {
         grid-row: 2;
+    }
+    .row3 {
+        grid-row: 3;
     }
     #backToTopBtn {
         display: none;
@@ -123,6 +129,21 @@
             {{ item }}
           </label>
           {% endfor %}
+        </div>
+        <h5 class="row3">Encoder:</h5>
+        <div class="row3" id="kb-encoder-tags">
+          <label class="kb-tag-label" for="encoder_any">
+            <input type="radio" name="encoder_filter" id="encoder_any" class="encoder-radio" value="any" checked>
+            Any
+          </label>
+          <label class="kb-tag-label" for="encoder_with">
+            <input type="radio" name="encoder_filter" id="encoder_with" class="encoder-radio" value="with">
+            With
+          </label>
+          <label class="kb-tag-label" for="encoder_without">
+            <input type="radio" name="encoder_filter" id="encoder_without" class="encoder-radio" value="without">
+            Without
+          </label>
         </div>
       </div>
       {% for k in keyboards %}
@@ -183,12 +204,13 @@
             var keyboardDivs = document.querySelectorAll('.kb-div');
             keyboardDivs.forEach(function(div) {
                 var numberOfKeys = parseInt(div.getAttribute('data-value'), 10);
-                var tags = div.getAttribute('data-tags').split(',');
+                var tags = div.getAttribute('data-tags').split(',').map(function (t) { return t.trim(); });
 
                 var sliderMatch = numberOfKeys >= sliderValues[0] && numberOfKeys <= sliderValues[1];
                 var checkboxMatch = checkTagsMatch(tags);
+                var encoderMatch = checkEncoderMatch(tags);
 
-                div.style.display = (sliderMatch && checkboxMatch) ? 'block' : 'none';
+                div.style.display = (sliderMatch && checkboxMatch && encoderMatch) ? 'block' : 'none';
             });
         }
 
@@ -200,6 +222,13 @@
             }
 
             return false;
+        }
+
+        function checkEncoderMatch(tags) {
+            var selected = document.querySelector('input[name="encoder_filter"]:checked').value;
+            if (selected === 'any') return true;
+            var hasEncoder = tags.includes('encoder');
+            return selected === 'with' ? hasEncoder : !hasEncoder;
         }
 
         slider.noUiSlider.on('update', function (values, handle) {
@@ -224,6 +253,11 @@
             checkbox.checked = true;
             selectedTags.push(checkbox.id.replace('checkbox_', ''));
             checkbox.addEventListener('change', handleCheckboxChange);
+        });
+
+        var encoderRadios = document.querySelectorAll('.encoder-radio');
+        encoderRadios.forEach(function (radio) {
+            radio.addEventListener('change', filterDivs);
         });
 
         // call once for initial display:

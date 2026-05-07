@@ -76,6 +76,7 @@ class KeyboardTag(Enum):
     ORTHOLINEAR = 1
     STAGGERED = 2
     OTHER = 3
+    ENCODER = 4
 
 
 def tag_keyboard(keyboard: MatrixAnnotatedKeyboard) -> List[KeyboardTag]:
@@ -114,6 +115,9 @@ def tag_keyboard(keyboard: MatrixAnnotatedKeyboard) -> List[KeyboardTag]:
 
     if not tags:
         tags.append(KeyboardTag.OTHER)
+
+    if encoders != 0:
+        tags.append(KeyboardTag.ENCODER)
 
     return tags
 
