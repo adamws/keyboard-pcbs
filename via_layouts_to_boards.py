@@ -1,4 +1,5 @@
 import concurrent.futures
+import datetime
 import glob
 import json
 import logging
@@ -33,6 +34,7 @@ kle_serial_logger = logging.getLogger("kbplacer.kle_serial")
 kle_serial_logger.setLevel(logging.WARNING)
 
 lz = LZString()
+
 
 def is_encoder(key: Key) -> bool:
     if len(key.labels) >= 5 and key.labels[4] and key.labels[4].startswith("e"):
@@ -271,12 +273,14 @@ def generate_index(output: Path, fix_links: bool = False):
 
     max_keys = 0
     keyboards = []
+    all_keyboard_names: List[str] = []
     for kle_layout in results:
         result = Path(kle_layout)
         name = result.stem.removesuffix("-kle")
         metadata = result.with_name(f"{name}-metadata.json")
         destination = result.parent
-        header = f"{destination.relative_to(output)}/{name}"
+        keyboard_id = f"{destination.relative_to(output)}/{name}"
+        header = keyboard_id
         via_path = f"v3/{destination.relative_to(output)}/{name}.json"
         # some vendors put each keyboard in separate folder of the same name,
         # if name is equal folder name, shorten it in header
@@ -291,7 +295,7 @@ def generate_index(output: Path, fix_links: bool = False):
         pcb_render_path = destination / f"{name}-render.svg"
         with open(result, "r") as f:
             data = json.load(f)
-            data_str = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
+            data_str = json.dumps(data, separators=(",", ":"), ensure_ascii=False)
             encoded = lz.compressToEncodedURIComponent(data_str)
             kle_url = "https://editor.keyboard-tools.xyz/#share=" + encoded
 
@@ -300,6 +304,9 @@ def generate_index(output: Path, fix_links: bool = False):
             total_keys = metadata["total"]
             if total_keys > max_keys:
                 max_keys = total_keys
+
+        all_keyboard_names.append(keyboard_id)
+        all_keyboard_names.extend(metadata["duplicates"])
 
         keyboards.append(
             {
@@ -321,6 +328,18 @@ def generate_index(output: Path, fix_links: bool = False):
         )
 
     keyboards = sorted(keyboards, key=lambda x: x["header"].casefold())
+
+    all_keyboard_names = sorted(set(all_keyboard_names), key=str.casefold)
+    last_updated = datetime.datetime.now(datetime.timezone.utc).strftime(
+        "%Y-%m-%d %H:%M:%S GMT"
+    )
+    with open(output.parent / "keyboard_list.json", "w") as f:
+        json.dump(
+            {"last_updated": last_updated, "keyboards": all_keyboard_names},
+            f,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        )
 
     env = Environment(
         loader=FileSystemLoader("templates"), autoescape=select_autoescape()
@@ -354,7 +373,6 @@ def process_drcs(output: Path):
             unconnected_items = len(report.get("unconnected_items", []))
             total_unconnected_items += unconnected_items
     logger.debug(f"Got {total_unconnected_items} unconnected items")
-
 
 
 if __name__ == "__main__":
