@@ -54,7 +54,7 @@ jobs:
       image_version: ${{ steps.push.outputs.image_version }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
       - name: Log in to registry
@@ -87,11 +87,11 @@ jobs:
     container: ghcr.io/adamws/keyboard-pcbs-maker:${{ needs.build_image.outputs.image_version }}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Run
       run: |
         python3 via_layouts_to_boards.py generate -n ${{ matrix.part }} -parts 8
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: gh-pages-${{ matrix.part }}
         path: gh-pages/*
@@ -105,9 +105,9 @@ jobs:
     container: ghcr.io/adamws/keyboard-pcbs-maker:develop
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Download All Artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         path: gh-pages
         pattern: gh-pages-*
@@ -124,7 +124,7 @@ jobs:
     - uses: geekyeggo/delete-artifact@v5
       with:
         name: gh-pages-*
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: gh-pages-final
         path: gh-pages/*
