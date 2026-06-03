@@ -1,6 +1,6 @@
 FROM admwscki/kicad-kbplacer-primary:9.0.7-noble
 
-ARG KBPLACER_REVISION=v0.15
+ARG KBPLACER_REVISION=develop
 
 RUN apt-get update \
   && apt-get install -y nodejs npm jq zip

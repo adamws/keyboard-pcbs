@@ -28,7 +28,7 @@ cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/9.0/colors \
 cd $PROJECT_DIR
 
 python -m kbplacer.kle_serial \
-  --in "$VIA_LAYOUT" --inform KLE_VIA --outform KLE_RAW --out "$KLE_LAYOUT"
+  --in "$VIA_LAYOUT" --inform KLE_VIA --convert-via-encoders --outform KLE_RAW --out "$KLE_LAYOUT"
 
 # `layout2image` is not yet part of kbplacer installation,
 # must call scripts directly:
@@ -40,6 +40,8 @@ python -m kbplacer \
   --sch-file "$KICAD_SCH" \
   --switch-footprint "$KICAD_3RDPARTY_PATH/footprints/$SWITCH_LIBRARY/Switch_Keyboard_Cherry_MX.pretty:SW_Cherry_MX_PCB_{:.2f}u" \
   --diode-footprint "/usr/share/kicad/footprints/Diode_SMD.pretty:D_SOD-123F" \
+  --encoder-footprint "/usr/share/kicad/footprints/Rotary_Encoder.pretty:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" \
+  --encoder-adjustment "-7.5 -2.5" \
   --create-pcb-file \
   --pcb-file "$KICAD_PCB" \
   --diode "D{} CUSTOM 5.08 4 90 BACK" \
