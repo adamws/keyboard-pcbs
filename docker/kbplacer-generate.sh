@@ -32,7 +32,7 @@ python -m kbplacer.kle_serial \
 
 # `layout2image` is not yet part of kbplacer installation,
 # must call scripts directly:
-python /kicad-kbplacer/tools/layout2image.py --in "$KLE_LAYOUT" --out "$KLE_SVG" -f
+python /kicad-kbplacer/tools/layout2image.py --convert-via-encoders --in "$VIA_LAYOUT" --out "$KLE_SVG" -f
 
 python -m kbplacer \
   --layout "$KLE_LAYOUT" \
