@@ -15,6 +15,7 @@ KICAD_PRO="$PROJECT_NAME.kicad_pro"
 KICAD_SCH="$PROJECT_NAME.kicad_sch"
 KICAD_PCB="$PROJECT_NAME.kicad_pcb"
 KICAD_DRC="$PROJECT_NAME.drc.json"
+KBPLACER_LOG="$PROJECT_NAME.kbplacer.log"
 SCH_SVG="$PROJECT_NAME-schematic.svg"
 PCB_SVG="$PROJECT_NAME-render.svg"
 
@@ -27,18 +28,22 @@ cp $KICAD_CONFIG_PATH/colors/vampire.json $HOME/.config/kicad/9.0/colors \
 
 cd $PROJECT_DIR
 
+echo "=== kbplacer.kle_serial ===" >> "$KBPLACER_LOG"
 python -m kbplacer.kle_serial \
-  --in "$VIA_LAYOUT" --inform KLE_VIA --convert-via-encoders --outform KLE_RAW --out "$KLE_LAYOUT"
+  --in "$VIA_LAYOUT" --inform KLE_VIA --convert-via-encoders --outform KLE_RAW --out "$KLE_LAYOUT" >> "$KBPLACER_LOG" 2>&1
 
 # `layout2image` is not yet part of kbplacer installation,
 # must call scripts directly:
+echo "=== layout2image.py ===" >> "$KBPLACER_LOG"
 python /kicad-kbplacer/tools/layout2image.py --convert-via-encoders --in "$VIA_LAYOUT" --out "$KLE_SVG" -f
 
+echo "=== kbplacer ===" >> "$KBPLACER_LOG"
 python -m kbplacer \
   --layout "$KLE_LAYOUT" \
   --create-sch-file \
   --sch-file "$KICAD_SCH" \
   --switch-footprint "$KICAD_3RDPARTY_PATH/footprints/$SWITCH_LIBRARY/Switch_Keyboard_Cherry_MX.pretty:SW_Cherry_MX_PCB_{:.2f}u" \
+  --stabilizer-footprint "$KICAD_3RDPARTY_PATH/footprints/$SWITCH_LIBRARY/Mounting_Keyboard_Stabilizer.pretty:Stabilizer_Cherry_MX_{:.2f}u" \
   --diode-footprint "/usr/share/kicad/footprints/Diode_SMD.pretty:D_SOD-123F" \
   --encoder-footprint "/usr/share/kicad/footprints/Rotary_Encoder.pretty:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" \
   --encoder-adjustment "-7.5 -2.5" \
@@ -47,7 +52,8 @@ python -m kbplacer \
   --diode "D{} CUSTOM 5.08 4 90 BACK" \
   --route-switches-with-diodes \
   --route-rows-and-columns \
-  --log-level "DEBUG"
+  --log-level "DEBUG" \
+  --log-format "%(asctime)s: [%(levelname)s] %(message)s" >> "$KBPLACER_LOG" 2>&1
 
 kicad-cli sch export svg --theme vampire --output "$TMP_SVG_DIR" "$KICAD_SCH"
 # schematic svg export creates file in new dir, move it:

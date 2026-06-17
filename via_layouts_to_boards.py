@@ -165,7 +165,7 @@ def process_layout(tempdir, output, layout_files: List[str]):
         logger.info(f"Running: {args}")
         p = subprocess.Popen(args)
         p.communicate()
-        assert p.returncode == 0
+        assert p.returncode == 0, "kbplacer-generate.sh exited with error code"
 
     except Exception as e:
         msg = f"\t{layout_file} failed with error: '{e}'"
