@@ -23,6 +23,7 @@ Numeric = Union[int, float]
 Box = Tuple[Numeric, Numeric, Numeric, Numeric]
 
 REPOSITORY_URL = "https://github.com/the-via/keyboards.git"
+SITE_URL = "https://adamws.github.io/keyboard-pcbs"
 
 FORMAT = "%(message)s"
 logging.basicConfig(format=FORMAT)
@@ -165,7 +166,14 @@ def process_layout(tempdir, output, layout_files: List[str]):
         logger.info(f"Running: {args}")
         p = subprocess.Popen(args)
         p.communicate()
-        assert p.returncode == 0, "kbplacer-generate.sh exited with error code"
+        if p.returncode != 0:
+            log_file = destination / f"{name}.kbplacer.log"
+            log_path = log_file.relative_to(output.parent)
+            log_url = f"{SITE_URL}/{log_path}"
+            raise RuntimeError(
+                f"kbplacer-generate.sh exited with error code {p.returncode}, "
+                f"see log {log_path} ({log_url})"
+            )
 
     except Exception as e:
         msg = f"\t{layout_file} failed with error: '{e}'"

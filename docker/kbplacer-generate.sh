@@ -52,7 +52,7 @@ python -m kbplacer \
   --diode "D{} CUSTOM 5.08 4 90 BACK" \
   --route-switches-with-diodes \
   --route-rows-and-columns \
-  --log-level "DEBUG" \
+  --log-level "INFO" \
   --log-format "%(asctime)s: [%(levelname)s] %(message)s" >> "$KBPLACER_LOG" 2>&1
 
 kicad-cli sch export svg --theme vampire --output "$TMP_SVG_DIR" "$KICAD_SCH"
