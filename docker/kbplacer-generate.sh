@@ -60,7 +60,7 @@ kicad-cli sch export svg --theme vampire --output "$TMP_SVG_DIR" "$KICAD_SCH"
 mv "$TMP_SVG_DIR"/"$PROJECT_NAME".svg "$SCH_SVG"
 rm -rf "$TMP_SVG_DIR"
 
-kicad-cli pcb drc --format json --output "$KICAD_DRC" "$KICAD_PCB"
+kicad-cli pcb drc --schematic-parity --format json --output "$KICAD_DRC" "$KICAD_PCB"
 
 kicad-cli pcb export svg --exclude-drawing-sheet --page-size-mode 2 --theme vampire \
   -l F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,Edge.Cuts -o "$PCB_SVG" "$KICAD_PCB"
