@@ -1,0 +1,181 @@
+{
+  "name": "EC Je-BAE-Ted",
+  "vendorId": "0x6369",
+  "productId": "0x6BBA",
+  "matrix": {
+    "rows": 2,
+    "cols": 1
+  },
+  "menus": [
+    {
+      "label": "EC Tools",
+      "content": [
+        {
+          "label": "Actuation",
+          "content": [
+            {
+              "label": "Mode",
+              "type": "dropdown",
+              "options": ["APC", "Rapid Trigger"],
+              "content": ["id_actuation_mode", 0, 1]
+            },
+            {
+              "showIf": "{id_actuation_mode} == 0",
+              "content": [
+                {
+                  "label": "Actuation Level (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "constraints": [
+                    {
+                      "operator": ">=",
+                      "reference": "id_apc_release_threshold",
+                      "offset": 50,
+                      "onViolation": "push"
+                    }
+                  ],
+                  "content": ["id_apc_actuation_threshold", 0, 2]
+                },
+                {
+                  "label": "Release Level (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "constraints": [
+                    {
+                      "operator": "<=",
+                      "reference": "id_apc_actuation_threshold",
+                      "offset": -50,
+                      "onViolation": "push"
+                    }
+                  ],
+                  "content": ["id_apc_release_threshold", 0, 3]
+                },
+                {
+                  "label": "Apply & save changes",
+                  "type": "button",
+                  "options": [0],
+                  "content": ["id_save_threshold_data", 0, 4]
+                }
+              ]
+            },
+            {
+              "showIf": "{id_actuation_mode} == 1",
+              "content": [
+                {
+                  "label": "Initial Deadzone Offset (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "content": ["id_rt_initial_deadzone_offset", 0, 5]
+                },
+                {
+                  "label": "Actuation Offset (1-255)",
+                  "type": "range",
+                  "options": [1, 255],
+                  "content": ["id_rt_actuation_offset", 0, 6]
+                },
+                {
+                  "label": "Release Offset (1-255)",
+                  "type": "range",
+                  "options": [1, 255],
+                  "content": ["id_rt_release_offset", 0, 7]
+                },
+                {
+                  "label": "Apply & save changes",
+                  "type": "button",
+                  "options": [1],
+                  "content": ["id_save_threshold_data", 0, 4]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Calibration",
+          "content": [
+            {
+              "label": "Board Calibration",
+              "type": "toggle",
+              "content": ["id_bottoming_calibration", 0, 8]
+            },
+            {
+              "showIf": "{id_bottoming_calibration} == 0",
+              "label": "Show Board Calibration Data",
+              "type": "button",
+              "options": [0],
+              "content": ["id_show_calibration_data", 0, 10]
+            },
+            {
+              "showIf": "{id_bottoming_calibration} == 0",
+              "label": "Clear Board Calibration Data",
+              "type": "button",
+              "options": [0],
+              "content": ["id_clear_bottoming_calibration_data", 0, 11]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Board System",
+      "content": [
+        {
+          "label": "Board Information",
+          "content": [
+            {
+              "showIf": "{id_firmware_version} >= 2",
+              "label": "Firmware Version",
+              "type": "label",
+              "content": ["id_firmware_version_text", 0, 12]
+            },
+            {
+              "showIf": "{id_firmware_version} >= 2",
+              "label": "Firmware Build",
+              "type": "label",
+              "content": ["id_firmware_build_text", 0, 13]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layouts": {
+    "labels": [["Layout", "BAE/ANSI", "ISO", "Simon"]],
+    "keymap": [
+      [
+        {
+          "x": 0.75,
+          "w": 1.5
+        },
+        "0,0\n\n\n0,0",
+        {
+          "x": 1.25,
+          "w": 1.25,
+          "h": 2,
+          "w2": 1.5,
+          "h2": 1,
+          "x2": -0.25
+        },
+        "0,0\n\n\n0,1",
+        {
+          "x": 1.38,
+          "h": 2
+        },
+        "0,0\n\n\n0,2"
+      ],
+      [
+        {
+          "w": 2.25
+        },
+        "1,0\n\n\n0,0",
+        {
+          "x": 0.25
+        },
+        "1,0\n\n\n0,1",
+        {
+          "x": 1.5
+        },
+        "1,0\n\n\n0,2"
+      ]
+    ]
+  }
+}

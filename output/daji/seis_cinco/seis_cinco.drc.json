@@ -1,0 +1,2880 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-07-14T10:50:38+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 57.15
+                    },
+                    "uuid": "60b59874-afb9-411e-bf67-5bcb9d05fc3e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST44",
+                    "pos": {
+                        "x": 292.89375,
+                        "y": 95.25
+                    },
+                    "uuid": "64b833ec-40aa-4ccc-850c-d53de4a0f15b"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST46",
+                    "pos": {
+                        "x": 50.00625,
+                        "y": 114.3
+                    },
+                    "uuid": "3b5e4028-9077-436c-9e44-0eaf0df9d3fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST63",
+                    "pos": {
+                        "x": 171.45,
+                        "y": 133.35
+                    },
+                    "uuid": "5e014078-613b-4d09-80c4-2454771bbbb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Missing footprint SW14_1 (SW_Push)",
+            "items": [],
+            "severity": "warning",
+            "type": "missing_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint SW14a",
+                    "pos": {
+                        "x": 285.75,
+                        "y": 57.15
+                    },
+                    "uuid": "f0fecdc5-e5e6-4b61-a448-bd70326dcfc4"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "seis_cinco.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [COL13] on F.Cu, length 11.9062 mm",
+                    "pos": {
+                        "x": 296.2275,
+                        "y": 73.66
+                    },
+                    "uuid": "8603da55-b621-497d-bbe5-c253b2f7741c"
+                },
+                {
+                    "description": "Track [COL13] on F.Cu, length 9.5250 mm",
+                    "pos": {
+                        "x": 281.94,
+                        "y": 54.61
+                    },
+                    "uuid": "2600e39d-79d2-4a37-8144-d277d7821fd4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(D14-A)] on B.Cu, length 5.1400 mm",
+                    "pos": {
+                        "x": 297.815,
+                        "y": 52.07
+                    },
+                    "uuid": "c819de2f-9d5f-4218-a943-0bb5f4f2704b"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D14-A)] of SW14a",
+                    "pos": {
+                        "x": 288.29,
+                        "y": 52.07
+                    },
+                    "uuid": "a3c5f8fe-e158-4e0e-908f-09cf6fb26dea"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of ST14",
+                    "pos": {
+                        "x": 307.213,
+                        "y": 50.165
+                    },
+                    "uuid": "0514dd0b-ea01-4fd1-9913-f50822727243"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D15-A)] of SW15",
+                    "pos": {
+                        "x": 307.34,
+                        "y": 52.07
+                    },
+                    "uuid": "8a30883e-c216-4bd8-b67c-7cd6e0b54b47"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of ST14",
+                    "pos": {
+                        "x": 307.213,
+                        "y": 50.165
+                    },
+                    "uuid": "0514dd0b-ea01-4fd1-9913-f50822727243"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D15-A)] of SW15",
+                    "pos": {
+                        "x": 307.34,
+                        "y": 52.07
+                    },
+                    "uuid": "8a30883e-c216-4bd8-b67c-7cd6e0b54b47"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "0f12b4f9-ad2e-4cfa-9348-54c0c4148fb1"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 57.15
+                    },
+                    "uuid": "399761e4-6bd5-4ed7-aedd-46a4088f00cb"
+                },
+                {
+                    "description": "Footprint SW15",
+                    "pos": {
+                        "x": 304.8,
+                        "y": 57.15
+                    },
+                    "uuid": "4120fb35-81d7-44ff-a89f-6f2be37d77e4"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 57.15
+                    },
+                    "uuid": "399761e4-6bd5-4ed7-aedd-46a4088f00cb"
+                },
+                {
+                    "description": "Footprint SW14a",
+                    "pos": {
+                        "x": 285.75,
+                        "y": 57.15
+                    },
+                    "uuid": "f0fecdc5-e5e6-4b61-a448-bd70326dcfc4"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D15-A)] of SW15",
+                    "pos": {
+                        "x": 307.34,
+                        "y": 52.07
+                    },
+                    "uuid": "8a30883e-c216-4bd8-b67c-7cd6e0b54b47"
+                },
+                {
+                    "description": "NPTH pad of ST14",
+                    "pos": {
+                        "x": 307.213,
+                        "y": 50.165
+                    },
+                    "uuid": "0514dd0b-ea01-4fd1-9913-f50822727243"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 292.85,
+                        "y": 50.05
+                    },
+                    "uuid": "14dad9a8-dccd-4705-acb2-c71f91a8b0ee"
+                },
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 50.05
+                    },
+                    "uuid": "37b193a2-5950-48bb-b282-560cf7e32e6b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 50.05
+                    },
+                    "uuid": "37b193a2-5950-48bb-b282-560cf7e32e6b"
+                },
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 292.85,
+                        "y": 64.25
+                    },
+                    "uuid": "f6b5dd27-609d-4198-9cf2-09145bc40f8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 50.05
+                    },
+                    "uuid": "37b193a2-5950-48bb-b282-560cf7e32e6b"
+                },
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 50.05
+                    },
+                    "uuid": "6cd3a9a7-90d8-4703-9f09-71366d5526f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 50.05
+                    },
+                    "uuid": "37b193a2-5950-48bb-b282-560cf7e32e6b"
+                },
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 311.9,
+                        "y": 50.05
+                    },
+                    "uuid": "e8514d48-443f-4feb-9655-5e77864ec1ce"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 50.05
+                    },
+                    "uuid": "869e1636-d08d-4207-b7af-153fc6396fd4"
+                },
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 278.65,
+                        "y": 64.25
+                    },
+                    "uuid": "aa2b8500-d159-40e9-8148-6efbcec80428"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 292.85,
+                        "y": 50.05
+                    },
+                    "uuid": "14dad9a8-dccd-4705-acb2-c71f91a8b0ee"
+                },
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 50.05
+                    },
+                    "uuid": "869e1636-d08d-4207-b7af-153fc6396fd4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 278.65,
+                        "y": 64.25
+                    },
+                    "uuid": "aa2b8500-d159-40e9-8148-6efbcec80428"
+                },
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 64.25
+                    },
+                    "uuid": "d3413e4e-24c1-4eef-9ba5-55de968342ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 64.25
+                    },
+                    "uuid": "d3413e4e-24c1-4eef-9ba5-55de968342ee"
+                },
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 292.85,
+                        "y": 64.25
+                    },
+                    "uuid": "f6b5dd27-609d-4198-9cf2-09145bc40f8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 50.05
+                    },
+                    "uuid": "6cd3a9a7-90d8-4703-9f09-71366d5526f9"
+                },
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 64.25
+                    },
+                    "uuid": "d3413e4e-24c1-4eef-9ba5-55de968342ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 64.25
+                    },
+                    "uuid": "77ed1ccf-9ae4-490d-b410-507f56b60601"
+                },
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 64.25
+                    },
+                    "uuid": "d3413e4e-24c1-4eef-9ba5-55de968342ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 64.25
+                    },
+                    "uuid": "4bf091c1-7780-4ac7-9d1c-46229dc61360"
+                },
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 311.9,
+                        "y": 50.05
+                    },
+                    "uuid": "e8514d48-443f-4feb-9655-5e77864ec1ce"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 302.375,
+                        "y": 64.25
+                    },
+                    "uuid": "4bf091c1-7780-4ac7-9d1c-46229dc61360"
+                },
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 64.25
+                    },
+                    "uuid": "77ed1ccf-9ae4-490d-b410-507f56b60601"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW14 on F.Silkscreen",
+                    "pos": {
+                        "x": 288.175,
+                        "y": 50.05
+                    },
+                    "uuid": "869e1636-d08d-4207-b7af-153fc6396fd4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST46",
+                    "pos": {
+                        "x": 50.00625,
+                        "y": 112.3
+                    },
+                    "uuid": "280d9560-7a76-46fe-859a-201f0394a69c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW15",
+                    "pos": {
+                        "x": 304.8,
+                        "y": 49.15
+                    },
+                    "uuid": "ca96c096-5ce5-4f82-83e9-49eac6697dc7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 50.05
+                    },
+                    "uuid": "6cd3a9a7-90d8-4703-9f09-71366d5526f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 297.7,
+                        "y": 64.25
+                    },
+                    "uuid": "77ed1ccf-9ae4-490d-b410-507f56b60601"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW15 on F.Silkscreen",
+                    "pos": {
+                        "x": 311.9,
+                        "y": 50.05
+                    },
+                    "uuid": "e8514d48-443f-4feb-9655-5e77864ec1ce"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST63",
+                    "pos": {
+                        "x": 171.45,
+                        "y": 131.35
+                    },
+                    "uuid": "5aa3bb1c-a93d-4dd1-9e03-ec5d820c887a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 55.15
+                    },
+                    "uuid": "494682ef-fc8b-472d-a315-f2df1501b14e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST44",
+                    "pos": {
+                        "x": 292.89375,
+                        "y": 93.25
+                    },
+                    "uuid": "95c07acb-8855-420e-9e06-79c5d3ba129d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW14a",
+                    "pos": {
+                        "x": 285.75,
+                        "y": 49.15
+                    },
+                    "uuid": "0a178ff6-bdd1-46af-a449-d12e958157d6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 278.65,
+                        "y": 64.25
+                    },
+                    "uuid": "aa2b8500-d159-40e9-8148-6efbcec80428"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW14a on F.Silkscreen",
+                    "pos": {
+                        "x": 292.85,
+                        "y": 50.05
+                    },
+                    "uuid": "14dad9a8-dccd-4705-acb2-c71f91a8b0ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW4",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 57.15
+                    },
+                    "uuid": "01e87e01-6ae0-4d8f-81fa-68d085ac7ecc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW39",
+                    "pos": {
+                        "x": 185.7375,
+                        "y": 95.25
+                    },
+                    "uuid": "031b7246-bb4c-4ac5-a7d0-2611590e94e4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW60",
+                    "pos": {
+                        "x": 42.8625,
+                        "y": 133.35
+                    },
+                    "uuid": "0c34a027-78ee-4c5a-a27f-385128729cff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW55",
+                    "pos": {
+                        "x": 233.3625,
+                        "y": 114.3
+                    },
+                    "uuid": "0dd21a84-5868-4274-b81f-7cad9f095fdf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW24",
+                    "pos": {
+                        "x": 180.975,
+                        "y": 76.2
+                    },
+                    "uuid": "153ea903-9cff-4bf2-a2be-305cedbbfc4d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW61",
+                    "pos": {
+                        "x": 66.675,
+                        "y": 133.35
+                    },
+                    "uuid": "1617ad1e-16a6-472d-9a1f-a1ee3a94a460"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW40",
+                    "pos": {
+                        "x": 204.7875,
+                        "y": 95.25
+                    },
+                    "uuid": "17e12585-e986-4956-a52e-fdd1beb39c86"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW36",
+                    "pos": {
+                        "x": 128.5875,
+                        "y": 95.25
+                    },
+                    "uuid": "1b992be6-0844-4e2e-9a40-cbbbe832f4ae"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW28",
+                    "pos": {
+                        "x": 257.175,
+                        "y": 76.2
+                    },
+                    "uuid": "20168917-6e5e-40fa-b0f6-4224ef1763a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW42",
+                    "pos": {
+                        "x": 242.8875,
+                        "y": 95.25
+                    },
+                    "uuid": "213b8a95-8619-481e-b981-4a1c13d26748"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW21",
+                    "pos": {
+                        "x": 123.825,
+                        "y": 76.2
+                    },
+                    "uuid": "2347d078-5742-43d1-8a34-ef7f59b0c638"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW45",
+                    "pos": {
+                        "x": 323.85,
+                        "y": 95.25
+                    },
+                    "uuid": "283ac7f1-3056-45ee-abe2-fe5b456525c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW20",
+                    "pos": {
+                        "x": 104.775,
+                        "y": 76.2
+                    },
+                    "uuid": "2bff3223-ce38-4ef8-8131-736a22745ec2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW5",
+                    "pos": {
+                        "x": 114.3,
+                        "y": 57.15
+                    },
+                    "uuid": "2f6b7b73-604d-4f14-8df7-7665771f417e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 57.15
+                    },
+                    "uuid": "399761e4-6bd5-4ed7-aedd-46a4088f00cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST46",
+                    "pos": {
+                        "x": 50.00625,
+                        "y": 114.3
+                    },
+                    "uuid": "3b5e4028-9077-436c-9e44-0eaf0df9d3fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 57.15
+                    },
+                    "uuid": "3c5fa8f0-b1e3-47cd-bc68-9ad963048246"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW7",
+                    "pos": {
+                        "x": 152.4,
+                        "y": 57.15
+                    },
+                    "uuid": "3e365fe8-7912-46e7-b6c3-025ef7ffa391"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW15",
+                    "pos": {
+                        "x": 304.8,
+                        "y": 57.15
+                    },
+                    "uuid": "4120fb35-81d7-44ff-a89f-6f2be37d77e4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW29",
+                    "pos": {
+                        "x": 276.225,
+                        "y": 76.2
+                    },
+                    "uuid": "418792b4-a542-4581-aa0f-8dd8ff2a124b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW26",
+                    "pos": {
+                        "x": 219.075,
+                        "y": 76.2
+                    },
+                    "uuid": "43859497-d46b-4ac6-812f-ef85ebf82054"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 57.15
+                    },
+                    "uuid": "481f839d-0a61-48da-91ad-752b4d4af601"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW43",
+                    "pos": {
+                        "x": 261.9375,
+                        "y": 95.25
+                    },
+                    "uuid": "498dd937-eea4-45bf-91ad-0f4ac4cfa177"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW37",
+                    "pos": {
+                        "x": 147.6375,
+                        "y": 95.25
+                    },
+                    "uuid": "4df97917-3d52-448d-8954-1558617ff7f7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW34",
+                    "pos": {
+                        "x": 90.4875,
+                        "y": 95.25
+                    },
+                    "uuid": "561c8798-0120-4e3f-ad67-c1033f0db168"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW52",
+                    "pos": {
+                        "x": 176.2125,
+                        "y": 114.3
+                    },
+                    "uuid": "5b99fb97-76d0-4dc3-ad78-84abdb891437"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW23",
+                    "pos": {
+                        "x": 161.925,
+                        "y": 76.2
+                    },
+                    "uuid": "5bb46ee4-ba87-4964-b307-48866762890f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW46",
+                    "pos": {
+                        "x": 50.00625,
+                        "y": 114.3
+                    },
+                    "uuid": "5d5b858f-43c8-4153-b590-61d7a8d0f266"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST63",
+                    "pos": {
+                        "x": 171.45,
+                        "y": 133.35
+                    },
+                    "uuid": "5e014078-613b-4d09-80c4-2454771bbbb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST14",
+                    "pos": {
+                        "x": 295.275,
+                        "y": 57.15
+                    },
+                    "uuid": "60b59874-afb9-411e-bf67-5bcb9d05fc3e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST44",
+                    "pos": {
+                        "x": 292.89375,
+                        "y": 95.25
+                    },
+                    "uuid": "64b833ec-40aa-4ccc-850c-d53de4a0f15b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW8",
+                    "pos": {
+                        "x": 171.45,
+                        "y": 57.15
+                    },
+                    "uuid": "6bcbd3d1-cb27-4079-a291-a2ce447ba4bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW17",
+                    "pos": {
+                        "x": 42.8625,
+                        "y": 76.2
+                    },
+                    "uuid": "6cd7c96d-cf17-4745-bd79-1af815a08527"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW63",
+                    "pos": {
+                        "x": 171.45,
+                        "y": 133.35
+                    },
+                    "uuid": "6e2e4041-6628-4c7f-b1e7-3cd77e559823"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW38",
+                    "pos": {
+                        "x": 166.6875,
+                        "y": 95.25
+                    },
+                    "uuid": "6f2afa58-27e8-47e7-aa8f-c1ab69a95e48"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW62",
+                    "pos": {
+                        "x": 90.4875,
+                        "y": 133.35
+                    },
+                    "uuid": "739464c3-5bb2-4cba-8aff-7c2f610ccac7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW32",
+                    "pos": {
+                        "x": 45.24375,
+                        "y": 95.25
+                    },
+                    "uuid": "73b87099-0244-4107-b3e5-8381ab28ac01"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW18",
+                    "pos": {
+                        "x": 66.675,
+                        "y": 76.2
+                    },
+                    "uuid": "75834369-9c10-4096-bda5-7b6e6fdef6d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW44",
+                    "pos": {
+                        "x": 292.89375,
+                        "y": 95.25
+                    },
+                    "uuid": "761e0829-b880-457d-941c-6ed430f81df3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW66",
+                    "pos": {
+                        "x": 304.8,
+                        "y": 133.35
+                    },
+                    "uuid": "897dea79-393f-4def-a25a-9a7aeec95b59"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW65",
+                    "pos": {
+                        "x": 285.75,
+                        "y": 133.35
+                    },
+                    "uuid": "8c14c14b-5d71-4a37-9415-443c459012e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW59",
+                    "pos": {
+                        "x": 323.85,
+                        "y": 114.3
+                    },
+                    "uuid": "8e9934dc-563b-4f01-8343-0e14bc2e77f5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW41",
+                    "pos": {
+                        "x": 223.8375,
+                        "y": 95.25
+                    },
+                    "uuid": "9d3aa47c-12b2-422a-9591-f3cd41c56282"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW58",
+                    "pos": {
+                        "x": 304.8,
+                        "y": 114.3
+                    },
+                    "uuid": "9d9179c4-bcb1-4be4-ab6a-9a25d7fc8750"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW27",
+                    "pos": {
+                        "x": 238.125,
+                        "y": 76.2
+                    },
+                    "uuid": "a21c846d-4b49-4308-8c24-27a8f1da030c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW25",
+                    "pos": {
+                        "x": 200.025,
+                        "y": 76.2
+                    },
+                    "uuid": "a2fc430c-a9e2-4a84-abed-c2e9be9dd3f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW13",
+                    "pos": {
+                        "x": 266.7,
+                        "y": 57.15
+                    },
+                    "uuid": "a731d622-7206-4128-b78d-10309dcd75c6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW6",
+                    "pos": {
+                        "x": 133.35,
+                        "y": 57.15
+                    },
+                    "uuid": "ac592833-deeb-4291-a088-a8c0a4ee0544"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW9",
+                    "pos": {
+                        "x": 190.5,
+                        "y": 57.15
+                    },
+                    "uuid": "aedca0e1-96ca-490b-80ba-8da13d8a4b19"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW56",
+                    "pos": {
+                        "x": 252.4125,
+                        "y": 114.3
+                    },
+                    "uuid": "afedf293-1c3d-4aca-8432-b8b23d9bb63d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW53",
+                    "pos": {
+                        "x": 195.2625,
+                        "y": 114.3
+                    },
+                    "uuid": "b067da76-cc71-4196-81ff-e9f2b50f9b3c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW35",
+                    "pos": {
+                        "x": 109.5375,
+                        "y": 95.25
+                    },
+                    "uuid": "b4e656a9-15f8-4fa7-8d24-fcccb59dff5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW16",
+                    "pos": {
+                        "x": 323.85,
+                        "y": 57.15
+                    },
+                    "uuid": "b6a27b07-cbcd-4f28-96e7-0bac0ab38ba6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW48",
+                    "pos": {
+                        "x": 100.0125,
+                        "y": 114.3
+                    },
+                    "uuid": "bcf73e71-bf83-417e-9fcf-2b7aeb7ded3e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW11",
+                    "pos": {
+                        "x": 228.6,
+                        "y": 57.15
+                    },
+                    "uuid": "c18826bd-3d93-4efa-a040-8f802614ee83"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW47",
+                    "pos": {
+                        "x": 80.9625,
+                        "y": 114.3
+                    },
+                    "uuid": "c81460a5-2fec-4f0f-924f-de61fcb5d738"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW12",
+                    "pos": {
+                        "x": 247.65,
+                        "y": 57.15
+                    },
+                    "uuid": "d0e3a444-68c2-40b7-8a6c-ce1b25d1fcd8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW54",
+                    "pos": {
+                        "x": 214.3125,
+                        "y": 114.3
+                    },
+                    "uuid": "d293d082-67b6-400c-88bd-3d8c4b35c29e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW33",
+                    "pos": {
+                        "x": 71.4375,
+                        "y": 95.25
+                    },
+                    "uuid": "d8e73795-8308-4e7e-bfa2-1618b09504f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW67",
+                    "pos": {
+                        "x": 323.85,
+                        "y": 133.35
+                    },
+                    "uuid": "d9ad6b50-ddea-4c94-b89f-0c88f9538ef2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW64",
+                    "pos": {
+                        "x": 252.4125,
+                        "y": 133.35
+                    },
+                    "uuid": "dbacf144-44e9-414c-b5fc-9c73edade7c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW57",
+                    "pos": {
+                        "x": 278.60625,
+                        "y": 114.3
+                    },
+                    "uuid": "e27624c4-8234-4d8a-9abc-dfa5fbcb8269"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW50",
+                    "pos": {
+                        "x": 138.1125,
+                        "y": 114.3
+                    },
+                    "uuid": "e72375e6-1dd4-446c-9b7c-8da5302f92f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW51",
+                    "pos": {
+                        "x": 157.1625,
+                        "y": 114.3
+                    },
+                    "uuid": "eb3887c6-7d3a-4394-b7ef-8a5a25aa1498"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW10",
+                    "pos": {
+                        "x": 209.55,
+                        "y": 57.15
+                    },
+                    "uuid": "eb9cb8ba-921a-4dfa-8b3a-4d26e7236318"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW30",
+                    "pos": {
+                        "x": 300.0375,
+                        "y": 76.2
+                    },
+                    "uuid": "ed1021ce-fed9-49de-9772-6cc86c9ac816"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW49",
+                    "pos": {
+                        "x": 119.0625,
+                        "y": 114.3
+                    },
+                    "uuid": "ef4a4506-b69c-4e38-9f30-68db5439fb21"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW14a",
+                    "pos": {
+                        "x": 285.75,
+                        "y": 57.15
+                    },
+                    "uuid": "f0fecdc5-e5e6-4b61-a448-bd70326dcfc4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW31",
+                    "pos": {
+                        "x": 323.85,
+                        "y": 76.2
+                    },
+                    "uuid": "f5481b5a-cdfe-457a-8c8e-0eacf838a2ce"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW22",
+                    "pos": {
+                        "x": 142.875,
+                        "y": 76.2
+                    },
+                    "uuid": "f64e663b-6860-43bf-b0e2-c7543a5a7652"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "f94f8836-b528-4a2a-b0df-da48c99265ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW19",
+                    "pos": {
+                        "x": 85.725,
+                        "y": 76.2
+                    },
+                    "uuid": "ff04c078-2133-4699-a268-09aac195e683"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D64",
+                    "pos": {
+                        "x": 257.4925,
+                        "y": 137.35
+                    },
+                    "uuid": "01d22979-bd3b-4c84-bdec-dd5b3085605d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 61.15
+                    },
+                    "uuid": "05c7e3e9-d33c-4714-9f27-02179807cd52"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D26",
+                    "pos": {
+                        "x": 224.155,
+                        "y": 80.2
+                    },
+                    "uuid": "07ffa718-232c-4b05-bbee-87e6cdc00ff0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D62",
+                    "pos": {
+                        "x": 95.5675,
+                        "y": 137.35
+                    },
+                    "uuid": "0b32cb9b-ebd2-4444-ada6-a22789a50876"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D27",
+                    "pos": {
+                        "x": 243.205,
+                        "y": 80.2
+                    },
+                    "uuid": "0c428b0e-0c27-4924-8f7f-faa3e9880ec8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D58",
+                    "pos": {
+                        "x": 309.88,
+                        "y": 118.3
+                    },
+                    "uuid": "1148ccce-032d-45dc-9bca-2b8e3649d422"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D60",
+                    "pos": {
+                        "x": 47.9425,
+                        "y": 137.35
+                    },
+                    "uuid": "13ac6197-48da-429a-bcac-7d86bd267bee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D48",
+                    "pos": {
+                        "x": 105.0925,
+                        "y": 118.3
+                    },
+                    "uuid": "159158fb-449c-4007-be14-92dce0302401"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D13",
+                    "pos": {
+                        "x": 271.78,
+                        "y": 61.15
+                    },
+                    "uuid": "1671ff73-b52c-4418-88b4-cfb1b4235820"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D42",
+                    "pos": {
+                        "x": 247.9675,
+                        "y": 99.25
+                    },
+                    "uuid": "1f97c99e-8527-47e3-b860-9f2c57786d04"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D18",
+                    "pos": {
+                        "x": 71.755,
+                        "y": 80.2
+                    },
+                    "uuid": "2067b573-5b10-487b-aeea-289d28c2b276"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D21",
+                    "pos": {
+                        "x": 128.905,
+                        "y": 80.2
+                    },
+                    "uuid": "23ed0e8e-6f6c-45c9-9110-2ab48e97d419"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D56",
+                    "pos": {
+                        "x": 257.4925,
+                        "y": 118.3
+                    },
+                    "uuid": "2a05d7b1-ad45-46db-a772-ceeef90bd0ec"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D20",
+                    "pos": {
+                        "x": 109.855,
+                        "y": 80.2
+                    },
+                    "uuid": "2a07911e-db0f-4679-b010-56b28457dbc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D5",
+                    "pos": {
+                        "x": 119.38,
+                        "y": 61.15
+                    },
+                    "uuid": "2dcb0b74-10d5-4646-acc8-e231757a886f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D38",
+                    "pos": {
+                        "x": 171.7675,
+                        "y": 99.25
+                    },
+                    "uuid": "2ef75cd2-5394-4452-bb0c-5c6fdb5b98c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D14",
+                    "pos": {
+                        "x": 300.355,
+                        "y": 61.15
+                    },
+                    "uuid": "3079b11f-baef-470c-bd7d-a90e7bddeb5e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D30",
+                    "pos": {
+                        "x": 305.1175,
+                        "y": 80.2
+                    },
+                    "uuid": "3890f5d2-703d-4906-b61f-544dcc50ee6c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D10",
+                    "pos": {
+                        "x": 214.63,
+                        "y": 61.15
+                    },
+                    "uuid": "3c1d8343-c963-4937-a604-8397357c71e9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D51",
+                    "pos": {
+                        "x": 162.2425,
+                        "y": 118.3
+                    },
+                    "uuid": "4057753d-fd41-4858-bebb-542127ebdd12"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D6",
+                    "pos": {
+                        "x": 138.43,
+                        "y": 61.15
+                    },
+                    "uuid": "40a70f64-6279-4a58-b59f-c6fd6b2490e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D67",
+                    "pos": {
+                        "x": 328.93,
+                        "y": 137.35
+                    },
+                    "uuid": "41064e64-21a1-4984-b9db-80256e7cea97"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D17",
+                    "pos": {
+                        "x": 47.9425,
+                        "y": 80.2
+                    },
+                    "uuid": "435b1ddb-1c15-4ea9-9a65-500346b65293"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D52",
+                    "pos": {
+                        "x": 181.2925,
+                        "y": 118.3
+                    },
+                    "uuid": "46425d0b-ba91-40d6-9156-5c1f20040cd6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D47",
+                    "pos": {
+                        "x": 86.0425,
+                        "y": 118.3
+                    },
+                    "uuid": "465932b8-e01c-488e-83c9-72fa534e0e73"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D15",
+                    "pos": {
+                        "x": 309.88,
+                        "y": 61.15
+                    },
+                    "uuid": "4a50497c-964d-427f-88f7-0536ec0c6f50"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D33",
+                    "pos": {
+                        "x": 76.5175,
+                        "y": 99.25
+                    },
+                    "uuid": "5140e452-93f9-4f6c-b83d-34ca5cb6e1b0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D23",
+                    "pos": {
+                        "x": 167.005,
+                        "y": 80.2
+                    },
+                    "uuid": "5a7ec208-6349-49fa-abb7-3f14934d7f71"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D11",
+                    "pos": {
+                        "x": 233.68,
+                        "y": 61.15
+                    },
+                    "uuid": "5c025ddc-4045-4b3a-ae18-d422b3eece80"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 61.15
+                    },
+                    "uuid": "5ccac4e2-d166-4482-9166-af80af2a2087"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D49",
+                    "pos": {
+                        "x": 124.1425,
+                        "y": 118.3
+                    },
+                    "uuid": "606d8584-312d-46dd-be18-5d045c70684b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D19",
+                    "pos": {
+                        "x": 90.805,
+                        "y": 80.2
+                    },
+                    "uuid": "62922d50-b9a2-4d92-8e65-bee8d0cc7d75"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D7",
+                    "pos": {
+                        "x": 157.48,
+                        "y": 61.15
+                    },
+                    "uuid": "725ef849-33d8-49fc-8cfb-1e6e57b32318"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D12",
+                    "pos": {
+                        "x": 252.73,
+                        "y": 61.15
+                    },
+                    "uuid": "7373770d-ffe7-480d-916b-28619df38c3f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D9",
+                    "pos": {
+                        "x": 195.58,
+                        "y": 61.15
+                    },
+                    "uuid": "7cfd1c21-3db7-4d69-ada9-189f37815168"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D39",
+                    "pos": {
+                        "x": 190.8175,
+                        "y": 99.25
+                    },
+                    "uuid": "7ec1e04b-1e40-4a9e-900d-79a0e3b91eaf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D36",
+                    "pos": {
+                        "x": 133.6675,
+                        "y": 99.25
+                    },
+                    "uuid": "81590e65-5a3e-472f-b27b-93aa8c781abe"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D44",
+                    "pos": {
+                        "x": 297.97375,
+                        "y": 99.25
+                    },
+                    "uuid": "8516da05-a5d6-4933-9afb-0c6fea866791"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D50",
+                    "pos": {
+                        "x": 143.1925,
+                        "y": 118.3
+                    },
+                    "uuid": "858c16d8-aae4-4d7c-a663-3e1612e4d26a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 61.15
+                    },
+                    "uuid": "89ca260e-3549-405a-84b3-be5fe8ba6b83"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D31",
+                    "pos": {
+                        "x": 328.93,
+                        "y": 80.2
+                    },
+                    "uuid": "91be5a83-647c-45d4-9e0f-8c68f6008ff1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D40",
+                    "pos": {
+                        "x": 209.8675,
+                        "y": 99.25
+                    },
+                    "uuid": "934a771f-6ef5-4c0d-a88a-6b46c8fcc3bc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D25",
+                    "pos": {
+                        "x": 205.105,
+                        "y": 80.2
+                    },
+                    "uuid": "9b97ab7e-013e-4f12-8401-a5f71475f95b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D16",
+                    "pos": {
+                        "x": 328.93,
+                        "y": 61.15
+                    },
+                    "uuid": "a65b97d1-13db-49cf-9533-d069661b5255"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D4",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 61.15
+                    },
+                    "uuid": "a7a1dac2-c3ee-4650-93fd-8c4a9d29d38b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D59",
+                    "pos": {
+                        "x": 328.93,
+                        "y": 118.3
+                    },
+                    "uuid": "ae3a5aca-17fc-457d-b90c-32ab7a4e18f8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D24",
+                    "pos": {
+                        "x": 186.055,
+                        "y": 80.2
+                    },
+                    "uuid": "af96db21-c2a0-47dd-8d25-6c5dd3058c6c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D22",
+                    "pos": {
+                        "x": 147.955,
+                        "y": 80.2
+                    },
+                    "uuid": "b2eb75a8-2cea-46eb-af1c-136f301edefa"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D45",
+                    "pos": {
+                        "x": 328.93,
+                        "y": 99.25
+                    },
+                    "uuid": "b4548340-6e63-4562-b531-5c1da3065012"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D57",
+                    "pos": {
+                        "x": 283.68625,
+                        "y": 118.3
+                    },
+                    "uuid": "ba48c194-7ec7-4c0b-b5de-eb4ba058133f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D65",
+                    "pos": {
+                        "x": 290.83,
+                        "y": 137.35
+                    },
+                    "uuid": "bd4fbd53-0ce2-4d5a-b9dd-296a416e12d9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D46",
+                    "pos": {
+                        "x": 55.08625,
+                        "y": 118.3
+                    },
+                    "uuid": "bff00f2e-c3b2-473f-9b2d-00ec6f31a4a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D41",
+                    "pos": {
+                        "x": 228.9175,
+                        "y": 99.25
+                    },
+                    "uuid": "c4d3a456-ef21-405b-a58a-16a38a922171"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D54",
+                    "pos": {
+                        "x": 219.3925,
+                        "y": 118.3
+                    },
+                    "uuid": "c907b182-024f-4feb-89d9-b2a929ce4ef8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D37",
+                    "pos": {
+                        "x": 152.7175,
+                        "y": 99.25
+                    },
+                    "uuid": "ca61baaa-dd15-430c-bf12-a5dc6aba8b02"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D8",
+                    "pos": {
+                        "x": 176.53,
+                        "y": 61.15
+                    },
+                    "uuid": "da1ddea0-e7ef-4449-87e5-e807ae8e833e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D34",
+                    "pos": {
+                        "x": 95.5675,
+                        "y": 99.25
+                    },
+                    "uuid": "e1657eec-b806-45f0-a445-2e0bb3f8daca"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D63",
+                    "pos": {
+                        "x": 176.53,
+                        "y": 137.35
+                    },
+                    "uuid": "ec9f1c5e-ee6b-4bcd-8823-8e0259eecb8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D66",
+                    "pos": {
+                        "x": 309.88,
+                        "y": 137.35
+                    },
+                    "uuid": "f1546484-8c33-4595-8c4f-2ed00e9a8cf3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D28",
+                    "pos": {
+                        "x": 262.255,
+                        "y": 80.2
+                    },
+                    "uuid": "f2772a10-99ad-4f02-a17a-63dd6e726903"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D32",
+                    "pos": {
+                        "x": 50.32375,
+                        "y": 99.25
+                    },
+                    "uuid": "f2dc8c3c-0043-4c5e-aef9-31e41199dd61"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D43",
+                    "pos": {
+                        "x": 267.0175,
+                        "y": 99.25
+                    },
+                    "uuid": "f690a6e2-491b-4aa6-971e-2903922de049"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D29",
+                    "pos": {
+                        "x": 281.305,
+                        "y": 80.2
+                    },
+                    "uuid": "f9cde2c8-7400-44e3-95d9-1a5d8e5db585"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D53",
+                    "pos": {
+                        "x": 200.3425,
+                        "y": 118.3
+                    },
+                    "uuid": "fb6ea326-8966-4b43-87b5-29c13ec17d46"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D61",
+                    "pos": {
+                        "x": 71.755,
+                        "y": 137.35
+                    },
+                    "uuid": "fdfa2a40-64aa-4a8a-bd5b-6243aa155eee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D35",
+                    "pos": {
+                        "x": 114.6175,
+                        "y": 99.25
+                    },
+                    "uuid": "fe4f8cde-bc8d-43f5-99be-b0e8ba693e97"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D55",
+                    "pos": {
+                        "x": 238.4425,
+                        "y": 118.3
+                    },
+                    "uuid": "feb788f5-37f8-44a5-a436-42edd6bc066e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SW14a",
+                    "pos": {
+                        "x": 290.83,
+                        "y": 57.15
+                    },
+                    "uuid": "00eac6ad-89ce-4224-a4b9-d2bdb1a27379"
+                },
+                {
+                    "description": "NPTH pad of SW14",
+                    "pos": {
+                        "x": 290.195,
+                        "y": 57.15
+                    },
+                    "uuid": "2424c964-b32d-4d8e-a02c-1362acd49b72"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SW14",
+                    "pos": {
+                        "x": 300.355,
+                        "y": 57.15
+                    },
+                    "uuid": "61b09069-e960-490c-986d-617b05e6df94"
+                },
+                {
+                    "description": "NPTH pad of SW15",
+                    "pos": {
+                        "x": 299.72,
+                        "y": 57.15
+                    },
+                    "uuid": "9892482b-0925-4d6d-98ca-9e814ba467c9"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of ST14",
+                    "pos": {
+                        "x": 307.213,
+                        "y": 50.165
+                    },
+                    "uuid": "0514dd0b-ea01-4fd1-9913-f50822727243"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D15-A)] of SW15",
+                    "pos": {
+                        "x": 307.34,
+                        "y": 52.07
+                    },
+                    "uuid": "8a30883e-c216-4bd8-b67c-7cd6e0b54b47"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        }
+    ]
+}

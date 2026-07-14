@@ -1,0 +1,776 @@
+{
+  "name": "EC Alice",
+  "vendorId": "0x6369",
+  "productId": "0x6BF9",
+  "matrix": {
+    "rows": 5,
+    "cols": 15
+  },
+  "keycodes": ["qmk_lighting"],
+  "menus": [
+    {
+      "label": "Lighting",
+      "content": [
+        {
+          "label": "Underglow",
+          "content": [
+            {
+              "label": "Brightness",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgblight_brightness", 2, 1]
+            },
+            {
+              "label": "Effect",
+              "type": "dropdown",
+              "content": ["id_qmk_rgblight_effect", 2, 2],
+              "options": [
+                ["Solid Color", 1],
+                ["Breathing 1", 2],
+                ["Breathing 2", 3],
+                ["Breathing 3", 4],
+                ["Breathing 4", 5],
+                ["Rainbow Mood 1", 6],
+                ["Rainbow Mood 2", 7],
+                ["Rainbow Mood 3", 8],
+                ["Rainbow Swirl 1", 9],
+                ["Rainbow Swirl 2", 10],
+                ["Rainbow Swirl 3", 11],
+                ["Rainbow Swirl 4", 12],
+                ["Rainbow Swirl 5", 13],
+                ["Rainbow Swirl 6", 14],
+                ["Snake 1", 15],
+                ["Snake 2", 16],
+                ["Snake 3", 17],
+                ["Snake 4", 18],
+                ["Snake 5", 19],
+                ["Snake 6", 20],
+                ["Knight 1", 21],
+                ["Knight 2", 22],
+                ["Knight 3", 23],
+                ["Christmas", 24],
+                ["Gradient 1", 25],
+                ["Gradient 2", 26],
+                ["Gradient 3", 27],
+                ["Gradient 4", 28],
+                ["Gradient 5", 29],
+                ["Gradient 6", 30],
+                ["Gradient 7", 31],
+                ["Gradient 8", 32],
+                ["Gradient 9", 33],
+                ["Gradient 10", 34],
+                ["RGB Test", 35],
+                ["Alternating", 36],
+                ["Twinkle 1", 37],
+                ["Twinkle 2", 38],
+                ["Twinkle 3", 39],
+                ["Twinkle 4", 40],
+                ["Twinkle 5", 41],
+                ["Twinkle 6", 42]
+              ]
+            },
+            {
+              "showIf": "{id_qmk_rgblight_effect} != 0",
+              "label": "Effect Speed",
+              "type": "range",
+              "options": [0, 255],
+              "content": ["id_qmk_rgblight_effect_speed", 2, 3]
+            },
+            {
+              "showIf": "{id_qmk_rgblight_effect} != 0 && {id_qmk_rgblight_effect} != 35",
+              "label": "Color",
+              "type": "color",
+              "content": ["id_qmk_rgblight_color", 2, 4]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Indicators",
+      "content": [
+        {
+          "label": "Left indicator",
+          "content": [
+            {
+              "label": "Enable Left Indicator",
+              "type": "toggle",
+              "content": ["id_ind3_enabled", 0, 9]
+            },
+            {
+              "showIf": "{id_ind3_enabled} == 1",
+              "content": [
+                {
+                  "label": "Brightness",
+                  "type": "range",
+                  "options": [0, 255],
+                  "content": ["id_ind3_brightness", 0, 10]
+                },
+                {
+                  "label": "Color",
+                  "type": "color",
+                  "content": ["id_ind3_color", 0, 11]
+                },
+                {
+                  "label": "Function",
+                  "type": "dropdown",
+                  "options": [
+                    "None",
+                    "Caps Lock",
+                    "Num Lock",
+                    "Scroll Lock",
+                    "Layer 0",
+                    "Layer 1",
+                    "Layer 2",
+                    "Layer 3",
+                    "Layer 4",
+                    "Layer 5",
+                    "Layer 6",
+                    "Layer 7"
+                  ],
+                  "content": ["id_ind3_func", 0, 12]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Central indicator",
+          "content": [
+            {
+              "label": "Enable Central Indicator",
+              "type": "toggle",
+              "content": ["id_ind2_enabled", 0, 5]
+            },
+            {
+              "showIf": "{id_ind2_enabled} == 1",
+              "content": [
+                {
+                  "label": "Brightness",
+                  "type": "range",
+                  "options": [0, 255],
+                  "content": ["id_ind2_brightness", 0, 6]
+                },
+                {
+                  "label": "Color",
+                  "type": "color",
+                  "content": ["id_ind2_color", 0, 7]
+                },
+                {
+                  "label": "Function",
+                  "type": "dropdown",
+                  "options": [
+                    "None",
+                    "Caps Lock",
+                    "Num Lock",
+                    "Scroll Lock",
+                    "Layer 0",
+                    "Layer 1",
+                    "Layer 2",
+                    "Layer 3",
+                    "Layer 4",
+                    "Layer 5",
+                    "Layer 6",
+                    "Layer 7"
+                  ],
+                  "content": ["id_ind2_func", 0, 8]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Right indicator",
+          "content": [
+            {
+              "label": "Enable Right Indicator",
+              "type": "toggle",
+              "content": ["id_ind1_enabled", 0, 1]
+            },
+            {
+              "showIf": "{id_ind1_enabled} == 1",
+              "content": [
+                {
+                  "label": "Brightness",
+                  "type": "range",
+                  "options": [0, 255],
+                  "content": ["id_ind1_brightness", 0, 2]
+                },
+                {
+                  "label": "Color",
+                  "type": "color",
+                  "content": ["id_ind1_color", 0, 3]
+                },
+                {
+                  "label": "Function",
+                  "type": "dropdown",
+                  "options": [
+                    "None",
+                    "Caps Lock",
+                    "Num Lock",
+                    "Scroll Lock",
+                    "Layer 0",
+                    "Layer 1",
+                    "Layer 2",
+                    "Layer 3",
+                    "Layer 4",
+                    "Layer 5",
+                    "Layer 6",
+                    "Layer 7"
+                  ],
+                  "content": ["id_ind1_func", 0, 4]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "EC Tools",
+      "content": [
+        {
+          "label": "Actuation",
+          "content": [
+            {
+              "label": "Mode",
+              "type": "dropdown",
+              "options": ["APC", "Rapid Trigger"],
+              "content": ["id_actuation_mode", 0, 13]
+            },
+            {
+              "showIf": "{id_actuation_mode} == 0",
+              "content": [
+                {
+                  "label": "Actuation Level (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "constraints": [
+                    {
+                      "operator": ">=",
+                      "reference": "id_apc_release_threshold",
+                      "offset": 50,
+                      "onViolation": "push"
+                    }
+                  ],
+                  "content": ["id_apc_actuation_threshold", 0, 14]
+                },
+                {
+                  "label": "Release Level (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "constraints": [
+                    {
+                      "operator": "<=",
+                      "reference": "id_apc_actuation_threshold",
+                      "offset": -50,
+                      "onViolation": "push"
+                    }
+                  ],
+                  "content": ["id_apc_release_threshold", 0, 15]
+                },
+                {
+                  "label": "Apply & save changes",
+                  "type": "button",
+                  "options": [0],
+                  "content": ["id_save_threshold_data", 0, 16]
+                }
+              ]
+            },
+            {
+              "showIf": "{id_actuation_mode} == 1",
+              "content": [
+                {
+                  "label": "Initial Deadzone Offset (0% | 100%)",
+                  "type": "range",
+                  "options": [1, 1023],
+                  "content": ["id_rt_initial_deadzone_offset", 0, 17]
+                },
+                {
+                  "label": "Actuation Offset (1-255)",
+                  "type": "range",
+                  "options": [1, 255],
+                  "content": ["id_rt_actuation_offset", 0, 18]
+                },
+                {
+                  "label": "Release Offset (1-255)",
+                  "type": "range",
+                  "options": [1, 255],
+                  "content": ["id_rt_release_offset", 0, 19]
+                },
+                {
+                  "label": "Apply & save changes",
+                  "type": "button",
+                  "options": [1],
+                  "content": ["id_save_threshold_data", 0, 16]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Calibration",
+          "content": [
+            {
+              "label": "Board Calibration",
+              "type": "toggle",
+              "content": ["id_bottoming_calibration", 0, 20]
+            },
+            {
+              "showIf": "{id_bottoming_calibration} == 0",
+              "label": "Show Board Calibration Data",
+              "type": "button",
+              "options": [0],
+              "content": ["id_show_calibration_data", 0, 22]
+            },
+            {
+              "showIf": "{id_bottoming_calibration} == 0",
+              "label": "Clear Board Calibration Data",
+              "type": "button",
+              "options": [0],
+              "content": ["id_clear_bottoming_calibration_data", 0, 23]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Advanced Features",
+      "content": [
+        {
+          "label": "SOCD",
+          "content": [
+            {
+              "label": "Pair #1 Mode",
+              "type": "dropdown",
+              "options": [
+                ["Disabled", 0],
+                ["Last Priority", 1],
+                ["Neutral", 2],
+                ["First Key Priority", 3],
+                ["Second Key Priority", 4]
+              ],
+              "content": ["id_socd_pair_1_mode", 0, 24]
+            },
+            {
+              "showIf": "{id_socd_pair_1_mode} != 0",
+              "content": [
+                {
+                  "label": "Pair #1 First Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_1_key_1", 0, 25]
+                },
+                {
+                  "label": "Pair #1 Second Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_1_key_2", 0, 26]
+                }
+              ]
+            },
+            {
+              "label": "Pair #2 Mode",
+              "type": "dropdown",
+              "options": [
+                ["Disabled", 0],
+                ["Last Priority", 1],
+                ["Neutral", 2],
+                ["First Key Priority", 3],
+                ["Second Key Priority", 4]
+              ],
+              "content": ["id_socd_pair_2_mode", 0, 27]
+            },
+            {
+              "showIf": "{id_socd_pair_2_mode} != 0",
+              "content": [
+                {
+                  "label": "Pair #2 First Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_2_key_1", 0, 28]
+                },
+                {
+                  "label": "Pair #2 Second Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_2_key_2", 0, 29]
+                }
+              ]
+            },
+            {
+              "label": "Pair #3 Mode",
+              "type": "dropdown",
+              "options": [
+                ["Disabled", 0],
+                ["Last Priority", 1],
+                ["Neutral", 2],
+                ["First Key Priority", 3],
+                ["Second Key Priority", 4]
+              ],
+              "content": ["id_socd_pair_3_mode", 0, 30]
+            },
+            {
+              "showIf": "{id_socd_pair_3_mode} != 0",
+              "content": [
+                {
+                  "label": "Pair #3 First Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_3_key_1", 0, 31]
+                },
+                {
+                  "label": "Pair #3 Second Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_3_key_2", 0, 32]
+                }
+              ]
+            },
+            {
+              "label": "Pair #4 Mode",
+              "type": "dropdown",
+              "options": [
+                ["Disabled", 0],
+                ["Last Priority", 1],
+                ["Neutral", 2],
+                ["First Key Priority", 3],
+                ["Second Key Priority", 4]
+              ],
+              "content": ["id_socd_pair_4_mode", 0, 33]
+            },
+            {
+              "showIf": "{id_socd_pair_4_mode} != 0",
+              "content": [
+                {
+                  "label": "Pair #4 First Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_4_key_1", 0, 34]
+                },
+                {
+                  "label": "Pair #4 Second Key",
+                  "type": "keycode",
+                  "content": ["id_socd_pair_4_key_2", 0, 35]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "showIf": "{id_firmware_version} >= 1",
+      "label": "Board System",
+      "content": [
+        {
+          "label": "Board Maintenance",
+          "content": [
+            {
+              "showIf": "{id_firmware_version} >= 2",
+              "label": "Firmware Version",
+              "type": "label",
+              "content": ["id_firmware_version_text", 0, 38]
+            },
+            {
+              "showIf": "{id_firmware_version} >= 2",
+              "label": "Firmware Build",
+              "type": "label",
+              "content": ["id_firmware_build_text", 0, 39]
+            },
+            {
+              "label": "Flash Mode",
+              "type": "button",
+              "options": [0],
+              "content": ["id_flash_mode", 0, 36]
+            },
+            {
+              "label": "FACTORY RESET (Unplug the board and plug it back in to complete the procedure)",
+              "type": "button",
+              "options": [0],
+              "content": ["id_factory_reset", 0, 37]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layouts": {
+    "labels": [
+      "Split Backspace",
+      ["Right Shift", "HHKB", "Unified"],
+      ["Left Spacebar", "2U", "2.25U"]
+    ],
+    "keymap": [
+      [
+        {
+          "y": 0.9,
+          "x": 0.55,
+          "c": "#777777"
+        },
+        "0,0"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 3.7,
+          "c": "#cccccc"
+        },
+        "0,2",
+        {
+          "x": 8.45
+        },
+        "0,11"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 1.7
+        },
+        "1,0",
+        "0,1",
+        {
+          "x": 10.45
+        },
+        "0,12",
+        {
+          "c": "#aaaaaa",
+          "w": 2
+        },
+        "0,14\n\n\n0,0",
+        {
+          "x": 1.35
+        },
+        "0,13\n\n\n0,1",
+        "0,14\n\n\n0,1"
+      ],
+      [
+        {
+          "y": -0.1,
+          "x": 0.35
+        },
+        "2,0"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 13,
+          "c": "#cccccc"
+        },
+        "1,11"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 1.5,
+          "c": "#aaaaaa",
+          "w": 1.5
+        },
+        "1,1",
+        {
+          "c": "#cccccc"
+        },
+        "1,2",
+        {
+          "x": 10
+        },
+        "1,12",
+        "1,13",
+        {
+          "c": "#aaaaaa",
+          "w": 1.5
+        },
+        "1,14"
+      ],
+      [
+        {
+          "y": -0.1,
+          "x": 0.15
+        },
+        "3,0"
+      ],
+      [
+        {
+          "y": -0.9,
+          "x": 1.3,
+          "w": 1.75
+        },
+        "2,1",
+        {
+          "c": "#cccccc"
+        },
+        "2,2",
+        {
+          "x": 9.35
+        },
+        "2,11",
+        "2,12",
+        {
+          "c": "#777777",
+          "w": 2.25
+        },
+        "2,14"
+      ],
+      [
+        {
+          "x": 1.05,
+          "c": "#aaaaaa",
+          "w": 2.25
+        },
+        "3,1",
+        {
+          "c": "#cccccc"
+        },
+        "3,2",
+        {
+          "x": 8.8
+        },
+        "3,11",
+        "3,12",
+        {
+          "c": "#aaaaaa",
+          "w": 1.75
+        },
+        "3,13\n\n\n1,0",
+        "3,14\n\n\n1,0",
+        {
+          "x": 0.5,
+          "w": 2.75
+        },
+        "3,13\n\n\n1,1"
+      ],
+      [
+        {
+          "x": 1.05,
+          "w": 1.5
+        },
+        "4,1",
+        {
+          "x": 13.55,
+          "w": 1.5
+        },
+        "4,14"
+      ],
+      [
+        {
+          "r": 12,
+          "y": -6,
+          "x": 5.05,
+          "c": "#cccccc"
+        },
+        "0,3",
+        "0,4",
+        "0,5",
+        "0,6"
+      ],
+      [
+        {
+          "x": 4.6
+        },
+        "1,3",
+        "1,4",
+        "1,5",
+        "1,6"
+      ],
+      [
+        {
+          "x": 4.85
+        },
+        "2,3",
+        "2,4",
+        "2,5",
+        "2,6"
+      ],
+      [
+        {
+          "x": 5.3
+        },
+        "3,3",
+        "3,4",
+        "3,5",
+        "3,6"
+      ],
+      [
+        {
+          "x": 6.6,
+          "w": 2
+        },
+        "4,5\n\n\n2,0",
+        {
+          "c": "#aaaaaa",
+          "w": 1.25
+        },
+        "4,6\n\n\n2,0"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 5.05,
+          "w": 1.5
+        },
+        "4,3"
+      ],
+      [
+        {
+          "y": 0.35,
+          "x": 6.6,
+          "c": "#cccccc",
+          "w": 2.25
+        },
+        "4,5\n\n\n2,1",
+        {
+          "c": "#aaaaaa"
+        },
+        "4,6\n\n\n2,1"
+      ],
+      [
+        {
+          "r": -12,
+          "y": -2.8,
+          "x": 8.45,
+          "c": "#cccccc"
+        },
+        "0,7",
+        "0,8",
+        "0,9",
+        "0,10"
+      ],
+      [
+        {
+          "x": 8.05
+        },
+        "1,7",
+        "1,8",
+        "1,9",
+        "1,10"
+      ],
+      [
+        {
+          "x": 8.2
+        },
+        "2,7",
+        "2,8",
+        "2,9",
+        "2,10"
+      ],
+      [
+        {
+          "x": 7.75
+        },
+        "3,7",
+        "3,8",
+        "3,9",
+        "3,10"
+      ],
+      [
+        {
+          "x": 7.75,
+          "w": 2.75
+        },
+        "4,8"
+      ],
+      [
+        {
+          "y": -0.95,
+          "x": 10.55,
+          "c": "#aaaaaa",
+          "w": 1.5
+        },
+        "4,10"
+      ]
+    ]
+  }
+}

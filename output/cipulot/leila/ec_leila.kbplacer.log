@@ -1,0 +1,2003 @@
+=== kbplacer.kle_serial ===
+=== layout2image.py ===
+=== kbplacer ===
+10:47:40: [INFO] User layout: [[{'x': 2.5, 'c': '#aaaaaa'}, '0,0\n\n\n0,1', {'x': 1.0, 'c': '#cccccc'}, '0,2\n\n\n0,1', '0,3\n\n\n0,1', '0,4\n\n\n0,1', '0,5\n\n\n0,1', {'x': 0.5, 'c': '#aaaaaa'}, '0,6\n\n\n0,1', '0,7\n\n\n0,1', '0,8\n\n\n0,1', '0,9\n\n\n0,1', {'x': 0.5, 'c': '#cccccc'}, '0,10\n\n\n0,1', '0,11\n\n\n0,1', '0,12\n\n\n0,1', '0,14\n\n\n0,1'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa'}, '0,0\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,1\n\n\n0,0', '0,2\n\n\n0,0', '0,3\n\n\n0,0', '0,4\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,5\n\n\n0,0', '0,6\n\n\n0,0', '0,7\n\n\n0,0', '0,8\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,9\n\n\n0,0', '0,10\n\n\n0,0', '0,11\n\n\n0,0', '0,12\n\n\n0,0', {'x': 0.25, 'c': '#777777'}, '0,14\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,15', '0,16', '0,17'], [{'x': 2.5, 'y': 0.5, 'c': '#cccccc'}, '1,0', '1,1', '1,2', '1,3', '1,4', '1,5', '1,6', '1,7', '1,8', '1,9', '1,10', '1,11', '1,12', {'c': '#aaaaaa', 'w': 2}, '1,14\n\n\n1,0', {'x': 0.25}, '1,15', '1,16', '1,17', {'x': 0.25}, '1,18', '1,19', '1,20', '1,21'], [{'x': 2.5, 'w': 1.5}, '2,0', {'c': '#cccccc'}, '2,1', '2,2', '2,3', '2,4', '2,5', '2,6', '2,7', '2,8', '2,9', '2,10', '2,11', '2,12', {'w': 1.5}, '2,13\n\n\n4,0', {'x': 0.25, 'c': '#aaaaaa'}, '2,15', '2,16', '2,17', {'x': 0.25, 'c': '#cccccc'}, '2,18', '2,19', '2,20', {'c': '#aaaaaa', 'h': 2}, '3,21\n\n\n6,0', {'x': 0.25}, '2,21\n\n\n6,1'], [{'x': 2.5, 'w': 1.75}, '3,0', {'c': '#cccccc'}, '3,1', '3,2', '3,3', '3,4', '3,5', '3,6', '3,7', '3,8', '3,9', '3,10', '3,11', {'c': '#aaaaaa', 'w': 2.25}, '3,13\n\n\n4,0', {'x': 3.5, 'c': '#cccccc'}, '3,18', '3,19', '3,20', {'x': 1.25, 'c': '#aaaaaa'}, '3,21\n\n\n6,1'], [{'w': 1.25}, '4,0\n\n\n2,1', {'c': '#cccccc'}, '4,1\n\n\n2,1', {'x': 0.25, 'c': '#aaaaaa', 'w': 2.25}, '4,0\n\n\n2,0', {'c': '#cccccc'}, '4,2', '4,3', '4,4', '4,5', '4,6', '4,7', '4,8', '4,9', '4,10', '4,11', {'c': '#aaaaaa', 'w': 2.75}, '4,13\n\n\n3,0', {'x': 1.25, 'c': '#cccccc'}, '4,16', {'x': 1.25}, '4,18', '4,19', '4,20', {'c': '#aaaaaa', 'h': 2}, '4,21\n\n\n7,0', {'x': 0.25}, '4,21\n\n\n7,1'], [{'x': 2.5, 'w': 1.5}, '5,0\n\n\n5,0', '5,1\n\n\n5,0', {'w': 1.5}, '5,2\n\n\n5,0', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,0', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,0', '5,12\n\n\n5,0', {'w': 1.5}, '5,13\n\n\n5,0', {'x': 0.25, 'c': '#cccccc'}, '5,14', '5,16', '5,17', {'x': 0.25, 'w': 2}, '5,19\n\n\n8,0', '5,20', {'x': 1.25, 'c': '#aaaaaa'}, '5,21\n\n\n7,1'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,1', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,1', {'x': 1.0, 'c': '#cccccc'}, '1,13\n\n\n1,1', {'c': '#aaaaaa'}, '1,14\n\n\n1,1', {'x': 0.5, 'c': '#cccccc'}, '5,18\n\n\n8,1', '5,19\n\n\n8,1'], [{'x': 19.25, 'c': '#aaaaaa', 'w': 1.25, 'h': 2, 'w2': 1.5, 'h2': 1, 'x2': -0.25}, '2,14\n\n\n4,1'], [{'x': 2.5, 'y': -0.75, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,2', {'c': '#aaaaaa'}, '5,1\n\n\n5,2', {'w': 1.5}, '5,2\n\n\n5,2', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,2', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,2', '5,12\n\n\n5,2', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,2'], [{'x': 18.25, 'y': -0.25}, '3,12\n\n\n4,1'], [{'x': 2.5, 'y': -0.5, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,3', '5,1\n\n\n5,3', {'c': '#cccccc', 'w': 10}, '5,6\n\n\n5,3', {'c': '#aaaaaa'}, '5,12\n\n\n5,3', {'w': 1.5}, '5,13\n\n\n5,3'], [{'x': 17.75, 'y': -0.5, 'w': 1.75}, '4,12\n\n\n3,1', {'c': '#cccccc'}, '4,14\n\n\n3,1', {'x': 0.25}, '4,12\n\n\n3,2', {'c': '#aaaaaa', 'w': 1.75}, '4,13\n\n\n3,2'], [{'x': 2.5, 'y': -0.25, 'w': 1.5}, '5,0\n\n\n5,4', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,4', {'w': 10}, '5,6\n\n\n5,4', {'d': True}, '5,12\n\n\n5,4', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,4'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,5', {'w': 1.25}, '5,1\n\n\n5,5', {'w': 1.25}, '5,2\n\n\n5,5', {'c': '#cccccc', 'w': 6.25}, '5,6\n\n\n5,5', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,5', {'w': 1.25}, '5,11\n\n\n5,5', {'w': 1.25}, '5,12\n\n\n5,5', {'w': 1.25}, '5,13\n\n\n5,5'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,6', {'w': 1.25}, '5,1\n\n\n5,6', {'w': 1.25}, '5,2\n\n\n5,6', {'c': '#cccccc', 'w': 2.25}, '5,4\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,6\n\n\n5,6', {'c': '#cccccc', 'w': 2.75}, '5,8\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,6', {'w': 1.25}, '5,11\n\n\n5,6', {'w': 1.25}, '5,12\n\n\n5,6', {'w': 1.25}, '5,13\n\n\n5,6'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,7', '5,1\n\n\n5,7', {'w': 1.5}, '5,2\n\n\n5,7', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,7', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,7', '5,11\n\n\n5,7', '5,12\n\n\n5,7', {'w': 1.5}, '5,13\n\n\n5,7'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,8', '5,1\n\n\n5,8', {'w': 1.5}, '5,2\n\n\n5,8', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,8', {'w': 3}, '5,8\n\n\n5,8', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,8', '5,11\n\n\n5,8', '5,12\n\n\n5,8', {'w': 1.5}, '5,13\n\n\n5,8'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,9', '5,1\n\n\n5,9', {'w': 1.5}, '5,2\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,9', {'c': '#aaaaaa'}, '5,6\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,9', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,9', '5,11\n\n\n5,9', '5,12\n\n\n5,9', {'w': 1.5}, '5,13\n\n\n5,9'], [{'x': 2.5, 'y': 0.25, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,10', {'c': '#aaaaaa'}, '5,1\n\n\n5,10', {'w': 1.5}, '5,2\n\n\n5,10', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,10', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,10', '5,11\n\n\n5,10', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,10', {'w': 1.5, 'd': True}, '5,13\n\n\n5,10'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,11', {'c': '#aaaaaa'}, '5,1\n\n\n5,11', {'w': 1.5}, '5,2\n\n\n5,11', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,11', {'w': 3}, '5,8\n\n\n5,11', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,11', '5,11\n\n\n5,11', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,11', {'w': 1.5, 'd': True}, '5,13\n\n\n5,11'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,12', {'c': '#aaaaaa'}, '5,1\n\n\n5,12', {'w': 1.5}, '5,2\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,12', {'c': '#aaaaaa'}, '5,6\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,12', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,12', '5,11\n\n\n5,12', {'d': True}, '5,12\n\n\n5,12', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,12'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,13', '5,1\n\n\n5,13', {'w': 1.5}, '5,2\n\n\n5,13', {'w': 1.5}, '5,4\n\n\n5,13', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,13', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,13', {'w': 1.5}, '5,9\n\n\n5,13', {'w': 1.5}, '5,11\n\n\n5,13', '5,12\n\n\n5,13', {'w': 1.5}, '5,13\n\n\n5,13'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,14', {'w': 1.5}, '5,4\n\n\n5,14', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,14', {'w': 1.5}, '5,9\n\n\n5,14', {'w': 1.5}, '5,11\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,14']]
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:40: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.75u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.75u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:41: [INFO] Object parent exists but has no children <Schematic 'ec_leila.kicad_sch'>
+10:47:41: [INFO] Wrote tree to ec_leila.kicad_sch
+10:47:41: [INFO] User layout: [[{'x': 2.5, 'c': '#aaaaaa'}, '0,0\n\n\n0,1', {'x': 1.0, 'c': '#cccccc'}, '0,2\n\n\n0,1', '0,3\n\n\n0,1', '0,4\n\n\n0,1', '0,5\n\n\n0,1', {'x': 0.5, 'c': '#aaaaaa'}, '0,6\n\n\n0,1', '0,7\n\n\n0,1', '0,8\n\n\n0,1', '0,9\n\n\n0,1', {'x': 0.5, 'c': '#cccccc'}, '0,10\n\n\n0,1', '0,11\n\n\n0,1', '0,12\n\n\n0,1', '0,14\n\n\n0,1'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa'}, '0,0\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,1\n\n\n0,0', '0,2\n\n\n0,0', '0,3\n\n\n0,0', '0,4\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,5\n\n\n0,0', '0,6\n\n\n0,0', '0,7\n\n\n0,0', '0,8\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,9\n\n\n0,0', '0,10\n\n\n0,0', '0,11\n\n\n0,0', '0,12\n\n\n0,0', {'x': 0.25, 'c': '#777777'}, '0,14\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,15', '0,16', '0,17'], [{'x': 2.5, 'y': 0.5, 'c': '#cccccc'}, '1,0', '1,1', '1,2', '1,3', '1,4', '1,5', '1,6', '1,7', '1,8', '1,9', '1,10', '1,11', '1,12', {'c': '#aaaaaa', 'w': 2}, '1,14\n\n\n1,0', {'x': 0.25}, '1,15', '1,16', '1,17', {'x': 0.25}, '1,18', '1,19', '1,20', '1,21'], [{'x': 2.5, 'w': 1.5}, '2,0', {'c': '#cccccc'}, '2,1', '2,2', '2,3', '2,4', '2,5', '2,6', '2,7', '2,8', '2,9', '2,10', '2,11', '2,12', {'w': 1.5}, '2,13\n\n\n4,0', {'x': 0.25, 'c': '#aaaaaa'}, '2,15', '2,16', '2,17', {'x': 0.25, 'c': '#cccccc'}, '2,18', '2,19', '2,20', {'c': '#aaaaaa', 'h': 2}, '3,21\n\n\n6,0', {'x': 0.25}, '2,21\n\n\n6,1'], [{'x': 2.5, 'w': 1.75}, '3,0', {'c': '#cccccc'}, '3,1', '3,2', '3,3', '3,4', '3,5', '3,6', '3,7', '3,8', '3,9', '3,10', '3,11', {'c': '#aaaaaa', 'w': 2.25}, '3,13\n\n\n4,0', {'x': 3.5, 'c': '#cccccc'}, '3,18', '3,19', '3,20', {'x': 1.25, 'c': '#aaaaaa'}, '3,21\n\n\n6,1'], [{'w': 1.25}, '4,0\n\n\n2,1', {'c': '#cccccc'}, '4,1\n\n\n2,1', {'x': 0.25, 'c': '#aaaaaa', 'w': 2.25}, '4,0\n\n\n2,0', {'c': '#cccccc'}, '4,2', '4,3', '4,4', '4,5', '4,6', '4,7', '4,8', '4,9', '4,10', '4,11', {'c': '#aaaaaa', 'w': 2.75}, '4,13\n\n\n3,0', {'x': 1.25, 'c': '#cccccc'}, '4,16', {'x': 1.25}, '4,18', '4,19', '4,20', {'c': '#aaaaaa', 'h': 2}, '4,21\n\n\n7,0', {'x': 0.25}, '4,21\n\n\n7,1'], [{'x': 2.5, 'w': 1.5}, '5,0\n\n\n5,0', '5,1\n\n\n5,0', {'w': 1.5}, '5,2\n\n\n5,0', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,0', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,0', '5,12\n\n\n5,0', {'w': 1.5}, '5,13\n\n\n5,0', {'x': 0.25, 'c': '#cccccc'}, '5,14', '5,16', '5,17', {'x': 0.25, 'w': 2}, '5,19\n\n\n8,0', '5,20', {'x': 1.25, 'c': '#aaaaaa'}, '5,21\n\n\n7,1'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,1', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,1', {'x': 1.0, 'c': '#cccccc'}, '1,13\n\n\n1,1', {'c': '#aaaaaa'}, '1,14\n\n\n1,1', {'x': 0.5, 'c': '#cccccc'}, '5,18\n\n\n8,1', '5,19\n\n\n8,1'], [{'x': 19.25, 'c': '#aaaaaa', 'w': 1.25, 'h': 2, 'w2': 1.5, 'h2': 1, 'x2': -0.25}, '2,14\n\n\n4,1'], [{'x': 2.5, 'y': -0.75, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,2', {'c': '#aaaaaa'}, '5,1\n\n\n5,2', {'w': 1.5}, '5,2\n\n\n5,2', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,2', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,2', '5,12\n\n\n5,2', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,2'], [{'x': 18.25, 'y': -0.25}, '3,12\n\n\n4,1'], [{'x': 2.5, 'y': -0.5, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,3', '5,1\n\n\n5,3', {'c': '#cccccc', 'w': 10}, '5,6\n\n\n5,3', {'c': '#aaaaaa'}, '5,12\n\n\n5,3', {'w': 1.5}, '5,13\n\n\n5,3'], [{'x': 17.75, 'y': -0.5, 'w': 1.75}, '4,12\n\n\n3,1', {'c': '#cccccc'}, '4,14\n\n\n3,1', {'x': 0.25}, '4,12\n\n\n3,2', {'c': '#aaaaaa', 'w': 1.75}, '4,13\n\n\n3,2'], [{'x': 2.5, 'y': -0.25, 'w': 1.5}, '5,0\n\n\n5,4', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,4', {'w': 10}, '5,6\n\n\n5,4', {'d': True}, '5,12\n\n\n5,4', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,4'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,5', {'w': 1.25}, '5,1\n\n\n5,5', {'w': 1.25}, '5,2\n\n\n5,5', {'c': '#cccccc', 'w': 6.25}, '5,6\n\n\n5,5', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,5', {'w': 1.25}, '5,11\n\n\n5,5', {'w': 1.25}, '5,12\n\n\n5,5', {'w': 1.25}, '5,13\n\n\n5,5'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,6', {'w': 1.25}, '5,1\n\n\n5,6', {'w': 1.25}, '5,2\n\n\n5,6', {'c': '#cccccc', 'w': 2.25}, '5,4\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,6\n\n\n5,6', {'c': '#cccccc', 'w': 2.75}, '5,8\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,6', {'w': 1.25}, '5,11\n\n\n5,6', {'w': 1.25}, '5,12\n\n\n5,6', {'w': 1.25}, '5,13\n\n\n5,6'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,7', '5,1\n\n\n5,7', {'w': 1.5}, '5,2\n\n\n5,7', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,7', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,7', '5,11\n\n\n5,7', '5,12\n\n\n5,7', {'w': 1.5}, '5,13\n\n\n5,7'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,8', '5,1\n\n\n5,8', {'w': 1.5}, '5,2\n\n\n5,8', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,8', {'w': 3}, '5,8\n\n\n5,8', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,8', '5,11\n\n\n5,8', '5,12\n\n\n5,8', {'w': 1.5}, '5,13\n\n\n5,8'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,9', '5,1\n\n\n5,9', {'w': 1.5}, '5,2\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,9', {'c': '#aaaaaa'}, '5,6\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,9', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,9', '5,11\n\n\n5,9', '5,12\n\n\n5,9', {'w': 1.5}, '5,13\n\n\n5,9'], [{'x': 2.5, 'y': 0.25, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,10', {'c': '#aaaaaa'}, '5,1\n\n\n5,10', {'w': 1.5}, '5,2\n\n\n5,10', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,10', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,10', '5,11\n\n\n5,10', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,10', {'w': 1.5, 'd': True}, '5,13\n\n\n5,10'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,11', {'c': '#aaaaaa'}, '5,1\n\n\n5,11', {'w': 1.5}, '5,2\n\n\n5,11', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,11', {'w': 3}, '5,8\n\n\n5,11', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,11', '5,11\n\n\n5,11', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,11', {'w': 1.5, 'd': True}, '5,13\n\n\n5,11'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,12', {'c': '#aaaaaa'}, '5,1\n\n\n5,12', {'w': 1.5}, '5,2\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,12', {'c': '#aaaaaa'}, '5,6\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,12', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,12', '5,11\n\n\n5,12', {'d': True}, '5,12\n\n\n5,12', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,12'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,13', '5,1\n\n\n5,13', {'w': 1.5}, '5,2\n\n\n5,13', {'w': 1.5}, '5,4\n\n\n5,13', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,13', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,13', {'w': 1.5}, '5,9\n\n\n5,13', {'w': 1.5}, '5,11\n\n\n5,13', '5,12\n\n\n5,13', {'w': 1.5}, '5,13\n\n\n5,13'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,14', {'w': 1.5}, '5,4\n\n\n5,14', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,14', {'w': 1.5}, '5,9\n\n\n5,14', {'w': 1.5}, '5,11\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,14']]
+10:47:41: [INFO] Add COL0 net
+10:47:41: [INFO] Add COL1 net
+10:47:41: [INFO] Add COL10 net
+10:47:41: [INFO] Add COL11 net
+10:47:41: [INFO] Add COL12 net
+10:47:41: [INFO] Add COL13 net
+10:47:41: [INFO] Add COL14 net
+10:47:41: [INFO] Add COL15 net
+10:47:41: [INFO] Add COL16 net
+10:47:41: [INFO] Add COL17 net
+10:47:41: [INFO] Add COL18 net
+10:47:41: [INFO] Add COL19 net
+10:47:41: [INFO] Add COL2 net
+10:47:41: [INFO] Add COL20 net
+10:47:41: [INFO] Add COL21 net
+10:47:41: [INFO] Add COL3 net
+10:47:41: [INFO] Add COL4 net
+10:47:41: [INFO] Add COL5 net
+10:47:41: [INFO] Add COL6 net
+10:47:41: [INFO] Add COL7 net
+10:47:41: [INFO] Add COL8 net
+10:47:41: [INFO] Add COL9 net
+10:47:41: [INFO] Add Net-(D1-A) net
+10:47:41: [INFO] Add Net-(D10-A) net
+10:47:41: [INFO] Add Net-(D100-A) net
+10:47:41: [INFO] Add Net-(D101-A) net
+10:47:41: [INFO] Add Net-(D102-A) net
+10:47:41: [INFO] Add Net-(D103-A) net
+10:47:41: [INFO] Add Net-(D104-A) net
+10:47:41: [INFO] Add Net-(D105-A) net
+10:47:41: [INFO] Add Net-(D106-A) net
+10:47:41: [INFO] Add Net-(D107-A) net
+10:47:41: [INFO] Add Net-(D108-A) net
+10:47:41: [INFO] Add Net-(D109-A) net
+10:47:41: [INFO] Add Net-(D11-A) net
+10:47:41: [INFO] Add Net-(D110-A) net
+10:47:41: [INFO] Add Net-(D111-A) net
+10:47:41: [INFO] Add Net-(D112-A) net
+10:47:41: [INFO] Add Net-(D113-A) net
+10:47:41: [INFO] Add Net-(D114-A) net
+10:47:41: [INFO] Add Net-(D115-A) net
+10:47:41: [INFO] Add Net-(D116-A) net
+10:47:41: [INFO] Add Net-(D12-A) net
+10:47:41: [INFO] Add Net-(D13-A) net
+10:47:41: [INFO] Add Net-(D14-A) net
+10:47:41: [INFO] Add Net-(D15-A) net
+10:47:41: [INFO] Add Net-(D16-A) net
+10:47:41: [INFO] Add Net-(D17-A) net
+10:47:41: [INFO] Add Net-(D18-A) net
+10:47:41: [INFO] Add Net-(D19-A) net
+10:47:41: [INFO] Add Net-(D2-A) net
+10:47:41: [INFO] Add Net-(D20-A) net
+10:47:41: [INFO] Add Net-(D21-A) net
+10:47:41: [INFO] Add Net-(D22-A) net
+10:47:41: [INFO] Add Net-(D23-A) net
+10:47:41: [INFO] Add Net-(D24-A) net
+10:47:41: [INFO] Add Net-(D25-A) net
+10:47:41: [INFO] Add Net-(D26-A) net
+10:47:41: [INFO] Add Net-(D27-A) net
+10:47:41: [INFO] Add Net-(D28-A) net
+10:47:41: [INFO] Add Net-(D29-A) net
+10:47:41: [INFO] Add Net-(D3-A) net
+10:47:41: [INFO] Add Net-(D30-A) net
+10:47:41: [INFO] Add Net-(D31-A) net
+10:47:41: [INFO] Add Net-(D32-A) net
+10:47:41: [INFO] Add Net-(D33-A) net
+10:47:41: [INFO] Add Net-(D34-A) net
+10:47:41: [INFO] Add Net-(D35-A) net
+10:47:41: [INFO] Add Net-(D36-A) net
+10:47:41: [INFO] Add Net-(D37-A) net
+10:47:41: [INFO] Add Net-(D38-A) net
+10:47:41: [INFO] Add Net-(D39-A) net
+10:47:41: [INFO] Add Net-(D4-A) net
+10:47:41: [INFO] Add Net-(D40-A) net
+10:47:41: [INFO] Add Net-(D41-A) net
+10:47:41: [INFO] Add Net-(D42-A) net
+10:47:41: [INFO] Add Net-(D43-A) net
+10:47:41: [INFO] Add Net-(D44-A) net
+10:47:41: [INFO] Add Net-(D45-A) net
+10:47:41: [INFO] Add Net-(D46-A) net
+10:47:41: [INFO] Add Net-(D47-A) net
+10:47:41: [INFO] Add Net-(D48-A) net
+10:47:41: [INFO] Add Net-(D49-A) net
+10:47:41: [INFO] Add Net-(D5-A) net
+10:47:41: [INFO] Add Net-(D50-A) net
+10:47:41: [INFO] Add Net-(D51-A) net
+10:47:41: [INFO] Add Net-(D52-A) net
+10:47:41: [INFO] Add Net-(D53-A) net
+10:47:41: [INFO] Add Net-(D54-A) net
+10:47:41: [INFO] Add Net-(D55-A) net
+10:47:41: [INFO] Add Net-(D56-A) net
+10:47:41: [INFO] Add Net-(D57-A) net
+10:47:41: [INFO] Add Net-(D58-A) net
+10:47:41: [INFO] Add Net-(D59-A) net
+10:47:41: [INFO] Add Net-(D6-A) net
+10:47:41: [INFO] Add Net-(D60-A) net
+10:47:41: [INFO] Add Net-(D61-A) net
+10:47:41: [INFO] Add Net-(D62-A) net
+10:47:41: [INFO] Add Net-(D63-A) net
+10:47:41: [INFO] Add Net-(D64-A) net
+10:47:41: [INFO] Add Net-(D65-A) net
+10:47:41: [INFO] Add Net-(D66-A) net
+10:47:41: [INFO] Add Net-(D67-A) net
+10:47:41: [INFO] Add Net-(D68-A) net
+10:47:41: [INFO] Add Net-(D69-A) net
+10:47:41: [INFO] Add Net-(D7-A) net
+10:47:41: [INFO] Add Net-(D70-A) net
+10:47:41: [INFO] Add Net-(D71-A) net
+10:47:41: [INFO] Add Net-(D72-A) net
+10:47:41: [INFO] Add Net-(D73-A) net
+10:47:41: [INFO] Add Net-(D74-A) net
+10:47:41: [INFO] Add Net-(D75-A) net
+10:47:41: [INFO] Add Net-(D76-A) net
+10:47:41: [INFO] Add Net-(D77-A) net
+10:47:41: [INFO] Add Net-(D78-A) net
+10:47:41: [INFO] Add Net-(D79-A) net
+10:47:41: [INFO] Add Net-(D8-A) net
+10:47:41: [INFO] Add Net-(D80-A) net
+10:47:41: [INFO] Add Net-(D81-A) net
+10:47:41: [INFO] Add Net-(D82-A) net
+10:47:41: [INFO] Add Net-(D83-A) net
+10:47:41: [INFO] Add Net-(D84-A) net
+10:47:41: [INFO] Add Net-(D85-A) net
+10:47:41: [INFO] Add Net-(D86-A) net
+10:47:41: [INFO] Add Net-(D87-A) net
+10:47:41: [INFO] Add Net-(D88-A) net
+10:47:41: [INFO] Add Net-(D89-A) net
+10:47:41: [INFO] Add Net-(D9-A) net
+10:47:41: [INFO] Add Net-(D90-A) net
+10:47:41: [INFO] Add Net-(D91-A) net
+10:47:41: [INFO] Add Net-(D92-A) net
+10:47:41: [INFO] Add Net-(D93-A) net
+10:47:41: [INFO] Add Net-(D94-A) net
+10:47:41: [INFO] Add Net-(D95-A) net
+10:47:41: [INFO] Add Net-(D96-A) net
+10:47:41: [INFO] Add Net-(D97-A) net
+10:47:41: [INFO] Add Net-(D98-A) net
+10:47:41: [INFO] Add Net-(D99-A) net
+10:47:41: [INFO] Add ROW0 net
+10:47:41: [INFO] Add ROW1 net
+10:47:41: [INFO] Add ROW2 net
+10:47:41: [INFO] Add ROW3 net
+10:47:41: [INFO] Add ROW4 net
+10:47:41: [INFO] Add ROW5 net
+10:47:41: [INFO] Add SW1 footprint
+10:47:41: [INFO] Add D1 footprint
+10:47:41: [INFO] Add SW2 footprint
+10:47:41: [INFO] Add D2 footprint
+10:47:41: [INFO] Add SW3 footprint
+10:47:41: [INFO] Add D3 footprint
+10:47:41: [INFO] Add SW3a footprint
+10:47:41: [INFO] Add SW4 footprint
+10:47:41: [INFO] Add D4 footprint
+10:47:41: [INFO] Add SW4a footprint
+10:47:41: [INFO] Add SW5 footprint
+10:47:41: [INFO] Add D5 footprint
+10:47:41: [INFO] Add SW5a footprint
+10:47:41: [INFO] Add SW6 footprint
+10:47:41: [INFO] Add D6 footprint
+10:47:42: [INFO] Add SW6a footprint
+10:47:42: [INFO] Add SW7 footprint
+10:47:42: [INFO] Add D7 footprint
+10:47:42: [INFO] Add SW8 footprint
+10:47:42: [INFO] Add D8 footprint
+10:47:42: [INFO] Add SW9 footprint
+10:47:42: [INFO] Add D9 footprint
+10:47:42: [INFO] Add SW10 footprint
+10:47:42: [INFO] Add D10 footprint
+10:47:42: [INFO] Add SW10a footprint
+10:47:42: [INFO] Add SW11 footprint
+10:47:42: [INFO] Add D11 footprint
+10:47:42: [INFO] Add SW11a footprint
+10:47:42: [INFO] Add SW12 footprint
+10:47:42: [INFO] Add D12 footprint
+10:47:42: [INFO] Add SW12a footprint
+10:47:42: [INFO] Add SW13 footprint
+10:47:42: [INFO] Add D13 footprint
+10:47:42: [INFO] Add SW13a footprint
+10:47:42: [INFO] Add SW14 footprint
+10:47:42: [INFO] Add D14 footprint
+10:47:42: [INFO] Add SW15 footprint
+10:47:42: [INFO] Add D15 footprint
+10:47:42: [INFO] Add SW16 footprint
+10:47:42: [INFO] Add D16 footprint
+10:47:42: [INFO] Add SW17 footprint
+10:47:42: [INFO] Add D17 footprint
+10:47:42: [INFO] Add SW18 footprint
+10:47:42: [INFO] Add D18 footprint
+10:47:42: [INFO] Add SW19 footprint
+10:47:42: [INFO] Add D19 footprint
+10:47:42: [INFO] Add SW20 footprint
+10:47:42: [INFO] Add D20 footprint
+10:47:42: [INFO] Add SW21 footprint
+10:47:42: [INFO] Add D21 footprint
+10:47:42: [INFO] Add SW22 footprint
+10:47:42: [INFO] Add D22 footprint
+10:47:42: [INFO] Add SW23 footprint
+10:47:43: [INFO] Add D23 footprint
+10:47:43: [INFO] Add SW24 footprint
+10:47:43: [INFO] Add D24 footprint
+10:47:43: [INFO] Add SW25 footprint
+10:47:43: [INFO] Add D25 footprint
+10:47:43: [INFO] Add SW26 footprint
+10:47:43: [INFO] Add D26 footprint
+10:47:43: [INFO] Add SW27 footprint
+10:47:43: [INFO] Add D27 footprint
+10:47:43: [INFO] Add SW28 footprint
+10:47:43: [INFO] Add D28 footprint
+10:47:43: [INFO] Add SW29 footprint
+10:47:43: [INFO] Add D29 footprint
+10:47:43: [INFO] Add SW30 footprint
+10:47:43: [INFO] Add D30 footprint
+10:47:43: [INFO] Add SW31 footprint
+10:47:43: [INFO] Add D31 footprint
+10:47:43: [INFO] Add SW32 footprint
+10:47:43: [INFO] Add D32 footprint
+10:47:43: [INFO] Add ST32 footprint
+10:47:43: [INFO] Add SW32a footprint
+10:47:43: [INFO] Add SW33 footprint
+10:47:43: [INFO] Add D33 footprint
+10:47:43: [INFO] Add SW34 footprint
+10:47:43: [INFO] Add D34 footprint
+10:47:43: [INFO] Add SW35 footprint
+10:47:43: [INFO] Add D35 footprint
+10:47:43: [INFO] Add SW36 footprint
+10:47:43: [INFO] Add D36 footprint
+10:47:43: [INFO] Add SW37 footprint
+10:47:43: [INFO] Add D37 footprint
+10:47:43: [INFO] Add SW38 footprint
+10:47:43: [INFO] Add D38 footprint
+10:47:43: [INFO] Add SW39 footprint
+10:47:43: [INFO] Add D39 footprint
+10:47:43: [INFO] Add SW40 footprint
+10:47:43: [INFO] Add D40 footprint
+10:47:43: [INFO] Add SW41 footprint
+10:47:43: [INFO] Add D41 footprint
+10:47:43: [INFO] Add SW42 footprint
+10:47:44: [INFO] Add D42 footprint
+10:47:44: [INFO] Add SW43 footprint
+10:47:44: [INFO] Add D43 footprint
+10:47:44: [INFO] Add SW44 footprint
+10:47:44: [INFO] Add D44 footprint
+10:47:44: [INFO] Add SW45 footprint
+10:47:44: [INFO] Add D45 footprint
+10:47:44: [INFO] Add SW46 footprint
+10:47:44: [INFO] Add D46 footprint
+10:47:44: [INFO] Add SW47 footprint
+10:47:44: [INFO] Add D47 footprint
+10:47:44: [INFO] Add SW48 footprint
+10:47:44: [INFO] Add D48 footprint
+10:47:44: [INFO] Add SW49 footprint
+10:47:44: [INFO] Add D49 footprint
+10:47:44: [INFO] Add SW50 footprint
+10:47:44: [INFO] Add D50 footprint
+10:47:44: [INFO] Add SW51 footprint
+10:47:44: [INFO] Add D51 footprint
+10:47:44: [INFO] Add SW52 footprint
+10:47:44: [INFO] Add D52 footprint
+10:47:44: [INFO] Add SW53 footprint
+10:47:44: [INFO] Add D53 footprint
+10:47:44: [INFO] Add SW54 footprint
+10:47:44: [INFO] Add D54 footprint
+10:47:44: [INFO] Add ST54 footprint
+10:47:44: [INFO] Add SW55 footprint
+10:47:44: [INFO] Add D55 footprint
+10:47:44: [INFO] Add SW56 footprint
+10:47:44: [INFO] Add D56 footprint
+10:47:44: [INFO] Add SW57 footprint
+10:47:44: [INFO] Add D57 footprint
+10:47:44: [INFO] Add SW58 footprint
+10:47:44: [INFO] Add D58 footprint
+10:47:44: [INFO] Add SW59 footprint
+10:47:44: [INFO] Add D59 footprint
+10:47:44: [INFO] Add SW60 footprint
+10:47:44: [INFO] Add D60 footprint
+10:47:45: [INFO] Add SW61 footprint
+10:47:45: [INFO] Add D61 footprint
+10:47:45: [INFO] Add SW62 footprint
+10:47:45: [INFO] Add D62 footprint
+10:47:45: [INFO] Add SW63 footprint
+10:47:45: [INFO] Add D63 footprint
+10:47:45: [INFO] Add SW64 footprint
+10:47:45: [INFO] Add D64 footprint
+10:47:45: [INFO] Add SW65 footprint
+10:47:45: [INFO] Add D65 footprint
+10:47:45: [INFO] Add SW66 footprint
+10:47:45: [INFO] Add D66 footprint
+10:47:45: [INFO] Add SW67 footprint
+10:47:45: [INFO] Add D67 footprint
+10:47:45: [INFO] Add SW68 footprint
+10:47:45: [INFO] Add D68 footprint
+10:47:45: [INFO] Add SW69 footprint
+10:47:45: [INFO] Add D69 footprint
+10:47:45: [INFO] Add SW70 footprint
+10:47:45: [INFO] Add D70 footprint
+10:47:45: [INFO] Add SW71 footprint
+10:47:45: [INFO] Add D71 footprint
+10:47:45: [INFO] Add SW72 footprint
+10:47:45: [INFO] Add D72 footprint
+10:47:45: [INFO] Add SW73 footprint
+10:47:45: [INFO] Add D73 footprint
+10:47:45: [INFO] Add SW74 footprint
+10:47:45: [INFO] Add D74 footprint
+10:47:45: [INFO] Add SW75 footprint
+10:47:45: [INFO] Add D75 footprint
+10:47:45: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:45: [INFO] Add ST75 footprint
+10:47:45: [INFO] Add SW76 footprint
+10:47:45: [INFO] Add D76 footprint
+10:47:45: [INFO] Add SW77 footprint
+10:47:45: [INFO] Add D77 footprint
+10:47:45: [INFO] Add SW78 footprint
+10:47:45: [INFO] Add D78 footprint
+10:47:45: [INFO] Add SW79 footprint
+10:47:45: [INFO] Add D79 footprint
+10:47:45: [INFO] Add ST79 footprint
+10:47:45: [INFO] Add SW79a footprint
+10:47:46: [INFO] Add SW80 footprint
+10:47:46: [INFO] Add D80 footprint
+10:47:46: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:46: [INFO] Add ST80 footprint
+10:47:46: [INFO] Add SW80a footprint
+10:47:46: [INFO] Add SW81 footprint
+10:47:46: [INFO] Add D81 footprint
+10:47:46: [INFO] Add SW82 footprint
+10:47:46: [INFO] Add D82 footprint
+10:47:46: [INFO] Add SW83 footprint
+10:47:46: [INFO] Add D83 footprint
+10:47:46: [INFO] Add SW84 footprint
+10:47:46: [INFO] Add D84 footprint
+10:47:46: [INFO] Add SW85 footprint
+10:47:46: [INFO] Add D85 footprint
+10:47:46: [INFO] Add SW86 footprint
+10:47:46: [INFO] Add D86 footprint
+10:47:46: [INFO] Add SW87 footprint
+10:47:46: [INFO] Add D87 footprint
+10:47:46: [INFO] Add SW88 footprint
+10:47:46: [INFO] Add D88 footprint
+10:47:46: [INFO] Add SW89 footprint
+10:47:46: [INFO] Add D89 footprint
+10:47:46: [INFO] Add SW90 footprint
+10:47:46: [INFO] Add D90 footprint
+10:47:46: [INFO] Add SW91 footprint
+10:47:46: [INFO] Add D91 footprint
+10:47:46: [INFO] Add SW92 footprint
+10:47:46: [INFO] Add D92 footprint
+10:47:46: [INFO] Add SW92a footprint
+10:47:46: [INFO] Add SW93 footprint
+10:47:46: [INFO] Add D93 footprint
+10:47:46: [WARNING] No stabilizer footprint for width 2.75u, using 2u as fallback
+10:47:46: [INFO] Add ST93 footprint
+10:47:46: [INFO] Add SW93a footprint
+10:47:46: [INFO] Add SW94 footprint
+10:47:46: [INFO] Add D94 footprint
+10:47:46: [INFO] Add SW95 footprint
+10:47:46: [INFO] Add D95 footprint
+10:47:46: [INFO] Add SW96 footprint
+10:47:46: [INFO] Add D96 footprint
+10:47:46: [INFO] Add SW97 footprint
+10:47:47: [INFO] Add D97 footprint
+10:47:47: [INFO] Add SW98 footprint
+10:47:47: [INFO] Add D98 footprint
+10:47:47: [INFO] Add SW99 footprint
+10:47:47: [INFO] Add D99 footprint
+10:47:47: [INFO] Add ST99 footprint
+10:47:47: [INFO] Add SW99a footprint
+10:47:47: [INFO] Add SW100 footprint
+10:47:47: [INFO] Add D100 footprint
+10:47:47: [INFO] Add SW100a footprint
+10:47:47: [INFO] Add SW101 footprint
+10:47:47: [INFO] Add D101 footprint
+10:47:47: [INFO] Add SW101a footprint
+10:47:47: [INFO] Add SW102 footprint
+10:47:47: [INFO] Add D102 footprint
+10:47:47: [INFO] Add SW102a footprint
+10:47:47: [INFO] Add SW103 footprint
+10:47:47: [INFO] Add D103 footprint
+10:47:47: [WARNING] No stabilizer footprint for width 2.25u, using 2u as fallback
+10:47:47: [INFO] Add ST103 footprint
+10:47:47: [INFO] Add SW103a footprint
+10:47:47: [INFO] Add ST103a footprint
+10:47:47: [INFO] Add SW103b footprint
+10:47:47: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:47: [INFO] Add ST103b footprint
+10:47:47: [INFO] Add SW103c footprint
+10:47:47: [INFO] Add SW104 footprint
+10:47:47: [INFO] Add D104 footprint
+10:47:47: [INFO] Add ST104 footprint
+10:47:47: [INFO] Add SW104a footprint
+10:47:47: [INFO] Add ST104a footprint
+10:47:47: [INFO] Add SW104b footprint
+10:47:47: [INFO] Add SW104c footprint
+10:47:47: [INFO] Add ST104c footprint
+10:47:47: [INFO] Add SW104d footprint
+10:47:47: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:47: [INFO] Add ST104d footprint
+10:47:47: [INFO] Add SW105 footprint
+10:47:47: [INFO] Add D105 footprint
+10:47:47: [WARNING] No stabilizer footprint for width 2.75u, using 2u as fallback
+10:47:47: [INFO] Add ST105 footprint
+10:47:47: [INFO] Add SW105a footprint
+10:47:47: [INFO] Add ST105a footprint
+10:47:47: [INFO] Add SW105b footprint
+10:47:47: [WARNING] No stabilizer footprint for width 2.5u, using 2u as fallback
+10:47:47: [INFO] Add ST105b footprint
+10:47:47: [INFO] Add SW106 footprint
+10:47:47: [INFO] Add D106 footprint
+10:47:47: [INFO] Add SW106a footprint
+10:47:47: [INFO] Add SW106b footprint
+10:47:47: [INFO] Add SW107 footprint
+10:47:47: [INFO] Add D107 footprint
+10:47:47: [INFO] Add SW107a footprint
+10:47:47: [INFO] Add SW107b footprint
+10:47:47: [INFO] Add SW108 footprint
+10:47:47: [INFO] Add D108 footprint
+10:47:48: [INFO] Add SW108a footprint
+10:47:48: [INFO] Add SW109 footprint
+10:47:48: [INFO] Add D109 footprint
+10:47:48: [INFO] Add SW109a footprint
+10:47:48: [INFO] Add SW110 footprint
+10:47:48: [INFO] Add D110 footprint
+10:47:48: [INFO] Add SW111 footprint
+10:47:48: [INFO] Add D111 footprint
+10:47:48: [INFO] Add SW112 footprint
+10:47:48: [INFO] Add D112 footprint
+10:47:48: [INFO] Add SW113 footprint
+10:47:48: [INFO] Add D113 footprint
+10:47:48: [INFO] Add SW114 footprint
+10:47:48: [INFO] Add D114 footprint
+10:47:48: [INFO] Add ST114 footprint
+10:47:48: [INFO] Add SW114a footprint
+10:47:48: [INFO] Add SW115 footprint
+10:47:48: [INFO] Add D115 footprint
+10:47:48: [INFO] Add SW116 footprint
+10:47:48: [INFO] Add D116 footprint
+10:47:48: [INFO] User layout: [[{'x': 2.5, 'c': '#aaaaaa'}, '0,0\n\n\n0,1', {'x': 1.0, 'c': '#cccccc'}, '0,2\n\n\n0,1', '0,3\n\n\n0,1', '0,4\n\n\n0,1', '0,5\n\n\n0,1', {'x': 0.5, 'c': '#aaaaaa'}, '0,6\n\n\n0,1', '0,7\n\n\n0,1', '0,8\n\n\n0,1', '0,9\n\n\n0,1', {'x': 0.5, 'c': '#cccccc'}, '0,10\n\n\n0,1', '0,11\n\n\n0,1', '0,12\n\n\n0,1', '0,14\n\n\n0,1'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa'}, '0,0\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,1\n\n\n0,0', '0,2\n\n\n0,0', '0,3\n\n\n0,0', '0,4\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,5\n\n\n0,0', '0,6\n\n\n0,0', '0,7\n\n\n0,0', '0,8\n\n\n0,0', {'x': 0.25, 'c': '#cccccc'}, '0,9\n\n\n0,0', '0,10\n\n\n0,0', '0,11\n\n\n0,0', '0,12\n\n\n0,0', {'x': 0.25, 'c': '#777777'}, '0,14\n\n\n0,0', {'x': 0.25, 'c': '#aaaaaa'}, '0,15', '0,16', '0,17'], [{'x': 2.5, 'y': 0.5, 'c': '#cccccc'}, '1,0', '1,1', '1,2', '1,3', '1,4', '1,5', '1,6', '1,7', '1,8', '1,9', '1,10', '1,11', '1,12', {'c': '#aaaaaa', 'w': 2}, '1,14\n\n\n1,0', {'x': 0.25}, '1,15', '1,16', '1,17', {'x': 0.25}, '1,18', '1,19', '1,20', '1,21'], [{'x': 2.5, 'w': 1.5}, '2,0', {'c': '#cccccc'}, '2,1', '2,2', '2,3', '2,4', '2,5', '2,6', '2,7', '2,8', '2,9', '2,10', '2,11', '2,12', {'w': 1.5}, '2,13\n\n\n4,0', {'x': 0.25, 'c': '#aaaaaa'}, '2,15', '2,16', '2,17', {'x': 0.25, 'c': '#cccccc'}, '2,18', '2,19', '2,20', {'c': '#aaaaaa', 'h': 2}, '3,21\n\n\n6,0', {'x': 0.25}, '2,21\n\n\n6,1'], [{'x': 2.5, 'w': 1.75}, '3,0', {'c': '#cccccc'}, '3,1', '3,2', '3,3', '3,4', '3,5', '3,6', '3,7', '3,8', '3,9', '3,10', '3,11', {'c': '#aaaaaa', 'w': 2.25}, '3,13\n\n\n4,0', {'x': 3.5, 'c': '#cccccc'}, '3,18', '3,19', '3,20', {'x': 1.25, 'c': '#aaaaaa'}, '3,21\n\n\n6,1'], [{'w': 1.25}, '4,0\n\n\n2,1', {'c': '#cccccc'}, '4,1\n\n\n2,1', {'x': 0.25, 'c': '#aaaaaa', 'w': 2.25}, '4,0\n\n\n2,0', {'c': '#cccccc'}, '4,2', '4,3', '4,4', '4,5', '4,6', '4,7', '4,8', '4,9', '4,10', '4,11', {'c': '#aaaaaa', 'w': 2.75}, '4,13\n\n\n3,0', {'x': 1.25, 'c': '#cccccc'}, '4,16', {'x': 1.25}, '4,18', '4,19', '4,20', {'c': '#aaaaaa', 'h': 2}, '4,21\n\n\n7,0', {'x': 0.25}, '4,21\n\n\n7,1'], [{'x': 2.5, 'w': 1.5}, '5,0\n\n\n5,0', '5,1\n\n\n5,0', {'w': 1.5}, '5,2\n\n\n5,0', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,0', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,0', '5,12\n\n\n5,0', {'w': 1.5}, '5,13\n\n\n5,0', {'x': 0.25, 'c': '#cccccc'}, '5,14', '5,16', '5,17', {'x': 0.25, 'w': 2}, '5,19\n\n\n8,0', '5,20', {'x': 1.25, 'c': '#aaaaaa'}, '5,21\n\n\n7,1'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,1', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,1', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,1', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,1', {'x': 1.0, 'c': '#cccccc'}, '1,13\n\n\n1,1', {'c': '#aaaaaa'}, '1,14\n\n\n1,1', {'x': 0.5, 'c': '#cccccc'}, '5,18\n\n\n8,1', '5,19\n\n\n8,1'], [{'x': 19.25, 'c': '#aaaaaa', 'w': 1.25, 'h': 2, 'w2': 1.5, 'h2': 1, 'x2': -0.25}, '2,14\n\n\n4,1'], [{'x': 2.5, 'y': -0.75, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,2', {'c': '#aaaaaa'}, '5,1\n\n\n5,2', {'w': 1.5}, '5,2\n\n\n5,2', {'c': '#cccccc', 'w': 7}, '5,6\n\n\n5,2', {'c': '#aaaaaa', 'w': 1.5}, '5,11\n\n\n5,2', '5,12\n\n\n5,2', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,2'], [{'x': 18.25, 'y': -0.25}, '3,12\n\n\n4,1'], [{'x': 2.5, 'y': -0.5, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,3', '5,1\n\n\n5,3', {'c': '#cccccc', 'w': 10}, '5,6\n\n\n5,3', {'c': '#aaaaaa'}, '5,12\n\n\n5,3', {'w': 1.5}, '5,13\n\n\n5,3'], [{'x': 17.75, 'y': -0.5, 'w': 1.75}, '4,12\n\n\n3,1', {'c': '#cccccc'}, '4,14\n\n\n3,1', {'x': 0.25}, '4,12\n\n\n3,2', {'c': '#aaaaaa', 'w': 1.75}, '4,13\n\n\n3,2'], [{'x': 2.5, 'y': -0.25, 'w': 1.5}, '5,0\n\n\n5,4', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,4', {'w': 10}, '5,6\n\n\n5,4', {'d': True}, '5,12\n\n\n5,4', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,4'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,5', {'w': 1.25}, '5,1\n\n\n5,5', {'w': 1.25}, '5,2\n\n\n5,5', {'c': '#cccccc', 'w': 6.25}, '5,6\n\n\n5,5', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,5', {'w': 1.25}, '5,11\n\n\n5,5', {'w': 1.25}, '5,12\n\n\n5,5', {'w': 1.25}, '5,13\n\n\n5,5'], [{'x': 2.5, 'y': 0.25, 'w': 1.25}, '5,0\n\n\n5,6', {'w': 1.25}, '5,1\n\n\n5,6', {'w': 1.25}, '5,2\n\n\n5,6', {'c': '#cccccc', 'w': 2.25}, '5,4\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,6\n\n\n5,6', {'c': '#cccccc', 'w': 2.75}, '5,8\n\n\n5,6', {'c': '#aaaaaa', 'w': 1.25}, '5,9\n\n\n5,6', {'w': 1.25}, '5,11\n\n\n5,6', {'w': 1.25}, '5,12\n\n\n5,6', {'w': 1.25}, '5,13\n\n\n5,6'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,7', '5,1\n\n\n5,7', {'w': 1.5}, '5,2\n\n\n5,7', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,7', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,7', '5,11\n\n\n5,7', '5,12\n\n\n5,7', {'w': 1.5}, '5,13\n\n\n5,7'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,8', '5,1\n\n\n5,8', {'w': 1.5}, '5,2\n\n\n5,8', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,8', {'w': 3}, '5,8\n\n\n5,8', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,8', '5,11\n\n\n5,8', '5,12\n\n\n5,8', {'w': 1.5}, '5,13\n\n\n5,8'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,9', '5,1\n\n\n5,9', {'w': 1.5}, '5,2\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,9', {'c': '#aaaaaa'}, '5,6\n\n\n5,9', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,9', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,9', '5,11\n\n\n5,9', '5,12\n\n\n5,9', {'w': 1.5}, '5,13\n\n\n5,9'], [{'x': 2.5, 'y': 0.25, 'c': '#cccccc', 'w': 1.5, 'd': True}, '5,0\n\n\n5,10', {'c': '#aaaaaa'}, '5,1\n\n\n5,10', {'w': 1.5}, '5,2\n\n\n5,10', {'c': '#cccccc', 'w': 6}, '5,6\n\n\n5,10', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,10', '5,11\n\n\n5,10', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,10', {'w': 1.5, 'd': True}, '5,13\n\n\n5,10'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,11', {'c': '#aaaaaa'}, '5,1\n\n\n5,11', {'w': 1.5}, '5,2\n\n\n5,11', {'c': '#cccccc', 'w': 3}, '5,4\n\n\n5,11', {'w': 3}, '5,8\n\n\n5,11', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,11', '5,11\n\n\n5,11', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,11', {'w': 1.5, 'd': True}, '5,13\n\n\n5,11'], [{'x': 2.5, 'y': 0.25, 'w': 1.5, 'd': True}, '5,0\n\n\n5,12', {'c': '#aaaaaa'}, '5,1\n\n\n5,12', {'w': 1.5}, '5,2\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,4\n\n\n5,12', {'c': '#aaaaaa'}, '5,6\n\n\n5,12', {'c': '#cccccc', 'w': 2.5}, '5,8\n\n\n5,12', {'c': '#aaaaaa', 'w': 1.5}, '5,9\n\n\n5,12', '5,11\n\n\n5,12', {'d': True}, '5,12\n\n\n5,12', {'c': '#cccccc', 'w': 1.5, 'd': True}, '5,13\n\n\n5,12'], [{'x': 2.5, 'y': 0.25, 'c': '#aaaaaa', 'w': 1.5}, '5,0\n\n\n5,13', '5,1\n\n\n5,13', {'w': 1.5}, '5,2\n\n\n5,13', {'w': 1.5}, '5,4\n\n\n5,13', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,13', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,13', {'w': 1.5}, '5,9\n\n\n5,13', {'w': 1.5}, '5,11\n\n\n5,13', '5,12\n\n\n5,13', {'w': 1.5}, '5,13\n\n\n5,13'], [{'x': 2.5, 'y': 0.25, 'w': 1.5}, '5,0\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,1\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,2\n\n\n5,14', {'w': 1.5}, '5,4\n\n\n5,14', {'c': '#cccccc', 'w': 2.5}, '5,6\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,8\n\n\n5,14', {'w': 1.5}, '5,9\n\n\n5,14', {'w': 1.5}, '5,11\n\n\n5,14', {'c': '#cccccc', 'd': True}, '5,12\n\n\n5,14', {'c': '#aaaaaa', 'w': 1.5}, '5,13\n\n\n5,14']]
+10:47:48: [INFO] Detected layout convertible to matrix annotated keyboard
+10:47:48: [INFO] Diode info: [ElementInfo(annotation_format='D{}', position_option=<PositionOption.CUSTOM: 'Custom'>, position=ElementPosition(x=5.08, y=4.0, orientation=90.0, side=<Side.BACK: 'Back'>), template_path='', start_index=-1)]
+10:47:48: [INFO] Routing SW116 with D116
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(507365000, 156845000), (507365000, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(507365000, 161985000), (509905000, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW115 with D115
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(488315000, 156845000), (488315000, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(488315000, 161985000), (490855000, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW114a with D114
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Routing SW114 with D114
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(459740000, 156845000), (459740000, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(459740000, 161985000), (462280000, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW113 with D113
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(450215000, 156845000), (450215000, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(450215000, 161985000), (452755000, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW112 with D112
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(426402500, 156845000), (426402500, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(426402500, 161985000), (428942500, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW111 with D111
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(407352500, 156845000), (407352500, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(407352500, 161985000), (409892500, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW110 with D110
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Adding track segment (B.Cu): [(388302500, 156845000), (388302500, 161985000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Adding track segment (B.Cu): [(388302500, 161985000), (390842500, 164525000)]
+10:47:48: [INFO] Track added
+10:47:48: [INFO] Routing SW109a with D109
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Routing SW109 with D109
+10:47:48: [INFO] Using internal autorouter method
+10:47:48: [INFO] Routing SW108a with D108
+10:47:48: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW108 with D108
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW107b with D107
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW107a with D107
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW107 with D107
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW106b with D106
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW106a with D106
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW106 with D106
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW105b with D105
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW105a with D105
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW105 with D105
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW104d with D104
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW104c with D104
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW104b with D104
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW104a with D104
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW104 with D104
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(231140000, 156845000), (231140000, 161985000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(231140000, 161985000), (233680000, 164525000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW103c with D103
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW103b with D103
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW103a with D103
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW103 with D103
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW102a with D102
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW102 with D102
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW101a with D101
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW101 with D101
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW100a with D100
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW100 with D100
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW99a with D99
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(507365000, 137795000), (507365000, 152460000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(507365000, 152460000), (509905000, 155000000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW99 with D99
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(507365000, 147320000), (507365000, 152460000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(507365000, 152460000), (509905000, 155000000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW98 with D98
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(488315000, 137795000), (488315000, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(488315000, 142935000), (490855000, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW97 with D97
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(469265000, 137795000), (469265000, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(469265000, 142935000), (471805000, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW96 with D96
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(450215000, 137795000), (450215000, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(450215000, 142935000), (452755000, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW95 with D95
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(407352500, 137795000), (407352500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(407352500, 142935000), (409892500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW94 with D94
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(364490000, 137795000), (364490000, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(364490000, 142935000), (367030000, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW93a with D93
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW93 with D93
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(347821250, 137795000), (347821250, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(347821250, 142935000), (350361250, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW92a with D92
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Routing SW92 with D92
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(338296250, 137795000), (338296250, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(338296250, 142935000), (340836250, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW91 with D91
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(312102500, 137795000), (312102500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(312102500, 142935000), (314642500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW90 with D90
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(293052500, 137795000), (293052500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(293052500, 142935000), (295592500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW89 with D89
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(274002500, 137795000), (274002500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(274002500, 142935000), (276542500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW88 with D88
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(254952500, 137795000), (254952500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(254952500, 142935000), (257492500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW87 with D87
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(235902500, 137795000), (235902500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(235902500, 142935000), (238442500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW86 with D86
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(216852500, 137795000), (216852500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(216852500, 142935000), (219392500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW85 with D85
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(197802500, 137795000), (197802500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(197802500, 142935000), (200342500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW84 with D84
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(178752500, 137795000), (178752500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(178752500, 142935000), (181292500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW83 with D83
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(159702500, 137795000), (159702500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(159702500, 142935000), (162242500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW82 with D82
+10:47:49: [INFO] Using internal autorouter method
+10:47:49: [INFO] Adding track segment (B.Cu): [(140652500, 137795000), (140652500, 142935000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Adding track segment (B.Cu): [(140652500, 142935000), (143192500, 145475000)]
+10:47:49: [INFO] Track added
+10:47:49: [INFO] Routing SW81 with D81
+10:47:49: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(121602500, 137795000), (121602500, 142935000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(121602500, 142935000), (124142500, 145475000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW80a with D80
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Routing SW80 with D80
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(109696250, 137795000), (109696250, 142935000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(109696250, 142935000), (112236250, 145475000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW79a with D79
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(507365000, 118745000), (508060000, 118745000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(508060000, 118745000), (509905000, 116900000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW79 with D79
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(507365000, 109220000), (507365000, 114360000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(507365000, 114360000), (509905000, 116900000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW78 with D78
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(488315000, 118745000), (488315000, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(488315000, 123885000), (490855000, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW77 with D77
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(469265000, 118745000), (469265000, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(469265000, 123885000), (471805000, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW76 with D76
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(450215000, 118745000), (450215000, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(450215000, 123885000), (452755000, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW75 with D75
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(352583750, 118745000), (352583750, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(352583750, 123885000), (355123750, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW74 with D74
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(340677500, 118745000), (340677500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(340677500, 123885000), (343217500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW73 with D73
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(321627500, 118745000), (321627500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(321627500, 123885000), (324167500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW72 with D72
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(302577500, 118745000), (302577500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(302577500, 123885000), (305117500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW71 with D71
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(283527500, 118745000), (283527500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(283527500, 123885000), (286067500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW70 with D70
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(264477500, 118745000), (264477500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(264477500, 123885000), (267017500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW69 with D69
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(245427500, 118745000), (245427500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(245427500, 123885000), (247967500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW68 with D68
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(226377500, 118745000), (226377500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(226377500, 123885000), (228917500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW67 with D67
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(207327500, 118745000), (207327500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(207327500, 123885000), (209867500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW66 with D66
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(188277500, 118745000), (188277500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(188277500, 123885000), (190817500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW65 with D65
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(169227500, 118745000), (169227500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(169227500, 123885000), (171767500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW64 with D64
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(150177500, 118745000), (150177500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(150177500, 123885000), (152717500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW63 with D63
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(131127500, 118745000), (131127500, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(131127500, 123885000), (133667500, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW62 with D62
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(104933750, 118745000), (104933750, 123885000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(104933750, 123885000), (107473750, 126425000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW61 with D61
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(507365000, 99695000), (507365000, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(507365000, 104835000), (509905000, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW60 with D60
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(488315000, 99695000), (488315000, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(488315000, 104835000), (490855000, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW59 with D59
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(469265000, 99695000), (469265000, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(469265000, 104835000), (471805000, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW58 with D58
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(450215000, 99695000), (450215000, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(450215000, 104835000), (452755000, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW57 with D57
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(426402500, 99695000), (426402500, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(426402500, 104835000), (428942500, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW56 with D56
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(407352500, 99695000), (407352500, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(407352500, 104835000), (409892500, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW55 with D55
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(388302500, 99695000), (388302500, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(388302500, 104835000), (390842500, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW54 with D54
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Routing SW53 with D53
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(359727500, 99695000), (359727500, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(359727500, 104835000), (362267500, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW52 with D52
+10:47:50: [INFO] Using internal autorouter method
+10:47:50: [INFO] Adding track segment (B.Cu): [(335915000, 99695000), (335915000, 104835000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Adding track segment (B.Cu): [(335915000, 104835000), (338455000, 107375000)]
+10:47:50: [INFO] Track added
+10:47:50: [INFO] Routing SW51 with D51
+10:47:50: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(316865000, 99695000), (316865000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(316865000, 104835000), (319405000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW50 with D50
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(297815000, 99695000), (297815000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(297815000, 104835000), (300355000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW49 with D49
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(278765000, 99695000), (278765000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(278765000, 104835000), (281305000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW48 with D48
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(259715000, 99695000), (259715000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(259715000, 104835000), (262255000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW47 with D47
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(240665000, 99695000), (240665000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(240665000, 104835000), (243205000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW46 with D46
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(221615000, 99695000), (221615000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(221615000, 104835000), (224155000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW45 with D45
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(202565000, 99695000), (202565000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(202565000, 104835000), (205105000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW44 with D44
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(183515000, 99695000), (183515000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(183515000, 104835000), (186055000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW43 with D43
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(164465000, 99695000), (164465000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(164465000, 104835000), (167005000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW42 with D42
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(145415000, 99695000), (145415000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(145415000, 104835000), (147955000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW41 with D41
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(126365000, 99695000), (126365000, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(126365000, 104835000), (128905000, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW40 with D40
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(102552500, 99695000), (102552500, 104835000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(102552500, 104835000), (105092500, 107375000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW39 with D39
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(507365000, 80645000), (507365000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(507365000, 85785000), (509905000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW38 with D38
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(488315000, 80645000), (488315000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(488315000, 85785000), (490855000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW37 with D37
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(469265000, 80645000), (469265000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(469265000, 85785000), (471805000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW36 with D36
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(450215000, 80645000), (450215000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(450215000, 85785000), (452755000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW35 with D35
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(426402500, 80645000), (426402500, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(426402500, 85785000), (428942500, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW34 with D34
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(407352500, 80645000), (407352500, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(407352500, 85785000), (409892500, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW33 with D33
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(388302500, 80645000), (388302500, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(388302500, 85785000), (390842500, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW32a with D32
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Routing SW32 with D32
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(354965000, 80645000), (354965000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(354965000, 85785000), (357505000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW31 with D31
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(345440000, 80645000), (345440000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(345440000, 85785000), (347980000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW30 with D30
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(326390000, 80645000), (326390000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(326390000, 85785000), (328930000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW29 with D29
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(307340000, 80645000), (307340000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(307340000, 85785000), (309880000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW28 with D28
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(288290000, 80645000), (288290000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(288290000, 85785000), (290830000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW27 with D27
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(269240000, 80645000), (269240000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(269240000, 85785000), (271780000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW26 with D26
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(250190000, 80645000), (250190000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(250190000, 85785000), (252730000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW25 with D25
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(231140000, 80645000), (231140000, 85785000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Adding track segment (B.Cu): [(231140000, 85785000), (233680000, 88325000)]
+10:47:51: [INFO] Track added
+10:47:51: [INFO] Routing SW24 with D24
+10:47:51: [INFO] Using internal autorouter method
+10:47:51: [INFO] Adding track segment (B.Cu): [(212090000, 80645000), (212090000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(212090000, 85785000), (214630000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW23 with D23
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(193040000, 80645000), (193040000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(193040000, 85785000), (195580000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW22 with D22
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(173990000, 80645000), (173990000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(173990000, 85785000), (176530000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW21 with D21
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(154940000, 80645000), (154940000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(154940000, 85785000), (157480000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW20 with D20
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(135890000, 80645000), (135890000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(135890000, 85785000), (138430000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW19 with D19
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(116840000, 80645000), (116840000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(116840000, 85785000), (119380000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW18 with D18
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(97790000, 80645000), (97790000, 85785000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(97790000, 85785000), (100330000, 88325000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW17 with D17
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(426402500, 52070000), (426402500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(426402500, 57210000), (428942500, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW16 with D16
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(407352500, 52070000), (407352500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(407352500, 57210000), (409892500, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW15 with D15
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(388302500, 52070000), (388302500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(388302500, 57210000), (390842500, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW14 with D14
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(364490000, 52070000), (364490000, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(364490000, 57210000), (367030000, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW13a with D13
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW13 with D13
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW12a with D12
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW12 with D12
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW11a with D11
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW11 with D11
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW10a with D10
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW10 with D10
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(283527500, 52070000), (283527500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(283527500, 57210000), (286067500, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW9 with D9
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(259715000, 52070000), (259715000, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(259715000, 57210000), (262255000, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW8 with D8
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(240665000, 52070000), (240665000, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(240665000, 57210000), (243205000, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW7 with D7
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(221615000, 52070000), (221615000, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(221615000, 57210000), (224155000, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW6a with D6
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW6 with D6
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(202565000, 52070000), (202565000, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(202565000, 57210000), (205105000, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW5a with D5
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW5 with D5
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(178752500, 52070000), (178752500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(178752500, 57210000), (181292500, 59750000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Routing SW4a with D4
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Routing SW4 with D4
+10:47:52: [INFO] Using internal autorouter method
+10:47:52: [INFO] Adding track segment (B.Cu): [(159702500, 52070000), (159702500, 57210000)]
+10:47:52: [INFO] Track added
+10:47:52: [INFO] Adding track segment (B.Cu): [(159702500, 57210000), (162242500, 59750000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Routing SW3a with D3
+10:47:53: [INFO] Using internal autorouter method
+10:47:53: [INFO] Routing SW3 with D3
+10:47:53: [INFO] Using internal autorouter method
+10:47:53: [INFO] Adding track segment (B.Cu): [(140652500, 52070000), (140652500, 57210000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(140652500, 57210000), (143192500, 59750000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Routing SW2 with D2
+10:47:53: [INFO] Using internal autorouter method
+10:47:53: [INFO] Adding track segment (B.Cu): [(121602500, 52070000), (121602500, 57210000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(121602500, 57210000), (124142500, 59750000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Routing SW1 with D1
+10:47:53: [INFO] Using internal autorouter method
+10:47:53: [INFO] Adding track segment (B.Cu): [(97790000, 52070000), (97790000, 57210000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(97790000, 57210000), (100330000, 59750000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(91440000, 54610000), (91440000, 83185000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(98583750, 121285000), (98583750, 135572500)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(98583750, 135572500), (93821250, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(93821250, 140335000), (93821250, 159385000)]
+10:47:53: [INFO] Adding track segment (F.Cu): [(91440000, 83185000), (91440000, 97472500)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(91440000, 97472500), (96202500, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(93821250, 159385000), (96202500, 159385000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(96202500, 102235000), (96202500, 118903750)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(96202500, 118903750), (98583750, 121285000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(93821250, 140335000), (103346250, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(239077500, 121285000), (239077500, 130810000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(239077500, 130810000), (229552500, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(224790000, 83185000), (234315000, 73660000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(234315000, 73660000), (234315000, 54610000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(224790000, 83185000), (224790000, 92710000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(224790000, 92710000), (234315000, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(234315000, 102235000), (234315000, 116522500)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(234315000, 116522500), (239077500, 121285000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(100330000, 91125000), (119380000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(119380000, 91125000), (138430000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(138430000, 91125000), (157480000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(157480000, 91125000), (176530000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(176530000, 91125000), (195580000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(195580000, 91125000), (214630000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(214630000, 91125000), (233680000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(233680000, 91125000), (252730000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(252730000, 91125000), (271780000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(271780000, 91125000), (290830000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(290830000, 91125000), (309880000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(309880000, 91125000), (328930000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(328930000, 91125000), (347980000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(347980000, 91125000), (357505000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(357505000, 91125000), (390842500, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(390842500, 91125000), (409892500, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(409892500, 91125000), (428942500, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(428942500, 91125000), (452755000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(452755000, 91125000), (471805000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(471805000, 91125000), (490855000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (B.Cu): [(490855000, 91125000), (509905000, 91125000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(443865000, 83185000), (443865000, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(443865000, 102235000), (443865000, 121285000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(443865000, 121285000), (443865000, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(443865000, 140335000), (443865000, 159385000)]
+10:47:53: [INFO] Adding track segment (F.Cu): [(315277500, 121285000), (315277500, 130810000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(315277500, 130810000), (305752500, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(305752500, 140335000), (305752500, 159385000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(305752500, 159385000), (308133750, 159385000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(300990000, 83185000), (300990000, 92710000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(300990000, 92710000), (310515000, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(308133750, 159385000), (310515000, 159385000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(300990000, 83185000), (315277500, 68897500)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(315277500, 68897500), (315277500, 54610000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(310515000, 102235000), (310515000, 116522500)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(310515000, 116522500), (315277500, 121285000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(315277500, 54610000), (320040000, 54610000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(462915000, 102235000), (462915000, 83185000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(462915000, 121285000), (462915000, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(462915000, 140335000), (462915000, 121285000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(462915000, 159385000), (462915000, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(453390000, 159385000), (462915000, 159385000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(381952500, 54610000), (381952500, 83185000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(381952500, 83185000), (381952500, 102235000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(277177500, 121285000), (277177500, 130810000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(277177500, 130810000), (267652500, 140335000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(262890000, 83185000), (272415000, 73660000)]
+10:47:53: [INFO] Track added
+10:47:53: [INFO] Adding track segment (F.Cu): [(272415000, 73660000), (272415000, 54610000)]
+10:47:53: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(262890000, 83185000), (262890000, 92710000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(262890000, 92710000), (272415000, 102235000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(272415000, 54610000), (277177500, 54610000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(272415000, 102235000), (272415000, 116522500)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(272415000, 116522500), (277177500, 121285000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(267652500, 140335000), (267652500, 149860000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(267652500, 149860000), (277177500, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(277177500, 159385000), (284321250, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(284321250, 159385000), (286702500, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(331946250, 140335000), (324802500, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(320040000, 83185000), (320040000, 92710000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(320040000, 92710000), (329565000, 102235000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(331946250, 159385000), (329565000, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(331946250, 140335000), (331946250, 159385000)]
+10:47:54: [INFO] Adding track segment (F.Cu): [(320040000, 83185000), (334327500, 68897500)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(334327500, 68897500), (334327500, 54610000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(329565000, 102235000), (329565000, 116522500)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(329565000, 116522500), (334327500, 121285000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(334327500, 54610000), (339090000, 54610000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(107473750, 129225000), (133667500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(133667500, 129225000), (152717500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(152717500, 129225000), (171767500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(171767500, 129225000), (190817500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(190817500, 129225000), (209867500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(209867500, 129225000), (228917500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(228917500, 129225000), (247967500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(247967500, 129225000), (267017500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(267017500, 129225000), (286067500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(286067500, 129225000), (305117500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(305117500, 129225000), (324167500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(324167500, 129225000), (343217500, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(343217500, 129225000), (355123750, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(355123750, 129225000), (452755000, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(452755000, 129225000), (471805000, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(471805000, 129225000), (490855000, 129225000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(186690000, 54610000), (186690000, 83185000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(200977500, 121285000), (200977500, 130810000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(200977500, 130810000), (191452500, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(186690000, 54610000), (196215000, 54610000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(186690000, 83185000), (186690000, 92710000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(186690000, 92710000), (196215000, 102235000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(196215000, 102235000), (196215000, 116522500)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(196215000, 116522500), (200977500, 121285000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(401002500, 54610000), (401002500, 83185000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(401002500, 83185000), (401002500, 102235000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(401002500, 102235000), (401002500, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(401002500, 140335000), (401002500, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(105092500, 167325000), (128905000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(128905000, 167325000), (152717500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(152717500, 167325000), (183673750, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(183673750, 167325000), (233680000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(233680000, 167325000), (255111250, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(255111250, 167325000), (293211250, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(293211250, 167325000), (314642500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(314642500, 167325000), (338455000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(338455000, 167325000), (362267500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(362267500, 167325000), (390842500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(390842500, 167325000), (409892500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(409892500, 167325000), (428942500, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(428942500, 167325000), (452755000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(452755000, 167325000), (462280000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(462280000, 167325000), (490855000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (B.Cu): [(490855000, 167325000), (509905000, 167325000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(346233750, 121285000), (346233750, 135572500)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(346233750, 135572500), (341471250, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(341471250, 140335000), (350996250, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(353377500, 159385000), (355758750, 159385000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(129540000, 54610000), (129540000, 83185000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(129540000, 54610000), (134302500, 54610000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(143827500, 121285000), (143827500, 130810000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(143827500, 130810000), (134302500, 140335000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(129540000, 83185000), (129540000, 92710000)]
+10:47:54: [INFO] Track added
+10:47:54: [INFO] Adding track segment (F.Cu): [(129540000, 92710000), (139065000, 102235000)]
+10:47:54: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(134302500, 140335000), (134302500, 152241250)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(134302500, 152241250), (141446250, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(139065000, 102235000), (139065000, 116522500)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(139065000, 116522500), (143827500, 121285000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(141446250, 159385000), (143827500, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(246221250, 159385000), (243840000, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(248602500, 159385000), (246221250, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(258127500, 121285000), (258127500, 130810000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(258127500, 130810000), (248602500, 140335000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(248602500, 140335000), (248602500, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(243840000, 83185000), (253365000, 73660000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(253365000, 73660000), (253365000, 54610000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(243840000, 83185000), (243840000, 92710000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(243840000, 92710000), (253365000, 102235000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(253365000, 102235000), (253365000, 116522500)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(253365000, 116522500), (258127500, 121285000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(296227500, 121285000), (296227500, 130810000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(296227500, 130810000), (286702500, 140335000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(281940000, 83185000), (281940000, 92710000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(281940000, 92710000), (291465000, 102235000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(281940000, 83185000), (296227500, 68897500)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(296227500, 68897500), (296227500, 54610000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(291465000, 102235000), (291465000, 116522500)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(291465000, 116522500), (296227500, 121285000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(296227500, 54610000), (300990000, 54610000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(358140000, 83185000), (358140000, 54610000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(348615000, 83185000), (358140000, 83185000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(358140000, 140335000), (362902500, 140335000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(362902500, 140335000), (381952500, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(167640000, 54610000), (167640000, 83185000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(167640000, 54610000), (172402500, 54610000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(181927500, 121285000), (181927500, 130810000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(181927500, 130810000), (172402500, 140335000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(172402500, 140335000), (172402500, 159385000)]
+10:47:55: [INFO] Adding track segment (F.Cu): [(172402500, 159385000), (174783750, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(167640000, 83185000), (167640000, 92710000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(167640000, 92710000), (177165000, 102235000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(177165000, 102235000), (177165000, 116522500)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(177165000, 116522500), (181927500, 121285000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(174783750, 159385000), (181927500, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(181927500, 159385000), (186690000, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 83185000), (501015000, 102235000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 102235000), (501015000, 111760000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 111760000), (501015000, 121285000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 121285000), (501015000, 140335000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 140335000), (501015000, 149860000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(501015000, 149860000), (501015000, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(100330000, 62550000), (124142500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(124142500, 62550000), (143192500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(143192500, 62550000), (162242500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(162242500, 62550000), (181292500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(181292500, 62550000), (205105000, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(205105000, 62550000), (224155000, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(224155000, 62550000), (243205000, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(243205000, 62550000), (262255000, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(262255000, 62550000), (286067500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(286067500, 62550000), (305117500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(305117500, 62550000), (324167500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(324167500, 62550000), (343217500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(343217500, 62550000), (367030000, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(367030000, 62550000), (390842500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(390842500, 62550000), (409892500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (B.Cu): [(409892500, 62550000), (428942500, 62550000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(210502500, 159385000), (208121250, 159385000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(220027500, 121285000), (220027500, 130810000)]
+10:47:55: [INFO] Track added
+10:47:55: [INFO] Adding track segment (F.Cu): [(220027500, 130810000), (210502500, 140335000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(210502500, 140335000), (210502500, 159385000)]
+10:47:56: [INFO] Adding track segment (F.Cu): [(210502500, 159385000), (212883750, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(205740000, 83185000), (215265000, 73660000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(215265000, 73660000), (215265000, 54610000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(205740000, 83185000), (205740000, 92710000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(205740000, 92710000), (215265000, 102235000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(212883750, 159385000), (215265000, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(215265000, 102235000), (215265000, 116522500)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(215265000, 116522500), (220027500, 121285000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(215265000, 159385000), (224790000, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(481965000, 83185000), (481965000, 102235000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(481965000, 102235000), (481965000, 121285000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(481965000, 121285000), (481965000, 140335000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(481965000, 140335000), (481965000, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(420052500, 54610000), (420052500, 83185000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(420052500, 83185000), (420052500, 102235000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(420052500, 102235000), (420052500, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(112236250, 148275000), (124142500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(124142500, 148275000), (143192500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(143192500, 148275000), (162242500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(162242500, 148275000), (181292500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(181292500, 148275000), (200342500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(200342500, 148275000), (219392500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(219392500, 148275000), (238442500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(238442500, 148275000), (257492500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(257492500, 148275000), (276542500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(276542500, 148275000), (295592500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(295592500, 148275000), (314642500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(314642500, 148275000), (340836250, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(340836250, 148275000), (350361250, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(350361250, 148275000), (367030000, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(367030000, 148275000), (409892500, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(409892500, 148275000), (452755000, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(452755000, 148275000), (471805000, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(471805000, 148275000), (490855000, 148275000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(110490000, 83185000), (115252500, 78422500)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(115252500, 78422500), (115252500, 54610000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(115252500, 140335000), (115252500, 157003750)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(115252500, 157003750), (117633750, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(110490000, 83185000), (110490000, 92710000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(110490000, 92710000), (120015000, 102235000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(117633750, 159385000), (120015000, 159385000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(120015000, 102235000), (120015000, 116522500)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(120015000, 116522500), (124777500, 121285000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(148590000, 54610000), (148590000, 83185000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(148590000, 54610000), (153352500, 54610000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(162877500, 121285000), (162877500, 130810000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(162877500, 130810000), (153352500, 140335000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(148590000, 83185000), (148590000, 92710000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(148590000, 92710000), (158115000, 102235000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(158115000, 102235000), (158115000, 116522500)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (F.Cu): [(158115000, 116522500), (162877500, 121285000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(105092500, 110175000), (128905000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(128905000, 110175000), (147955000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(147955000, 110175000), (167005000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(167005000, 110175000), (186055000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(186055000, 110175000), (205105000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(205105000, 110175000), (224155000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(224155000, 110175000), (243205000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(243205000, 110175000), (262255000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(262255000, 110175000), (281305000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(281305000, 110175000), (300355000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(300355000, 110175000), (319405000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(319405000, 110175000), (338455000, 110175000)]
+10:47:56: [INFO] Track added
+10:47:56: [INFO] Adding track segment (B.Cu): [(338455000, 110175000), (362267500, 110175000)]
+10:47:56: [INFO] Adding track segment (B.Cu): [(364648750, 119700000), (381317500, 119700000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(381317500, 119700000), (390842500, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(390842500, 110175000), (409892500, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(409892500, 110175000), (428942500, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(428942500, 110175000), (452755000, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(452755000, 110175000), (471805000, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(471805000, 110175000), (490855000, 110175000)]
+10:47:57: [INFO] Track added
+10:47:57: [INFO] Adding track segment (B.Cu): [(490855000, 110175000), (509905000, 110175000)]
+10:47:57: [INFO] Removing dangling tracks
