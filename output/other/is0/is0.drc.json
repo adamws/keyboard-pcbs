@@ -1,0 +1,102 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-22T14:37:54+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "731c06d5-9631-416e-9ab6-e7fb8c434ba4"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        }
+    ],
+    "source": "is0.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "4901b2ce-ac98-46df-b2d1-7a45fb46e4a7"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST1",
+                    "pos": {
+                        "x": 40.1,
+                        "y": 57.15
+                    },
+                    "uuid": "9b03ecab-9a4f-46e4-aa9e-8c32bd8494da"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "731c06d5-9631-416e-9ab6-e7fb8c434ba4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "dedba003-1ca7-48f4-9430-e2bf872ea332"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 61.15
+                    },
+                    "uuid": "3caefc83-e7df-4ed2-8bb0-39c6d025ff99"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

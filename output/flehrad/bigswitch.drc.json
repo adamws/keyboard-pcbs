@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-22T14:38:16+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Missing footprint ST1 (SW_stab)",
+            "items": [],
+            "severity": "warning",
+            "type": "missing_footprint"
+        }
+    ],
+    "source": "bigswitch.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "0a99d760-3868-4eb0-9019-c40170d5ff98"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 76.2
+                    },
+                    "uuid": "1a03a3aa-89f8-4c72-87b4-2129f81b0359"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 80.2
+                    },
+                    "uuid": "b7e80ea7-189b-47c9-b0d8-ea390871daf3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}
