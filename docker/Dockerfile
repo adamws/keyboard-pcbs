@@ -36,9 +36,9 @@ RUN git clone https://github.com/adamws/kicad-kbplacer.git \
   && cd kicad-kbplacer \
   && git checkout $KBPLACER_REVISION \
   && python -m pip install .[schematic] \
-  && python -m pip install PyYAML==6.0.1 colormath==3.0.0 drawsvg==2.3.0
+  && python -m pip install PyYAML==6.0.3 colormath==3.0.0 drawsvg==2.4.2
 
-RUN python -m pip install yq scour==0.38.2 yq lzstring==1.0.4 Jinja2==3.1.3
+RUN python -m pip install yq scour==0.38.2 yq lzstring==1.0.4 Jinja2==3.1.6
 
 COPY kbplacer-generate.sh /usr/bin
 
