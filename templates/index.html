@@ -72,15 +72,39 @@
         display: grid;
         box-sizing: border-box;
         grid-template-columns: 1fr 3fr;
+        align-items: center;
+        row-gap: 8px;
+        margin-bottom: 24px;
+    }
+    #kb-filters h5 {
+        margin: 0;
+    }
+    #kb-filters label {
+        margin-bottom: 0;
     }
     #kb-filters-label {
-        margin-top: 12px;
+        padding-top: 25px;
     }
     #kb-tags {
         display: flex;
     }
     #kb-encoder-tags {
         display: flex;
+    }
+    #kb-sort {
+        display: flex;
+    }
+    .kb-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 24px;
+    }
+    .kb-links {
+        margin-bottom: 4px;
+    }
+    .kb-dates {
+        color: var(--muted-color);
     }
     .kb-tag-label {
         margin-right: 24px;
@@ -93,6 +117,9 @@
     }
     .row3 {
         grid-row: 3;
+    }
+    .row4 {
+        grid-row: 4;
     }
     #backToTopBtn {
         display: none;
@@ -145,16 +172,33 @@
             Without
           </label>
         </div>
+        <h5 class="row4">Sort by:</h5>
+        <div class="row4" id="kb-sort">
+          {% set sort_options = [('name', 'Name'), ('added', 'Newest added'), ('modified', 'Recently modified')] %}
+          {% for value, label in sort_options %}
+          <label class="kb-tag-label" for="sort_{{ value }}">
+            <input type="radio" name="sort_order" id="sort_{{ value }}" class="sort-radio" value="{{ value }}"{% if loop.first %} checked{% endif %}>
+            {{ label }}
+          </label>
+          {% endfor %}
+        </div>
       </div>
+      <div id="kb-list">
       {% for k in keyboards %}
-        <div class="kb-div" data-value="{{ k.total_keys }}" data-tags="{{ k.tags|lower }}">
+        <div class="kb-div" data-value="{{ k.total_keys }}" data-tags="{{ k.tags|lower }}"
+             data-name="{{ loop.index0 }}" data-added="{{ k.added }}" data-modified="{{ k.modified }}">
           <hgroup style="margin-bottom: 0px;">
             <h4>{{ k.header }}</h4>
-            <ul class="kb-links">
-            {% for name, link in k.links.items() %}
-            <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
-            {% endfor %}
-            </ul>
+            <div class="kb-meta">
+              <ul class="kb-links">
+              {% for name, link in k.links.items() %}
+              <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+              {% endfor %}
+              </ul>
+              {% if k.added %}
+              <small class="kb-dates">Added {{ k.added[:10] }}, modified {{ k.modified[:10] }}</small>
+              {% endif %}
+            </div>
           </hgroup>
           <img src="{{ k.image_path }}" loading="lazy">
 
@@ -170,6 +214,7 @@
           {% endif %}
         </div>
       {% endfor %}
+      </div>
       <footer>
         <small>Built for revision {{ revision }}</small>
       </footer>
@@ -260,7 +305,29 @@
             radio.addEventListener('change', filterDivs);
         });
 
+        // dates are ISO 8601 UTC strings, so they compare lexicographically;
+        // 'name' holds the position in the (already name sorted) initial list
+        function sortDivs() {
+            var key = document.querySelector('input[name="sort_order"]:checked').value;
+            var list = document.getElementById('kb-list');
+            var divs = Array.prototype.slice.call(list.querySelectorAll('.kb-div'));
+            divs.sort(function (a, b) {
+                var nameOrder = parseInt(a.dataset.name, 10) - parseInt(b.dataset.name, 10);
+                if (key === 'name') return nameOrder;
+                var x = a.dataset[key], y = b.dataset[key];
+                if (x === y) return nameOrder;
+                return x < y ? 1 : -1;
+            });
+            divs.forEach(function (div) { list.appendChild(div); });
+        }
+
+        var sortRadios = document.querySelectorAll('.sort-radio');
+        sortRadios.forEach(function (radio) {
+            radio.addEventListener('change', sortDivs);
+        });
+
         // call once for initial display:
+        sortDivs();
         filterDivs();
 
         var backToTopBtn = document.getElementById('backToTopBtn');

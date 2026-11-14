@@ -50,7 +50,11 @@ def is_iso_enter(key: Key) -> bool:
 
 
 def clone(destination: str) -> None:
-    p = subprocess.Popen(["git", "clone", "--depth", "1", REPOSITORY_URL, destination])
+    # blobless clone keeps full commit history (needed for layout dates)
+    # without downloading file contents of old revisions
+    p = subprocess.Popen(
+        ["git", "clone", "--filter=blob:none", REPOSITORY_URL, destination]
+    )
     p.communicate()
     assert p.returncode == 0
 
@@ -66,6 +70,27 @@ def git_repository_sha(path):
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"Error executing Git command: {e}")
     return git_hash.decode("utf-8")
+
+
+def layout_dates(path) -> Dict[str, Dict[str, str]]:
+    """Return {"v3/...json": {"added": iso, "modified": iso}} from git history."""
+    log = subprocess.check_output(
+        ["git", "log", "--format=%x00%ct", "--name-only", "--", "v3"],
+        cwd=path,
+        text=True,
+    )
+    dates: Dict[str, Dict[str, str]] = {}
+    timestamp = ""
+    # log is ordered newest first, so first occurrence of a file is its last
+    # modification and the last occurrence is when it was added
+    for line in log.splitlines():
+        if line.startswith("\0"):
+            ts = datetime.datetime.fromtimestamp(int(line[1:]), datetime.timezone.utc)
+            timestamp = ts.strftime("%Y-%m-%dT%H:%M:%SZ")
+        elif line:
+            entry = dates.setdefault(line, {"modified": timestamp})
+            entry["added"] = timestamp
+    return dates
 
 
 def create_result_dir(tempdir, output: Path, layout_file: str):
@@ -132,7 +157,7 @@ def load_keyboard(layout_file: str) -> MatrixAnnotatedKeyboard:
         return keyboard
 
 
-def process_layout(tempdir, output, layout_files: List[str]):
+def process_layout(tempdir, output, dates, layout_files: List[str]):
     layout_file = layout_files[0]
     logger.info(f"Processing: {layout_file}")
 
@@ -158,6 +183,7 @@ def process_layout(tempdir, output, layout_files: List[str]):
                             d.removeprefix(f"{tempdir}/v3/").removesuffix(".json")
                             for d in layout_files[1:]
                         ],
+                        **dates.get(str(Path(layout_file).relative_to(tempdir)), {}),
                     }
                 )
             )
@@ -261,8 +287,10 @@ def generate_images(output: Path, part: int, num_parts: int):
         with open(output.parent / "revision.txt", "w") as f:
             f.write(git_repository_sha(tempdir))
 
+        dates = layout_dates(tempdir)
+
         with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
-            process_layout_partial = partial(process_layout, tempdir, output)
+            process_layout_partial = partial(process_layout, tempdir, output, dates)
             executor.map(process_layout_partial, layouts)
 
 
@@ -331,6 +359,8 @@ def generate_index(output: Path, fix_links: bool = False):
                 "total_keys": total_keys,
                 "tags": ", ".join(metadata["tags"]),
                 "duplicates": metadata["duplicates"],
+                "added": metadata.get("added", ""),
+                "modified": metadata.get("modified", ""),
                 "image_path": build_link(output, layout_svg, fix_links),
             }
         )
