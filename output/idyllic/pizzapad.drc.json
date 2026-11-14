@@ -1,0 +1,676 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-14T18:33:51+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Pad net (Net-(D1-A)) doesn't match net given by schematic (/Net-(D1-A)).",
+            "items": [
+                {
+                    "description": "Pad 2 [Net-(D1-A)] of D1 on B.Cu",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 59.75
+                    },
+                    "uuid": "2f227cf7-7fca-45a9-9907-2bf20e92287f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (Net-(D1-A)) doesn't match net given by schematic (/Net-(D1-A)).",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D1-A)] of SW1",
+                    "pos": {
+                        "x": 40.64,
+                        "y": 52.07
+                    },
+                    "uuid": "4fe8876a-2c0d-485a-8afd-43cfccc7b029"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Missing footprint SW1_1 (RotaryEncoder_Switch)",
+            "items": [],
+            "severity": "warning",
+            "type": "missing_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint SW1a",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 54.65
+                    },
+                    "uuid": "f2bd57fe-3fb7-4bd4-9d69-3a9c85b33437"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "pizzapad.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [COL0] on F.Cu, length 3.2000 mm",
+                    "pos": {
+                        "x": 45.1,
+                        "y": 59.65
+                    },
+                    "uuid": "c19ed71d-6b82-4284-b790-d1280b2a8d92"
+                },
+                {
+                    "description": "PTH pad 1 [COL0] of SW1",
+                    "pos": {
+                        "x": 34.29,
+                        "y": 54.61
+                    },
+                    "uuid": "a13645bb-a4d1-44ec-ab64-14ec60cd9c8f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D1-A)] of SW1",
+                    "pos": {
+                        "x": 40.64,
+                        "y": 52.07
+                    },
+                    "uuid": "4fe8876a-2c0d-485a-8afd-43cfccc7b029"
+                },
+                {
+                    "description": "PTH pad MP [<no net>] of SW1a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 51.55
+                    },
+                    "uuid": "22b6717c-d769-4a0b-bb2f-3d6855cb12b0"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D1-A)] of SW1",
+                    "pos": {
+                        "x": 40.64,
+                        "y": 52.07
+                    },
+                    "uuid": "4fe8876a-2c0d-485a-8afd-43cfccc7b029"
+                },
+                {
+                    "description": "PTH pad MP [<no net>] of SW1a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 51.55
+                    },
+                    "uuid": "22b6717c-d769-4a0b-bb2f-3d6855cb12b0"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "ec00bc53-a7b9-4a77-968e-10057d4ccbec"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "2d53ff97-801b-4094-bf27-f4d3e4664cdd"
+                },
+                {
+                    "description": "Footprint SW1a",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 54.65
+                    },
+                    "uuid": "f2bd57fe-3fb7-4bd4-9d69-3a9c85b33437"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1869 mm)",
+            "items": [
+                {
+                    "description": "PTH pad S1 [COL0] of SW1a",
+                    "pos": {
+                        "x": 45.1,
+                        "y": 59.65
+                    },
+                    "uuid": "c51fa8e0-7293-4d48-bdcd-1b16deeb4807"
+                },
+                {
+                    "description": "Track [Net-(D1-A)] on B.Cu, length 2.7153 mm",
+                    "pos": {
+                        "x": 45.1,
+                        "y": 57.83
+                    },
+                    "uuid": "cdabfcce-3e71-4371-b3a0-b25ff1eaef2b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D1-A)] of SW1",
+                    "pos": {
+                        "x": 40.64,
+                        "y": 52.07
+                    },
+                    "uuid": "4fe8876a-2c0d-485a-8afd-43cfccc7b029"
+                },
+                {
+                    "description": "PTH pad MP [<no net>] of SW1a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 51.55
+                    },
+                    "uuid": "22b6717c-d769-4a0b-bb2f-3d6855cb12b0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW1a on F.Silkscreen",
+                    "pos": {
+                        "x": 30.3,
+                        "y": 53.05
+                    },
+                    "uuid": "1dd4ac9a-b20a-4cf5-8b17-94c7a13c7489"
+                },
+                {
+                    "description": "Segment of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 50.05
+                    },
+                    "uuid": "31fd1e2c-c976-4cf3-86d5-8da1aa82a4a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW1a on F.Silkscreen",
+                    "pos": {
+                        "x": 30.9,
+                        "y": 53.05
+                    },
+                    "uuid": "097b9d22-b0f5-4457-ab00-d658d5edb6ed"
+                },
+                {
+                    "description": "Segment of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 50.05
+                    },
+                    "uuid": "31fd1e2c-c976-4cf3-86d5-8da1aa82a4a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 50.05
+                    },
+                    "uuid": "89bf395f-17f0-49c2-80b5-5267f408e4ea"
+                },
+                {
+                    "description": "Reference field of SW1a",
+                    "pos": {
+                        "x": 33.4,
+                        "y": 49.95
+                    },
+                    "uuid": "eda500fa-d16d-4328-bbe0-721431a34e68"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 50.05
+                    },
+                    "uuid": "31fd1e2c-c976-4cf3-86d5-8da1aa82a4a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 64.25
+                    },
+                    "uuid": "8832b60e-5b37-41fa-8908-2e8619f0ff6f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW1a on F.Silkscreen",
+                    "pos": {
+                        "x": 37.6,
+                        "y": 57.15
+                    },
+                    "uuid": "4d4f869a-1bb1-412a-85c7-e6edf92beb98"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW1a on F.Silkscreen",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 56.65
+                    },
+                    "uuid": "bf65857d-9136-48c4-894a-b54adff16f51"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW1a on F.Silkscreen",
+                    "pos": {
+                        "x": 40.1,
+                        "y": 51.25
+                    },
+                    "uuid": "4109e260-981e-411f-bf92-1270f12bd2c5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D1",
+                    "pos": {
+                        "x": 45.085,
+                        "y": 61.277
+                    },
+                    "uuid": "c2eec75b-2bcc-4dd7-bcaf-c99ce4bb128b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of D1 on B.Silkscreen",
+                    "pos": {
+                        "x": 44.18,
+                        "y": 63.36
+                    },
+                    "uuid": "ad1f831b-b7eb-4651-a878-b2714baf7987"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 57.15
+                    },
+                    "uuid": "043c93da-c870-4f62-8e77-3f9c52b7e61b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "2d53ff97-801b-4094-bf27-f4d3e4664cdd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW4",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 76.2
+                    },
+                    "uuid": "2ffcd9a1-f3f9-4903-b077-62df6bb9554b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW6",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 76.2
+                    },
+                    "uuid": "410b164e-a71c-426c-bdb4-5045d30dcfe7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 57.15
+                    },
+                    "uuid": "638657f3-933f-43bc-b452-de47bf268f7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW8",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 95.25
+                    },
+                    "uuid": "9cd83313-2ace-4612-928d-1645d1b762f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW7",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 95.25
+                    },
+                    "uuid": "c3dadc87-a818-4b10-b908-03b03edd10ab"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW9",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 95.25
+                    },
+                    "uuid": "d171d988-26ea-4dc6-a13a-5e2099400421"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW5",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 76.2
+                    },
+                    "uuid": "f07b90fa-14e5-4067-87f8-7f6c12a81eb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Rotary_Encoder'.",
+            "items": [
+                {
+                    "description": "Footprint SW1a",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 54.65
+                    },
+                    "uuid": "f2bd57fe-3fb7-4bd4-9d69-3a9c85b33437"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D5",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 80.2
+                    },
+                    "uuid": "38f73c95-9f24-4233-a69b-984b15dbfd2f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 61.15
+                    },
+                    "uuid": "8055688b-a1ee-4fb4-88ab-0bff2275b081"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D7",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 99.25
+                    },
+                    "uuid": "8468f7ec-85d2-458b-83be-e0bebb80af62"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D6",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 80.2
+                    },
+                    "uuid": "879daecd-e34e-40f3-960c-6d3a907eca4f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 61.15
+                    },
+                    "uuid": "9d3a5e3d-34e0-48bb-ad2a-ba9c38be4ce8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 61.15
+                    },
+                    "uuid": "d9630ac2-be20-44b5-b2fa-b3fc941e2986"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D9",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 99.25
+                    },
+                    "uuid": "eda473d5-ad24-4d57-8675-702c651b9716"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D4",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 80.2
+                    },
+                    "uuid": "eeb3da7c-9c29-4788-86de-fb6f689db0ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D8",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 99.25
+                    },
+                    "uuid": "f6e54bed-8e16-4f59-a31d-9552ac55ab97"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}
