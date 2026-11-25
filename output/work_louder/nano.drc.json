@@ -1,0 +1,186 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-25T19:58:21+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Pad missing net given by schematic (unconnected-(SW1-PadA)).",
+            "items": [
+                {
+                    "description": "PTH pad A [<no net>] of SW1",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 35.6
+                    },
+                    "uuid": "8c653637-e9e7-404f-92ab-b7373a7d3c7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(SW1-PadB)).",
+            "items": [
+                {
+                    "description": "PTH pad B [<no net>] of SW1",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 40.6
+                    },
+                    "uuid": "81c381f4-2de2-4322-aaa7-b7c4269dc9ab"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(SW1-PadC)).",
+            "items": [
+                {
+                    "description": "PTH pad C [<no net>] of SW1",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 38.1
+                    },
+                    "uuid": "cb61b285-82a2-40ca-884f-c215c8e47531"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        }
+    ],
+    "source": "nano.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [ROW0] of D1 on B.Cu",
+                    "pos": {
+                        "x": 35.68,
+                        "y": 41.0
+                    },
+                    "uuid": "b49c9cc3-9b81-470b-8e16-70e85ca74e43"
+                },
+                {
+                    "description": "Track [ROW0] on B.Cu, length 19.0500 mm",
+                    "pos": {
+                        "x": 66.9925,
+                        "y": 43.5
+                    },
+                    "uuid": "339bf456-fa9f-41b7-af13-54b2208c1200"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "b3907124-ab8c-4dda-b112-e8b9d582d994"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 61.9125,
+                        "y": 38.1
+                    },
+                    "uuid": "1355f92b-4365-4c06-a095-2d79dfb287c9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 80.9625,
+                        "y": 38.1
+                    },
+                    "uuid": "68cde820-6857-4805-b312-07934e1bec32"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Rotary_Encoder'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 30.6,
+                        "y": 35.6
+                    },
+                    "uuid": "eebe2e35-343a-4d4a-8811-91bedfe33c7e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 66.9925,
+                        "y": 42.1
+                    },
+                    "uuid": "60f8c809-37ef-420e-9e3a-bdd1d235b228"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 35.68,
+                        "y": 39.6
+                    },
+                    "uuid": "e1a900b4-96c4-41f6-b41a-eecaa9d5dc45"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 86.0425,
+                        "y": 42.1
+                    },
+                    "uuid": "ebd90f67-00e8-4965-be82-c3830c84ce12"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

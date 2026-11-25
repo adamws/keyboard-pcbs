@@ -1,0 +1,1957 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-25T19:51:50+0000",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 104.775
+                    },
+                    "uuid": "8d58c55a-52a5-4292-9682-737759167773"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Footprint attributes don't match symbol: 'Exclude from bill of materials' settings differ.",
+            "items": [
+                {
+                    "description": "Footprint ST17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 114.3
+                    },
+                    "uuid": "b777aa8d-6078-4277-b6fb-7de0aad643a8"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Missing footprint SW16_1 (SW_Push)",
+            "items": [],
+            "severity": "warning",
+            "type": "missing_footprint"
+        },
+        {
+            "description": "Missing footprint SW17_1 (SW_Push)",
+            "items": [],
+            "severity": "warning",
+            "type": "missing_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint SW17a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 114.3
+                    },
+                    "uuid": "22a32257-deed-4d43-af8e-9cb5e68e7ea1"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint SW16a",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 95.25
+                    },
+                    "uuid": "7c8ac55b-8d1e-44ad-ae3a-6773b8680a15"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "launch_pad.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [COL0] on F.Cu, length 19.0500 mm",
+                    "pos": {
+                        "x": 34.29,
+                        "y": 73.66
+                    },
+                    "uuid": "53e18a45-3e3f-4160-91f0-97e0b8688fe7"
+                },
+                {
+                    "description": "Track [COL0] on F.Cu, length 9.5250 mm",
+                    "pos": {
+                        "x": 34.29,
+                        "y": 111.76
+                    },
+                    "uuid": "4c81ca8d-a5d3-47a4-9d69-81ac9fa400ed"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(D17-A)] on B.Cu, length 5.1400 mm",
+                    "pos": {
+                        "x": 50.165,
+                        "y": 109.22
+                    },
+                    "uuid": "8ecd39cb-80bf-4033-9aa5-050fd3dd32f8"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D17-A)] of SW17a",
+                    "pos": {
+                        "x": 40.64,
+                        "y": 109.22
+                    },
+                    "uuid": "d40047a7-3a96-45a7-8994-065bb2b2678f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [ROW3] of D16 on B.Cu",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 110.175
+                    },
+                    "uuid": "287d32eb-48b8-4b8a-bf9f-75a512ef5116"
+                },
+                {
+                    "description": "Track [ROW3] on B.Cu, length 19.0500 mm",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 100.65
+                    },
+                    "uuid": "bdf2d813-7771-4317-9e79-9b66dea12ec4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of ST16",
+                    "pos": {
+                        "x": 102.235,
+                        "y": 116.713
+                    },
+                    "uuid": "edaaf58c-7efe-49f2-b90c-55baa7e16ae2"
+                },
+                {
+                    "description": "Pad 2 [Net-(D20-A)] of D20 on B.Cu",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 116.9
+                    },
+                    "uuid": "021c244e-d7ff-45d3-b059-b3d09e412461"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of ST17",
+                    "pos": {
+                        "x": 59.563,
+                        "y": 107.315
+                    },
+                    "uuid": "ab773df7-3f56-434a-98a9-7b258ee179b2"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D18-A)] of SW18",
+                    "pos": {
+                        "x": 59.69,
+                        "y": 109.22
+                    },
+                    "uuid": "0e455a33-a6e0-4d43-a8c3-7a0a879d3e5c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "NPTH pad of ST17",
+                    "pos": {
+                        "x": 59.563,
+                        "y": 107.315
+                    },
+                    "uuid": "ab773df7-3f56-434a-98a9-7b258ee179b2"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(D18-A)] of SW18",
+                    "pos": {
+                        "x": 59.69,
+                        "y": 109.22
+                    },
+                    "uuid": "0e455a33-a6e0-4d43-a8c3-7a0a879d3e5c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "baa65331-294f-4c1a-82c2-597694ba9d0e"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW17a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 114.3
+                    },
+                    "uuid": "22a32257-deed-4d43-af8e-9cb5e68e7ea1"
+                },
+                {
+                    "description": "Footprint SW17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 114.3
+                    },
+                    "uuid": "ababd3d0-6267-4692-8fff-d453d8822780"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW18",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 114.3
+                    },
+                    "uuid": "29375734-8d81-4de2-bb26-b782e2e58dfd"
+                },
+                {
+                    "description": "Footprint SW17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 114.3
+                    },
+                    "uuid": "ababd3d0-6267-4692-8fff-d453d8822780"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW20",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 114.3
+                    },
+                    "uuid": "6d00cad3-747e-4fa9-b4aa-c231f923f39f"
+                },
+                {
+                    "description": "Footprint SW16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 104.775
+                    },
+                    "uuid": "7a3ee048-75e0-4aad-a3eb-27f985c3a070"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint SW16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 104.775
+                    },
+                    "uuid": "7a3ee048-75e0-4aad-a3eb-27f985c3a070"
+                },
+                {
+                    "description": "Footprint SW16a",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 95.25
+                    },
+                    "uuid": "7c8ac55b-8d1e-44ad-ae3a-6773b8680a15"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D18-A)] of SW18",
+                    "pos": {
+                        "x": 59.69,
+                        "y": 109.22
+                    },
+                    "uuid": "0e455a33-a6e0-4d43-a8c3-7a0a879d3e5c"
+                },
+                {
+                    "description": "NPTH pad of ST17",
+                    "pos": {
+                        "x": 59.563,
+                        "y": 107.315
+                    },
+                    "uuid": "ab773df7-3f56-434a-98a9-7b258ee179b2"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 121.4
+                    },
+                    "uuid": "ad54e464-581f-4f8a-a934-004501536f30"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 107.2
+                    },
+                    "uuid": "c2e43d1f-86b2-443e-b985-37c4a712af01"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 121.4
+                    },
+                    "uuid": "04fcea98-e72a-4c37-be83-bddc67b9bc21"
+                },
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 121.4
+                    },
+                    "uuid": "ad54e464-581f-4f8a-a934-004501536f30"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 107.2
+                    },
+                    "uuid": "c2e43d1f-86b2-443e-b985-37c4a712af01"
+                },
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 107.2
+                    },
+                    "uuid": "d501aace-b872-425d-aae2-909cf4d0f824"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 107.2
+                    },
+                    "uuid": "b7888318-a2d9-4742-9203-31d29d88c00e"
+                },
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 107.2
+                    },
+                    "uuid": "d501aace-b872-425d-aae2-909cf4d0f824"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 121.4
+                    },
+                    "uuid": "04fcea98-e72a-4c37-be83-bddc67b9bc21"
+                },
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 121.4
+                    },
+                    "uuid": "187d368a-2cb5-405e-9c79-57802ea3d03a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 121.4
+                    },
+                    "uuid": "187d368a-2cb5-405e-9c79-57802ea3d03a"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 107.2
+                    },
+                    "uuid": "b7888318-a2d9-4742-9203-31d29d88c00e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 121.4
+                    },
+                    "uuid": "c637d35a-70c2-4415-91bb-cc17ac7b7fb4"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 121.4
+                    },
+                    "uuid": "e204a041-8f67-4b10-a784-c19bbc2c2be8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 121.4
+                    },
+                    "uuid": "04fcea98-e72a-4c37-be83-bddc67b9bc21"
+                },
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 121.4
+                    },
+                    "uuid": "c637d35a-70c2-4415-91bb-cc17ac7b7fb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.25,
+                        "y": 107.2
+                    },
+                    "uuid": "7847bf17-91b0-4087-bcbe-1e574ebdd636"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 121.4
+                    },
+                    "uuid": "e204a041-8f67-4b10-a784-c19bbc2c2be8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.25,
+                        "y": 107.2
+                    },
+                    "uuid": "7847bf17-91b0-4087-bcbe-1e574ebdd636"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 107.2
+                    },
+                    "uuid": "b7888318-a2d9-4742-9203-31d29d88c00e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 121.4
+                    },
+                    "uuid": "04fcea98-e72a-4c37-be83-bddc67b9bc21"
+                },
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 107.2
+                    },
+                    "uuid": "7b0879a1-8690-4488-ba5c-2e124b55521f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 107.2
+                    },
+                    "uuid": "7b0879a1-8690-4488-ba5c-2e124b55521f"
+                },
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.725,
+                        "y": 107.2
+                    },
+                    "uuid": "b7888318-a2d9-4742-9203-31d29d88c00e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Reference field of SW20",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 106.3
+                    },
+                    "uuid": "6c28e215-7936-466e-be4c-86eea99a7888"
+                },
+                {
+                    "description": "Reference field of ST16",
+                    "pos": {
+                        "x": 97.25,
+                        "y": 104.775
+                    },
+                    "uuid": "c5b8ad8b-e49c-462d-80fb-5a7d1b529563"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 107.2
+                    },
+                    "uuid": "353f1955-9e9d-4298-8d67-64ea3c2b40a7"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 111.875
+                    },
+                    "uuid": "a12b32b9-9032-4ba3-a6e6-843d50a0e585"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 107.2
+                    },
+                    "uuid": "353f1955-9e9d-4298-8d67-64ea3c2b40a7"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 97.675
+                    },
+                    "uuid": "bd6ead61-44de-4624-a292-2d15969add98"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 107.2
+                    },
+                    "uuid": "0f20b86f-859e-4dbe-a7f6-8cdd2d8c7a73"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 97.675
+                    },
+                    "uuid": "bd6ead61-44de-4624-a292-2d15969add98"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 107.2
+                    },
+                    "uuid": "0f20b86f-859e-4dbe-a7f6-8cdd2d8c7a73"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 111.875
+                    },
+                    "uuid": "e74199c4-d459-48f3-8e4d-c20293e15d38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 121.4
+                    },
+                    "uuid": "8ca2ae86-63ad-4843-b7ce-7511ae29a170"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 111.875
+                    },
+                    "uuid": "a12b32b9-9032-4ba3-a6e6-843d50a0e585"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 121.4
+                    },
+                    "uuid": "8ca2ae86-63ad-4843-b7ce-7511ae29a170"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 111.875
+                    },
+                    "uuid": "e74199c4-d459-48f3-8e4d-c20293e15d38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 102.35
+                    },
+                    "uuid": "b705b1da-982c-418e-bb1a-1c818218df3b"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 97.675
+                    },
+                    "uuid": "bd6ead61-44de-4624-a292-2d15969add98"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 97.675
+                    },
+                    "uuid": "bd6ead61-44de-4624-a292-2d15969add98"
+                },
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 88.15
+                    },
+                    "uuid": "d96ffba0-76d3-4c32-90a5-aa7f64ff6ac1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 102.35
+                    },
+                    "uuid": "b705b1da-982c-418e-bb1a-1c818218df3b"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 111.875
+                    },
+                    "uuid": "e74199c4-d459-48f3-8e4d-c20293e15d38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 102.35
+                    },
+                    "uuid": "86d5d54a-872e-430e-98a5-bab1903b3e21"
+                },
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 111.875
+                    },
+                    "uuid": "e74199c4-d459-48f3-8e4d-c20293e15d38"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 97.675
+                    },
+                    "uuid": "2e9c8614-fce2-466b-8e87-5dd7485109e6"
+                },
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 102.35
+                    },
+                    "uuid": "86d5d54a-872e-430e-98a5-bab1903b3e21"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen overlap",
+            "items": [
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 97.675
+                    },
+                    "uuid": "2e9c8614-fce2-466b-8e87-5dd7485109e6"
+                },
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 88.15
+                    },
+                    "uuid": "d96ffba0-76d3-4c32-90a5-aa7f64ff6ac1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW17a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 106.3
+                    },
+                    "uuid": "31b33a2c-1dfe-4c0e-9962-0ce326a1b5eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 121.4
+                    },
+                    "uuid": "ad54e464-581f-4f8a-a934-004501536f30"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW17a on F.Silkscreen",
+                    "pos": {
+                        "x": 45.2,
+                        "y": 107.2
+                    },
+                    "uuid": "d501aace-b872-425d-aae2-909cf4d0f824"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW18",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 106.3
+                    },
+                    "uuid": "b9741f53-93d7-4b32-9791-28f850cb53f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 107.2
+                    },
+                    "uuid": "7b0879a1-8690-4488-ba5c-2e124b55521f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 50.05,
+                        "y": 121.4
+                    },
+                    "uuid": "c637d35a-70c2-4415-91bb-cc17ac7b7fb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW18 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.25,
+                        "y": 107.2
+                    },
+                    "uuid": "7847bf17-91b0-4087-bcbe-1e574ebdd636"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW20",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 106.3
+                    },
+                    "uuid": "6c28e215-7936-466e-be4c-86eea99a7888"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 107.2
+                    },
+                    "uuid": "353f1955-9e9d-4298-8d67-64ea3c2b40a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW20 on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 121.4
+                    },
+                    "uuid": "8ca2ae86-63ad-4843-b7ce-7511ae29a170"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 96.775
+                    },
+                    "uuid": "3754efb7-1f9f-499a-a94c-33dffcc6a170"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW16 on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 111.875
+                    },
+                    "uuid": "a12b32b9-9032-4ba3-a6e6-843d50a0e585"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 88.15
+                    },
+                    "uuid": "d96ffba0-76d3-4c32-90a5-aa7f64ff6ac1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 88.15,
+                        "y": 102.35
+                    },
+                    "uuid": "b705b1da-982c-418e-bb1a-1c818218df3b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW16a on F.Silkscreen",
+                    "pos": {
+                        "x": 102.35,
+                        "y": 102.35
+                    },
+                    "uuid": "86d5d54a-872e-430e-98a5-bab1903b3e21"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST16",
+                    "pos": {
+                        "x": 97.25,
+                        "y": 104.775
+                    },
+                    "uuid": "c5b8ad8b-e49c-462d-80fb-5a7d1b529563"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of SW17 on F.Silkscreen",
+                    "pos": {
+                        "x": 40.525,
+                        "y": 107.2
+                    },
+                    "uuid": "c2e43d1f-86b2-443e-b985-37c4a712af01"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of ST17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 112.3
+                    },
+                    "uuid": "84ab8d1f-8ee0-4e8e-b968-36413ce7faea"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D20",
+                    "pos": {
+                        "x": 102.235,
+                        "y": 118.427
+                    },
+                    "uuid": "bc6d298e-adcc-450c-8b15-6a510821ca91"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of D20 on B.Silkscreen",
+                    "pos": {
+                        "x": 101.33,
+                        "y": 120.51
+                    },
+                    "uuid": "81c4fa9b-0bb0-45a0-9a88-dec18d71803f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW13",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 95.25
+                    },
+                    "uuid": "03ff3956-5808-459f-b067-2740429915e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW4",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 38.1
+                    },
+                    "uuid": "14da436e-bd3b-42a7-ba2d-a3a8b9a7251e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW12",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 76.2
+                    },
+                    "uuid": "156eb175-951a-47a6-8665-789e373370b2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW17a",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 114.3
+                    },
+                    "uuid": "22a32257-deed-4d43-af8e-9cb5e68e7ea1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW18",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 114.3
+                    },
+                    "uuid": "29375734-8d81-4de2-bb26-b782e2e58dfd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 38.1
+                    },
+                    "uuid": "47198191-4254-4fd4-af8b-73783a8553ac"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 38.1
+                    },
+                    "uuid": "53ce9808-224b-49be-b6dd-e53e1c722a33"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW5",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 57.15
+                    },
+                    "uuid": "6305d1cf-d4c5-47ac-aed2-4c81c92e42df"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW7",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 57.15
+                    },
+                    "uuid": "67f19773-f59e-4bf4-aedb-0d18d0cadaf0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW20",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 114.3
+                    },
+                    "uuid": "6d00cad3-747e-4fa9-b4aa-c231f923f39f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 104.775
+                    },
+                    "uuid": "7a3ee048-75e0-4aad-a3eb-27f985c3a070"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW16a",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 95.25
+                    },
+                    "uuid": "7c8ac55b-8d1e-44ad-ae3a-6773b8680a15"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW10",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 76.2
+                    },
+                    "uuid": "8d486d62-fe5f-48aa-b9a1-f63edb27b483"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST16",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 104.775
+                    },
+                    "uuid": "8d58c55a-52a5-4292-9682-737759167773"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 38.1
+                    },
+                    "uuid": "a7579920-a827-4678-a586-df23c4689dca"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW9",
+                    "pos": {
+                        "x": 38.1,
+                        "y": 76.2
+                    },
+                    "uuid": "ab93ac0f-1cc3-423d-8452-69eb31ff4023"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 114.3
+                    },
+                    "uuid": "ababd3d0-6267-4692-8fff-d453d8822780"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW8",
+                    "pos": {
+                        "x": 95.25,
+                        "y": 57.15
+                    },
+                    "uuid": "b12c768f-bdd7-46bc-a89f-af4127077a2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Mounting_Keyboard_Stabilizer'.",
+            "items": [
+                {
+                    "description": "Footprint ST17",
+                    "pos": {
+                        "x": 47.625,
+                        "y": 114.3
+                    },
+                    "uuid": "b777aa8d-6078-4277-b6fb-7de0aad643a8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW6",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 57.15
+                    },
+                    "uuid": "caaddb73-c8c1-41ba-84bf-34d54dbe184c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW14",
+                    "pos": {
+                        "x": 57.15,
+                        "y": 95.25
+                    },
+                    "uuid": "de8f7f75-0cb6-4d24-9edb-a5345b6b2af0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW11",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 76.2
+                    },
+                    "uuid": "e3c35c28-4f58-420e-8929-f8c1d5dc235c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW15",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 95.25
+                    },
+                    "uuid": "f9d58604-fead-41d0-85aa-00ebbc4495f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Switch_Keyboard_Cherry_MX'.",
+            "items": [
+                {
+                    "description": "Footprint SW19",
+                    "pos": {
+                        "x": 76.2,
+                        "y": 114.3
+                    },
+                    "uuid": "fe87f57c-2827-42e0-ad6c-5b0a9949899b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D9",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 80.2
+                    },
+                    "uuid": "08ce14c3-bd9f-4044-962d-441f83adedca"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D15",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 99.25
+                    },
+                    "uuid": "1ace6e45-08b3-43d7-8a84-1d269196dc16"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D10",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 80.2
+                    },
+                    "uuid": "2a008f00-b24b-4301-be6c-2fb0ee59a6d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D8",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 61.15
+                    },
+                    "uuid": "2fd22d44-ca80-4e16-b258-58b4ce125a8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D3",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 42.1
+                    },
+                    "uuid": "346483ed-918c-4243-9fc1-8cfd4c3f3218"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D4",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 42.1
+                    },
+                    "uuid": "4b7c155c-72d7-47a9-9b44-b18efac0ee1f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D17",
+                    "pos": {
+                        "x": 52.705,
+                        "y": 118.3
+                    },
+                    "uuid": "5c48bf2f-89c1-42b5-8d6c-74af021429eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D12",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 80.2
+                    },
+                    "uuid": "5df33b8a-44fd-49ab-8e85-929b7906e921"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D16",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 108.775
+                    },
+                    "uuid": "71480157-a007-419e-926b-46b0da9aeab5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D11",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 80.2
+                    },
+                    "uuid": "7c15f73f-9cd3-4280-9f14-badc7bf26280"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D7",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 61.15
+                    },
+                    "uuid": "8df6307b-0463-423d-bd5f-3018fdfef394"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D13",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 99.25
+                    },
+                    "uuid": "8f757827-6680-4bda-88cb-73af7a523be2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D6",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 61.15
+                    },
+                    "uuid": "8fcaf04b-463f-4fb0-bd17-302b9f14975e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 42.1
+                    },
+                    "uuid": "9633f66f-9a02-409a-8f55-17113e453192"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D5",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 61.15
+                    },
+                    "uuid": "96f9645e-e59e-4069-a624-a0b02ec49445"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D19",
+                    "pos": {
+                        "x": 81.28,
+                        "y": 118.3
+                    },
+                    "uuid": "9c1da951-b7ad-417e-981c-cf8009796236"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 42.1
+                    },
+                    "uuid": "b53f0a83-293c-4a1b-aef6-5a5dd0f23152"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D14",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 99.25
+                    },
+                    "uuid": "c5349045-b34f-4220-8c3b-c0701427f5cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D18",
+                    "pos": {
+                        "x": 62.23,
+                        "y": 118.3
+                    },
+                    "uuid": "cb2b33c3-9a8d-4625-bc25-df48f530eab8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Diode_SMD'.",
+            "items": [
+                {
+                    "description": "Footprint D20",
+                    "pos": {
+                        "x": 100.33,
+                        "y": 118.3
+                    },
+                    "uuid": "dbca7d7e-8677-41e4-9eb5-2181a2ae4328"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SW17a",
+                    "pos": {
+                        "x": 43.18,
+                        "y": 114.3
+                    },
+                    "uuid": "da8a352b-67fa-4b24-adc4-2961eb041944"
+                },
+                {
+                    "description": "NPTH pad of SW17",
+                    "pos": {
+                        "x": 42.545,
+                        "y": 114.3
+                    },
+                    "uuid": "fcaf802f-382f-434e-be89-7fc6e18c8c8d"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SW18",
+                    "pos": {
+                        "x": 52.07,
+                        "y": 114.3
+                    },
+                    "uuid": "86681b4a-da59-43ac-aaaa-e26a98ed5cc4"
+                },
+                {
+                    "description": "NPTH pad of SW17",
+                    "pos": {
+                        "x": 52.705,
+                        "y": 114.3
+                    },
+                    "uuid": "f1d37b50-b2bc-45c1-983f-177f8ad233ba"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        },
+        {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2495 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [Net-(D18-A)] of SW18",
+                    "pos": {
+                        "x": 59.69,
+                        "y": 109.22
+                    },
+                    "uuid": "0e455a33-a6e0-4d43-a8c3-7a0a879d3e5c"
+                },
+                {
+                    "description": "NPTH pad of ST17",
+                    "pos": {
+                        "x": 59.563,
+                        "y": 107.315
+                    },
+                    "uuid": "ab773df7-3f56-434a-98a9-7b258ee179b2"
+                }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+        }
+    ]
+}
